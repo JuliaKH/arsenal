@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**{*/
 /*    color: red;*/
 /*}*/
@@ -51,3 +52,103 @@
 #brands .arrow.left:hover {
     border-color: #484848;
 }
+=======
+body {
+    margin: 0;
+    padding: 0;
+    /*height: 100vh;*/
+    font-size: 16px;
+    min-width: 320px;
+    position: relative;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+.topBar, .shopBar {
+    width: 100vw;
+    padding: 1em;
+}
+.topBar {
+    background-color: #af945d;
+    color: white;
+
+    display: flex;
+    text-align: center;
+}
+.city {
+    border-bottom: 1px dotted white;
+}
+.street {
+    border-bottom: 1px solid white;
+}
+nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav > ul > li {
+    display: inline;
+    margin-right: 1em;
+    border-bottom: 1px solid white;
+}
+nav > ul > li:nth-last-child(1) {
+    margin-right: 0em;
+}
+.account {
+    border-bottom: 1px dotted white;
+}
+.logo-container > img {
+    object-fit: contain
+}
+.logo-container > span {
+    text-align: center;
+    color: #9b9b9b;
+    font-size: 0.85em;
+}
+.shopBar {
+    border-bottom: 1px solid #e7e7e7;
+}
+.search {
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid #919191;
+}
+.search > input {
+    margin-bottom: 0;
+    border: none;
+    box-shadow: none;
+}
+.search > input:focus {
+    border: none;
+    box-shadow: none;
+}
+.search > div {
+    padding: 0.5em;
+}
+.cart {
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 0.5em;
+    background-color: #f0f0f0;
+    border: 1px solid #929292;
+}
+.itemsCount {
+    background-color: #c19c4f;
+    border-radius: 50%;
+    width: 2em;
+    color: white;
+    text-align: center;
+}
+.mainMenu {
+    display: flex;
+    justify-content: space-evenly;
+    color: #5f4849;
+    padding: 1em;
+    border-bottom: 2px solid #ed3642;
+}
+.mainMenu > span:hover {
+    color: #c2a263;
+    cursor: pointer;
+}
+>>>>>>> d6d3a980b82f9ca095b58f53e1b18ac2358f070f
