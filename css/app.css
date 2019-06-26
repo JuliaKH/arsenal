@@ -85,3 +85,14 @@ nav > ul > li:nth-last-child(1) {
     color: white;
     text-align: center;
 }
+.mainMenu {
+    display: flex;
+    justify-content: space-evenly;
+    color: #5f4849;
+    padding: 1em;
+    border-bottom: 2px solid #ed3642;
+}
+.mainMenu > span:hover {
+    color: #c2a263;
+    cursor: pointer;
+}
