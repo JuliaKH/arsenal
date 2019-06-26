@@ -1,3 +1,42 @@
-/**{*/
-/*    color: red;*/
-/*}*/
+body {
+    margin: 0;
+    padding: 0;
+    /*height: 100vh;*/
+    font-size: 16px;
+    min-width: 320px;
+    position: relative;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+.topBar {
+    background-color: #af945d;
+    color: white;
+
+    width: 100vw;
+    padding: 1em;
+
+    display: flex;
+    text-align: center;
+}
+.city {
+    border-bottom: 1px dotted white;
+}
+.street {
+    border-bottom: 1px solid white;
+}
+nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav > ul > li {
+    display: inline;
+    margin-right: 1em;
+    border-bottom: 1px solid white;
+}
+nav > ul > li:nth-last-child(1) {
+    margin-right: 0em;
+}
+.account {
+    border-bottom: 1px dotted white;
+}
