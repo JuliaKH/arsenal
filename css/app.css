@@ -9,7 +9,8 @@ body {
     /*overflow-x: hidden;*/
 }
 /*region Header styles*/
-header > div {
+header > div,
+#services {
     padding: 1em 5em;
 }
 /*region Header topBar*/
@@ -263,3 +264,37 @@ nav > ul > li:nth-last-child(1) {
 }
 /*endregion*/
 
+/*region Services*/
+#services {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+#services > img {
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+}
+.servicesBorder {
+    padding-top: 2em;
+    border: 2px solid rgb(214,203,203);
+}
+#services .row {
+    display: flex;
+}
+.serviceContainer {
+    padding: 2em;
+}
+.head {
+    display: flex;
+    color: red;
+    text-decoration: underline;
+}
+.head > h4 {
+    padding: 0 1em;
+}
+.head > img {
+    object-fit: contain;
+}
+/*endregion*/
