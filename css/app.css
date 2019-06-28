@@ -6,18 +6,21 @@ body {
     min-width: 320px;
     position: relative;
     font-family: sans-serif;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
-.topBar, .shopBar {
-    width: 100vw;
-    padding: 1em;
+/*region Header styles*/
+header > div,
+#services {
+    padding: 1em 5em;
 }
+/*region Header topBar*/
 .topBar {
     background-color: #af945d;
     color: white;
 
     display: flex;
-    text-align: center;
+    /*text-align: center;*/
+    justify-content: space-between;
 }
 .city {
     border-bottom: 1px dotted white;
@@ -41,21 +44,28 @@ nav > ul > li:nth-last-child(1) {
 .account {
     border-bottom: 1px dotted white;
 }
-.logo-container > img {
-    object-fit: contain
+/*endregion*/
+/*region Header shopBar*/
+.shopBar {
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
 }
 .logo-container > span {
     text-align: center;
     color: #9b9b9b;
     font-size: 0.85em;
 }
-.shopBar {
-    border-bottom: 1px solid #e7e7e7;
-}
 .search {
+    flex-grow: 1;
+    margin: 0 3em;
     display: flex;
     flex-direction: row;
-
     border: 1px solid #919191;
 }
 .search > input {
@@ -73,6 +83,7 @@ nav > ul > li:nth-last-child(1) {
 .cart {
     display: flex;
     justify-content: space-evenly;
+    width: 12em;
 
     padding: 0.5em;
     background-color: #f0f0f0;
@@ -85,19 +96,122 @@ nav > ul > li:nth-last-child(1) {
     color: white;
     text-align: center;
 }
+/*endregion*/
+/*region Header main menu*/
 .mainMenu {
-    display: flex;
-    justify-content: space-evenly;
-    color: #5f4849;
-    padding: 1em;
     border-bottom: 2px solid #ed3642;
-}
-.mainMenu > span:hover {
-    color: #c2a263;
-    cursor: pointer;
-}
 
-/*BRANDS SECTION*/
+}
+.mainMenu > ul {
+    display: flex;
+    justify-content: space-between;
+}
+.mainMenu > ul > li > a {
+    color: #5f4849;
+}
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+    display: none;
+}
+.dropdown.menu > li.is-active > a {
+    color: white;
+    background-color: red;
+    border-radius: 3em;
+}
+.menu.lvl1 {
+    background-color: rgba(0,0,0,0.8);
+    border: none;
+    margin-top: 1.1em;
+}
+.menu.lvl1 > li > a {
+    color: white;
+}
+.menu.lvl1 .is-active > a {
+    background-color: rgba(175, 149, 89, 1);
+}
+.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {
+    display: none;
+}
+.menu.lvl2, .menu.lvl3 {
+    background-color: rgba(175, 149, 89, 1);
+    border: none;
+}
+.menu.lvl2 > li > a {
+    color: rgb(235, 228, 213);
+}
+.menu.lvl2 > li > a:hover {
+    color: white;
+}
+.menu.lvl3 > div {
+    border-left: 1px solid rgb(150,128,76);
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu.lvl3 > div > h4, .menu.lvl3 > div > p {
+    color: rgb(85,80,71);
+}
+.menu.lvl3 > div > h4 {
+    border-bottom: 1px solid rgb(85,80,71);
+}
+.menu.lvl3 > div > p {
+    font-size: 0.8em;
+    text-align: center;
+}
+.menu.lvl3 > div > div {
+    background-color: white;
+    padding: 0 1em;
+}
+.menu.lvl3 > div > div > span:nth-child(1) {
+    text-decoration: line-through;
+    color: rgb(126,126,126);
+}
+.menu.lvl3 > div > div > span:nth-child(2) {
+    color: red;
+    font-size: 1.3em;
+}
+/*endregion*/
+/*region Header carousel*/
+.headerCarousel {
+    padding: 0;
+}
+.headerCarousel .orbit-bullets {
+    margin-top: -3em;
+}
+.orbit-bullets button {
+    background-color: white;
+    border: 1px solid #393a3b;
+    border-radius: 50%;
+}
+.headerCarousel .orbit-bullets .is-active {
+    background-color: red;
+}
+.headerCarousel .orbit-figure {
+    height: 400px;
+    background-size: cover;
+}
+.orbit-figure.img1 {
+    background-image: url("../img/headerCarouselImage1.png");
+}
+.orbit-figure.img2 {
+    background-image: url("../img/headerCarouselImage2.png");
+}
+.headerSliderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50%;
+    height: 400px;
+    color: white;
+}
+.headerSliderContainer > span {
+    color: rgb(170, 170, 170);
+}
+/*endregion*/
+/*endregion*/
+
+/*region Brands styles*/
 #brands{
     /*height: 130px;*/
     display: flex;
@@ -241,3 +355,39 @@ nav > ul > li:nth-last-child(1) {
         width: 36.0em;
     }
 }
+/*endregion*/
+
+/*region Services*/
+#services {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+#services > img {
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+}
+.servicesBorder {
+    padding-top: 2em;
+    border: 2px solid rgb(214,203,203);
+}
+#services .row {
+    display: flex;
+}
+.serviceContainer {
+    padding: 2em;
+}
+.head {
+    display: flex;
+    color: red;
+    text-decoration: underline;
+}
+.head > h4 {
+    padding: 0 1em;
+}
+.head > img {
+    object-fit: contain;
+}
+/*endregion*/
