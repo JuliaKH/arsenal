@@ -225,7 +225,7 @@ nav > ul > li:nth-last-child(1) {
     align-items: center;
 
 }
-.slider-container .grid-x{
+#brands .slider-container .grid-x{
     margin: 0 auto;
 }
 #brands .cell img{
@@ -261,7 +261,7 @@ nav > ul > li:nth-last-child(1) {
    right: 110px;
     top: 70px;
 }
-#brands .arrow {
+.arrow {
     position: relative;
     border: solid #808080;
     border-width: 0 3px 3px 0;
@@ -271,22 +271,22 @@ nav > ul > li:nth-last-child(1) {
     padding: 3px;
 }
 
-#brands .arrow.right {
+.arrow.right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     float: right;
 }
 
-#brands .arrow.right:hover {
-    border-color: #484848;
+.orbit-next:hover .arrow.right {
+    border-color: white;
 }
 
-#brands .arrow.left {
+.arrow.left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
 
-#brands .arrow.left:hover {
+.orbit-previous:hover .arrow.left {
     border-color: white;
 }
 #brands .lines{
@@ -354,9 +354,157 @@ nav > ul > li:nth-last-child(1) {
     #brands .line-item{
         width: 36.0em;
     }
+    .orbit-previous{
+        left: 5030px;
+    }
+    .orbit-next{
+        right: 30px;
+    }
+}
+@media (max-width: 550px){
+    .orbit-previous{
+        left: 0!important;
+    }
+    .orbit-next{
+        right: 0!important;
+    }
+    #sellout .btn{
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    #sellout .links a{
+        font-size: 10px!important;
+    }
 }
 /*endregion*/
-
+/*Sell-out*/
+#sellout h2{
+    font-size: 26px;
+    text-align: center;
+    margin-top: 30px;
+    color: #503737;
+}
+#sellout .buttons{
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 20px;
+}
+#sellout .bckgr{
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #503737;
+}
+#sellout .btn{
+   background-color: #503737;
+    color: white;
+    padding: 10px 15px;
+}
+#sellout .btn:hover, #sellout .btn-img:hover{
+    background-color: #ff2d2d;
+    border-radius: 50px;
+}
+#sellout .instrum{
+    border-radius: 50px 0 0 50px;
+}
+#sellout .mrkdown{
+    border-radius: 0 50px 50px 0;
+}
+#sellout .slider-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+#sellout .cell{
+    max-width: 240px;
+    width: 100%;
+    border: 1px solid rgb(214,203,203);
+    margin-left: -1px;
+}
+#sellout .image{
+    height: 350px;
+    display: flex;
+    align-items: center;
+}
+#sellout .name{
+    font-size: 16px;
+    text-decoration: underline;
+    text-align: center;
+}
+#sellout .descr{
+    font-size: 12px;
+    text-align: center;
+}
+#sellout .prices{
+    max-width: 125px;
+    width: 100%;
+    margin: 14px auto 25px auto;
+    /*text-align: center;*/
+}
+#sellout .price{
+    color: #777777;
+    font-size: 14px;
+    text-decoration: line-through;
+    float: left;
+    margin-right: 8px;
+    text-align: center;
+}
+#sellout .sell{
+    font-size: 18px;
+    color: #e73939;
+}
+#sellout .sell span{
+    text-decoration: line-through;
+}
+/*#sellout .cell{*/
+/*    position: relative;*/
+/*}*/
+#sellout .cell .buttons{
+    display: none;
+}
+#sellout .cell .transbcg{
+    width: 180px;
+    background-color: white;
+}
+#sellout .cell:hover{
+    position: relative;
+    border: 2px solid #ad9797;
+}
+#sellout .cell:hover .buttons{
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    left: 30px;
+}
+#sellout .btn-img{
+    background-color: #503737;
+    /*color: white;*/
+    padding: 10px 10px;
+    border-radius: 50px;
+}
+#sellout .orbit-previous{
+    left: 110px;
+    /*top: 70px;*/
+}
+#sellout .orbit-next{
+    right: 110px;
+    /*top: 70px;*/
+}
+#sellout .orbit-previous:hover,#sellout .orbit-next:hover{
+    background-color: #d3ba7e;
+    border-radius: 50px;
+    /*top: 70px;*/
+}
+#sellout .links{
+    text-align: center;
+    margin-bottom: 42px;
+}
+#sellout .links a{
+    color: black;
+    font-size: 14px;
+    text-decoration: underline;
+    margin-right: 25px;
+}
+    /*End sell-out*/
 /*region Services*/
 #services {
     display: flex;
