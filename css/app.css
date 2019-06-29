@@ -368,38 +368,38 @@ nav > ul > li:nth-last-child(1) {
     .orbit-next{
         right: 0!important;
     }
-    #sellout .btn{
+    #sellout .btn, #news_items .btn{
         font-size: 12px;
         padding: 5px 10px;
     }
-    #sellout .links a{
+    #sellout .links a, #news_items .links a{
         font-size: 10px!important;
     }
 }
 /*endregion*/
-/*Sell-out*/
-#sellout h2{
-    font-size: 26px;
+/*Sell-out and news_items*/
+#sellout h2, #news_items h2{
+    font-size: 28px;
     text-align: center;
     margin-top: 30px;
     color: #503737;
 }
-#sellout .buttons{
+#sellout .buttons, #news_items .buttons{
     text-align: center;
     margin-top: 24px;
     margin-bottom: 20px;
 }
-#sellout .bckgr{
+#sellout .bckgr, #news_items .bckgr{
     display: inline-block;
     border-radius: 50px;
     background-color: #503737;
 }
-#sellout .btn{
+#sellout .btn, #news_items .btn{
    background-color: #503737;
     color: white;
     padding: 10px 15px;
 }
-#sellout .btn:hover, #sellout .btn-img:hover{
+#sellout .btn:hover, #sellout .btn-img:hover,#news_items .btn:hover, #news_items .btn-img:hover{
     background-color: #ff2d2d;
     border-radius: 50px;
 }
@@ -409,38 +409,41 @@ nav > ul > li:nth-last-child(1) {
 #sellout .mrkdown{
     border-radius: 0 50px 50px 0;
 }
-#sellout .slider-container{
+#sellout .slider-container, #news_items .slider-container{
     display: flex;
     justify-content: center;
     margin-bottom: 28px;
 }
-#sellout .cell{
+#sellout .cell, #news_items .cell{
     max-width: 240px;
     width: 100%;
     border: 1px solid rgb(214,203,203);
     margin-left: -1px;
 }
-#sellout .image{
+#sellout .image, #news_items .image{
     height: 350px;
     display: flex;
     align-items: center;
 }
-#sellout .name{
+#news_items .image img{
+    margin: 0 auto;
+}
+#sellout .name, #news_items .name{
     font-size: 16px;
     text-decoration: underline;
     text-align: center;
 }
-#sellout .descr{
+#sellout .descr, #news_items .descr{
     font-size: 12px;
     text-align: center;
 }
-#sellout .prices{
+#sellout .prices, #news_items .prices{
     max-width: 125px;
     width: 100%;
     margin: 14px auto 25px auto;
     /*text-align: center;*/
 }
-#sellout .price{
+#sellout .price, #news_items .price{
     color: #777777;
     font-size: 14px;
     text-decoration: line-through;
@@ -448,57 +451,57 @@ nav > ul > li:nth-last-child(1) {
     margin-right: 8px;
     text-align: center;
 }
-#sellout .sell{
+#sellout .sell, #news_items .sell{
     font-size: 18px;
     color: #e73939;
 }
-#sellout .sell span{
+#sellout .sell span, #news_items .sell span{
     text-decoration: line-through;
 }
 /*#sellout .cell{*/
 /*    position: relative;*/
 /*}*/
-#sellout .cell .buttons{
+#sellout .cell .buttons, #news_items .cell .buttons{
     display: none;
 }
-#sellout .cell .transbcg{
+#sellout .cell .transbcg, #news_items .cell .transbcg{
     width: 180px;
     background-color: white;
 }
-#sellout .cell:hover{
+#sellout .cell:hover, #news_items .cell:hover{
     position: relative;
     border: 2px solid #ad9797;
 }
-#sellout .cell:hover .buttons{
+#sellout .cell:hover .buttons, #news_items .cell:hover .buttons{
     display: block;
     position: absolute;
     bottom: -40px;
     left: 30px;
 }
-#sellout .btn-img{
+#sellout .btn-img, #news_items .btn-img{
     background-color: #503737;
     /*color: white;*/
     padding: 10px 10px;
     border-radius: 50px;
 }
-#sellout .orbit-previous{
+#sellout .orbit-previous, #news_items .orbit-previous{
     left: 110px;
     /*top: 70px;*/
 }
-#sellout .orbit-next{
+#sellout .orbit-next, #news_items .orbit-next{
     right: 110px;
     /*top: 70px;*/
 }
-#sellout .orbit-previous:hover,#sellout .orbit-next:hover{
+#sellout .orbit-previous:hover,#sellout .orbit-next:hover, #news_items .orbit-previous:hover,#news_items .orbit-next:hover{
     background-color: #d3ba7e;
     border-radius: 50px;
     /*top: 70px;*/
 }
-#sellout .links{
+#sellout .links, #news_items .links{
     text-align: center;
     margin-bottom: 42px;
 }
-#sellout .links a{
+#sellout .links a, #news_items .links a{
     color: black;
     font-size: 14px;
     text-decoration: underline;
