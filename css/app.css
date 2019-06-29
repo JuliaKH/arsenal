@@ -507,7 +507,7 @@ nav > ul > li:nth-last-child(1) {
     text-decoration: underline;
     margin-right: 25px;
 }
-    /*End sell-out*/
+    /*End sell-out/ news items*/
 /*region Services*/
 #services {
     display: flex;
@@ -542,3 +542,78 @@ nav > ul > li:nth-last-child(1) {
     object-fit: contain;
 }
 /*endregion*/
+
+/*Stock Section*/
+#stock h2{
+    font-size: 28px;
+    text-align: center;
+    margin-top: 30px;
+    color: #503737;
+}
+#stock .grid-x{
+    max-width: 950px;
+    margin: 40px auto 0 auto;
+}
+#stock .cell{
+    background-color: #f4f3eb;
+}
+#stock .cell:first-child{
+    margin-right: 10px;
+}
+#stock .cell img{
+    float: left;
+    margin-right: 20px;
+}
+#stock .text h3{
+    color: #d8424b;
+    font-size: 18px;
+    text-decoration: underline;
+    margin: 28px 0 14px 0px;
+}
+#stock .text p{
+    font-size: 12px;
+}
+#stock .orbit-previous{
+    left: 40px;
+}
+#stock .orbit-next{
+    right: 40px;
+}
+#stock .sml-slider{
+    display: none;
+}
+@media (max-width: 1070px){
+    #stock .grid-x{
+        max-width: 550px;
+    }
+    #stock .cell{
+        display: flex;
+        /*justify-content: center;*/
+        flex-direction: column;
+    }
+    #stock .cell img{
+        clear: left!important;
+        margin: 0!important;
+    }
+    .orbit-previous{
+        left: 5030px;
+    }
+    .orbit-next{
+        right: 30px;
+    }
+}
+@media (max-width: 640px){
+    #stock .grid-x{
+        max-width: 250px;
+    }
+    #stock .cell{
+        margin-bottom: 20px;
+    }
+    #stock .lrg-slider{
+        display: none;
+    }
+    #stock .sml-slider{
+        display: block;
+    }
+}
+/*End stock section*/
