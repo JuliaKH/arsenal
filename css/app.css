@@ -522,11 +522,17 @@ nav > ul > li:nth-last-child(1) {
     top: 0;
 }
 .servicesBorder {
+    display: flex;
     padding-top: 2em;
     border: 2px solid rgb(214,203,203);
 }
 #services .row {
     display: flex;
+}
+#services .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .serviceContainer {
     padding: 2em;
@@ -700,7 +706,7 @@ footer span {
     display: flex;
     flex-direction: column;
 }
-.links {
+footer .links {
     display: flex;
     flex-grow: 2;
     justify-content: space-between;
