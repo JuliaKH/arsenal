@@ -10,7 +10,8 @@ body {
 }
 /*region Header styles*/
 header > div,
-#services {
+#services,
+#articles{
     padding: 1em 5em;
 }
 /*region Header topBar*/
@@ -210,7 +211,6 @@ nav > ul > li:nth-last-child(1) {
 }
 /*endregion*/
 /*endregion*/
-
 /*region Brands styles*/
 #brands{
     /*height: 130px;*/
@@ -377,6 +377,7 @@ nav > ul > li:nth-last-child(1) {
     }
 }
 /*endregion*/
+/*region Sellout*/
 /*Sell-out and news_items*/
 #sellout h2, #news_items h2{
     font-size: 28px;
@@ -508,6 +509,7 @@ nav > ul > li:nth-last-child(1) {
     margin-right: 25px;
 }
     /*End sell-out/ news items*/
+/*endregion*/
 /*region Services*/
 #services {
     display: flex;
@@ -542,7 +544,7 @@ nav > ul > li:nth-last-child(1) {
     object-fit: contain;
 }
 /*endregion*/
-
+/*region Stock*/
 /*Stock Section*/
 #stock h2{
     font-size: 28px;
@@ -616,6 +618,50 @@ nav > ul > li:nth-last-child(1) {
     }
     #stock .sml-slider{
         display: block;
+    }
+}
+/*endregion*/
+#articles {
+    display: flex;
+    flex-direction: row;
+    background-color: #f4f3eb
+}
+.news {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: rgb(68, 68, 68);
+}
+.news-item {
+    display: flex;
+    margin: 1em 0;
+}
+.news-item > img {
+    object-fit: contain;
+}
+.news-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+
+}
+.news-content > h5 {
+    text-decoration: underline;
+}
+.news-text {
+    padding-bottom: 0.5em;
+}
+.news-links {
+    display: flex;
+}
+.news-links > a {
+    margin-right: 2em;
+    color: rgb(68, 68, 68);
+    text-decoration: underline;
+}
+@media (max-width: 786px) {
+    .news {
+        flex-direction: column;
     }
 }
 /*End stock section*/
