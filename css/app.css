@@ -11,7 +11,8 @@ body {
 /*region Header styles*/
 header > div,
 #services,
-#articles{
+#articles,
+footer{
     padding: 1em 5em;
 }
 /*region Header topBar*/
@@ -378,7 +379,6 @@ nav > ul > li:nth-last-child(1) {
 }
 /*endregion*/
 /*region Sellout*/
-/*Sell-out and news_items*/
 #sellout h2, #news_items h2{
     font-size: 28px;
     text-align: center;
@@ -508,7 +508,6 @@ nav > ul > li:nth-last-child(1) {
     text-decoration: underline;
     margin-right: 25px;
 }
-    /*End sell-out/ news items*/
 /*endregion*/
 /*region Services*/
 #services {
@@ -545,7 +544,6 @@ nav > ul > li:nth-last-child(1) {
 }
 /*endregion*/
 /*region Stock*/
-/*Stock Section*/
 #stock h2{
     font-size: 28px;
     text-align: center;
@@ -621,6 +619,7 @@ nav > ul > li:nth-last-child(1) {
     }
 }
 /*endregion*/
+/*region articles*/
 #articles {
     display: flex;
     flex-direction: row;
@@ -664,4 +663,55 @@ nav > ul > li:nth-last-child(1) {
         flex-direction: column;
     }
 }
-/*End stock section*/
+/*endregion*/
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: #5d5555;
+    color: white;
+    padding-top: 3em;
+    padding-bottom: 5em;
+}
+footer a,
+footer a:hover,
+footer a:visited{
+    color: white;
+    text-decoration: underline;
+    padding: 0.5em 0;
+}
+footer span {
+    padding: 0.5em 0;
+}
+.created {
+    justify-content: space-between;
+}
+.created > div {
+    display: flex;
+    flex-direction: column;
+}
+.created,
+.contacts{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.place-info {
+    display: flex;
+    flex-direction: column;
+}
+.links {
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-between;
+}
+.links-col {
+    display: flex;
+    flex-direction: column;
+}
+.social {
+    display: flex;
+}
+.social > img {
+    margin-right: 1em;
+}
