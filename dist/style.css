@@ -268,13 +268,13 @@ footer {
     left: 0 !important; }
   .orbit-next {
     right: 0 !important; }
-  #sellout .btn {
+  #sellout .btn, #news_items .btn {
     font-size: 12px;
     padding: 5px 10px; }
   #news_items .btn {
     font-size: 12px;
     padding: 5px 10px; }
-  #sellout .links a {
+  #sellout .links a, #news_items .links a {
     font-size: 10px !important; }
   #news_items .links a {
     font-size: 10px !important; }
@@ -283,84 +283,84 @@ footer {
   #brands .line-item {
     width: 26.0em; } }
 
-#sellout h2 {
+#sellout h2, #news_items h2 {
   font-size: 28px;
   text-align: center;
   margin-top: 30px;
   color: #503737; }
 
-#sellout .buttons {
+#sellout .buttons, #news_items .buttons {
   text-align: center;
   margin-top: 24px;
   margin-bottom: 20px; }
 
-#sellout .bckgr {
+#sellout .bckgr, #news_items .bckgr {
   display: inline-block;
   border-radius: 50px;
   background-color: #503737; }
 
-#sellout .btn {
+#sellout .btn, #news_items .btn {
   background-color: #503737;
   color: white;
   padding: 10px 15px; }
-  #sellout .btn:hover {
+  #sellout .btn:hover, #news_items .btn:hover {
     background-color: #ff2d2d;
     border-radius: 50px; }
 
-#sellout .btn-img:hover {
+#sellout .btn-img:hover, #news_items .btn-img:hover {
   background-color: #ff2d2d;
   border-radius: 50px; }
 
-#sellout .instrum {
+#sellout .instrum, #news_items .instrum {
   border-radius: 50px 0 0 50px; }
 
-#sellout .mrkdown {
+#sellout .mrkdown, #news_items .mrkdown {
   border-radius: 0 50px 50px 0; }
 
-#sellout .slider-container {
+#sellout .slider-container, #news_items .slider-container {
   display: flex;
   justify-content: center;
   margin-bottom: 28px; }
 
-#sellout .cell {
+#sellout .cell, #news_items .cell {
   max-width: 240px;
   width: 100%;
   border: 1px solid #d6cbcb;
   margin-left: -1px; }
-  #sellout .cell .buttons {
+  #sellout .cell .buttons, #news_items .cell .buttons {
     display: none; }
-    #sellout .cell .buttons .transbcg {
+    #sellout .cell .buttons .transbcg, #news_items .cell .buttons .transbcg {
       width: 180px;
       background-color: white; }
-  #sellout .cell:hover {
+  #sellout .cell:hover, #news_items .cell:hover {
     position: relative;
     border: 2px solid #ad9797; }
-  #sellout .cell:hover .buttons {
+  #sellout .cell:hover .buttons, #news_items .cell:hover .buttons {
     display: block;
     position: absolute;
     bottom: -40px;
     left: 30px; }
 
-#sellout .image {
+#sellout .image, #news_items .image {
   height: 350px;
   display: flex;
   align-items: center; }
 
-#sellout .name {
+#sellout .name, #news_items .name {
   font-size: 16px;
   text-decoration: underline;
   text-align: center; }
 
-#sellout .descr {
+#sellout .descr, #news_items .descr {
   font-size: 12px;
   text-align: center; }
 
-#sellout .prices {
+#sellout .prices, #news_items .prices {
   max-width: 125px;
   width: 100%;
   margin: 14px auto 25px auto; }
 
-#sellout .price {
+#sellout .price, #news_items .price {
   color: #777777;
   font-size: 14px;
   text-decoration: line-through;
@@ -368,33 +368,33 @@ footer {
   margin-right: 8px;
   text-align: center; }
 
-#sellout .sell {
+#sellout .sell, #news_items .sell {
   font-size: 18px;
   color: #e73939; }
-  #sellout .sell span {
+  #sellout .sell span, #news_items .sell span {
     text-decoration: line-through; }
 
-#sellout .btn-img {
+#sellout .btn-img, #news_items .btn-img {
   background-color: #503737;
   padding: 10px 10px;
   border-radius: 50px; }
 
-#sellout .orbit-previous {
+#sellout .orbit-previous, #news_items .orbit-previous {
   left: 110px; }
-  #sellout .orbit-previoushover {
+  #sellout .orbit-previoushover, #news_items .orbit-previoushover {
     background-color: #d3ba7e;
     border-radius: 50px; }
 
-#sellout .orbit-next {
+#sellout .orbit-next, #news_items .orbit-next {
   right: 110px; }
-  #sellout .orbit-next:hover {
+  #sellout .orbit-next:hover, #news_items .orbit-next:hover {
     background-color: #d3ba7e;
     border-radius: 50px; }
 
-#sellout .links {
+#sellout .links, #news_items .links {
   text-align: center;
   margin-bottom: 42px; }
-  #sellout .links a {
+  #sellout .links a, #news_items .links a {
     color: black;
     font-size: 14px;
     text-decoration: underline;
@@ -503,124 +503,8 @@ footer {
   #stock .sml-slider {
     display: block; } }
 
-#news_items h2 {
-  font-size: 28px;
-  text-align: center;
-  margin-top: 30px;
-  color: #503737; }
-
-#news_items .buttons {
-  text-align: center;
-  margin-top: 24px;
-  margin-bottom: 20px; }
-
-#news_items .bckgr {
-  display: inline-block;
-  border-radius: 50px;
-  background-color: #503737; }
-
-#news_items .btn {
-  background-color: #503737;
-  color: white;
-  padding: 10px 15px; }
-  #news_items .btn:hover {
-    background-color: #ff2d2d;
-    border-radius: 50px; }
-
-#news_items .btn-img:hover {
-  background-color: #ff2d2d;
-  border-radius: 50px; }
-
-#news_items .instrum {
-  border-radius: 50px 0 0 50px; }
-
-#news_items .mrkdown {
-  border-radius: 0 50px 50px 0; }
-
-#news_items .slider-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 28px; }
-
-#news_items .cell {
-  max-width: 240px;
-  width: 100%;
-  border: 1px solid #d6cbcb;
-  margin-left: -1px; }
-  #news_items .cell .buttons {
-    display: none; }
-    #news_items .cell .buttons .transbcg {
-      width: 180px;
-      background-color: white; }
-  #news_items .cell:hover {
-    position: relative;
-    border: 2px solid #ad9797; }
-  #news_items .cell:hover .buttons {
-    display: block;
-    position: absolute;
-    bottom: -40px;
-    left: 30px; }
-
-#news_items .image {
-  height: 350px;
-  display: flex;
-  align-items: center; }
-  #news_items .image img {
-    margin: 0 auto; }
-
-#news_items .name {
-  font-size: 16px;
-  text-decoration: underline;
-  text-align: center; }
-
-#news_items .descr {
-  font-size: 12px;
-  text-align: center; }
-
-#news_items .prices {
-  max-width: 125px;
-  width: 100%;
-  margin: 14px auto 25px auto; }
-
-#news_items .price {
-  color: #777777;
-  font-size: 14px;
-  text-decoration: line-through;
-  float: left;
-  margin-right: 8px;
-  text-align: center; }
-
-#news_items .sell {
-  font-size: 18px;
-  color: #e73939; }
-  #news_items .sell span {
-    text-decoration: line-through; }
-
-#news_items .btn-img {
-  background-color: #503737;
-  padding: 10px 10px;
-  border-radius: 50px; }
-
-#news_items .orbit-previous {
-  left: 110px; }
-  #news_items .orbit-previoushover {
-    background-color: #d3ba7e;
-    border-radius: 50px; }
-
-#news_items .orbit-next {
-  right: 110px; }
-  #news_items .orbit-next:hover {
-    background-color: #d3ba7e;
-    border-radius: 50px; }
-
-#news_items .links {
-  text-align: center;
-  margin-bottom: 42px; }
-  #news_items .links a {
-    color: black;
-    font-size: 14px;
-    text-decoration: underline;
-    margin-right: 25px; }
+#news_items .image img {
+  margin: 0 auto; }
 
 #articles {
   display: flex;
