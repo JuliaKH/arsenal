@@ -301,6 +301,7 @@ footer {
   height: 1px;
   background-color: #E6E6E6;
   width: 76.0em;
+  margin: 30px auto 0 auto;
   background-image: linear-gradient(left, white 2%, #E6E6E6 50%, white 98%);
   background-image: -o-linear-gradient(left, white 2%, #E6E6E6 50%, white 98%);
   background-image: -moz-linear-gradient(left, white 2%, #E6E6E6 50%, white 98%);
@@ -314,7 +315,7 @@ footer {
 
 @media (max-width: 550px) {
   .brands .lines__item {
-    width: 26.0em; } }
+    width: 22.0em; } }
 
 #sellout h2, #news_items h2 {
   font-size: 28px;
