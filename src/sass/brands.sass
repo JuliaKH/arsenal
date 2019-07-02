@@ -1,67 +1,71 @@
 @import "mixins"
-.arrow
+
+.brands
+  .slider-block
+    width: 1200px
+    height: 115px
+    margin: 0 auto
+  .flex-container
+    font-family: 'Noto Serif JP', sans-serif
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    flex-wrap: wrap
+    min-height: 400px
+  .flex-container__item
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    margin-top: 25px
+#viewport
   position: relative
+  overflow: hidden
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+.slider-block__wrapper
+  position: relative
+  width: calc(100% * 3)
+  top: 0
+  left: 0
+  margin: 0
+  padding: 0
+  -webkit-transition: 1s
+  -o-transition: 1s
+  transition: 1s
+  -webkit-transition-timing-function: ease-in-out
+  -o-transition-timing-function: ease-in-out
+  transition-timing-function: ease-in-out
+  li
+    width: calc(100%/3)
+    list-style: none
+    float: left
+.slider-block__wrapper ul, .slider-block__wrapper li
+  margin: 0
+  padding: 0
+.slider-block__control_left, .slider-block__control_right
+  position: absolute
+  border-width: 0 3px 3px 0
+  display: inline-block
+  width: 10px
+  top: 60px
   border: solid #808080
   border-width: 0 3px 3px 0
   height: 20px
   min-width: 20px
-  display: inline-block
   padding: 3px
+.slider-block__control_left:hover, .slider-block__control_right:hover
+  cursor: pointer
+.slider-block__control_left
+  @include arwTransform(135deg)
+  left: 20px
+.slider-block__control_right
+  @include arwTransform(-45deg)
+  right: 20px
 
-  &.right
-    @include arwTransform(-45deg)
-
-  &.left
-    @include arwTransform(135deg)
-
-#brands
-  display: flex
-  flex-direction: column
-
-  .slider-container
-    max-width: 1170px
-    padding: 0
-    margin: 30px auto 0 auto
-    display: flex
-    align-items: center
-
-    .grid-x
-      margin: 0 auto
-
-  .cell img
-    height: 100%
-
-  .sm-slider
-    .docs-example-orbit-slide
-      display: flex
-    img
-      margin: 0 auto
-      padding-top: 30px
-
-    .orbit-slide
-      padding-bottom: 20px
-
-  .md-slider
-    .docs-example-orbit-slide
-      display: flex
-      justify-content: center
-      padding-bottom: 20px
-      padding-top: 30px
-
-    img
-      padding-right: 20px
-
-  .orbit-previous
-    left: 110px
-    top: 70px
-    &:hover .arrow.left
-      border-color: white
-  .orbit-next
-    right: 110px
-    top: 70px
-    &:hover .arrow.right
-      border-color: white
-
+.brands
   .lines
     text-align: center
     max-width: 1320px
@@ -78,7 +82,7 @@
       transform: translateY(-50%)
       background: #fff
 
-  .line-item
+  .lines__item
     height: 1px
     background-color: $arrow-color
     width: 76.0em
@@ -89,6 +93,8 @@
     background-image: -webkit-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
     background-image: -ms-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
     background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white) )
+
+
 
 @media (min-width: 1287px)
   .sm-slider
@@ -107,10 +113,6 @@
   .sm-slider
     display: none
 
-  #brands
-    .line-item
-      width: 56.0em
-
 
 @media (max-width: 800px)
   .lg-slider
@@ -121,10 +123,6 @@
 
   .sm-slider
     display: block
-
-  #brands
-    .line-item
-      width: 36.0em
 
   .orbit-previous
     left: 5030px
@@ -163,10 +161,17 @@
     a
       font-size: 10px!important
 
-  #brands
-    .line-item
-      width: 26.0em
 
 
+@media (max-width: 800px)
+  .brands
+    .lines__item
+      width: 36.0em
+
+
+@media (max-width: 550px)
+  .brands
+    .lines__item
+      width: 22.0em
 
 
