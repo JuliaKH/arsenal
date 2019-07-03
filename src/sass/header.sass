@@ -1,48 +1,48 @@
 @import "variables"
+@import "mixins"
 
 //header
 .header
-//<editor-fold desc="top-bar">
-.top-bar
+//<editor-fold desc="upper-navigation">
+.upper-navigation
     display: flex
     flex-direction: column
-    @media (min-width: $md)
+    +tablet-portrait
         flex-direction: row
         text-align: center
         padding: 1em
     justify-content: space-between
     align-items: center
     background-color: $base-color-dark-orange
-.top-bar__item
-    padding: 0.5em 0
-    align-items: center
-.top-bar__link
-    color: white
-    &:hover
+    &__item
+        padding: 0.5em 0
+        align-items: center
+    &__link
         color: white
-
-    .city
+        &:hover, &:visited
+            color: white
+    &__city
         border-bottom: 1px dotted white
-    .street
+    &__street
         border-bottom: 1px solid white
-    .account
+    &__account
         border-bottom: 1px dotted white
-.top-bar__social-image
+    &__social-image
         object-fit: contain
 .header-navigation
     background-color: $base-color-dark-orange !important
     list-style-type: none
     margin: 0
     padding: 0
-.header-navigation__item
-    display: inline
-    margin-right: 1em
-    border-bottom: 1px solid white
-.header-navigation__link
-    margin-right: 0em
-    color: white
-    &:hover
+    &__item
+        display: inline
+        margin-right: 1em
+        border-bottom: 1px solid white
+    &__link
+        margin-right: 0em
         color: white
+        &:hover
+            color: white
 //</editor-fold>
 //<editor-fold desc="shop-bar">
 .shop-bar
@@ -50,29 +50,26 @@
     flex-direction: column
     justify-content: space-between
     align-items: center
-    @media (min-width: $md)
+    border-bottom: 1px solid $base-color-light-grey
+    +tablet-portrait
         flex-direction: row
         text-align: center
         padding: 1em
-
-    border-bottom: 1px solid $base-color-light-grey
-.shop-bar__item
-    &:first-child
-        margin-top: 1em
-    display: flex
-    margin-bottom: 1em
-    @media (min-width: $md)
-        padding: 0 1em
-        margin-bottom: 0em
-.shop-bar__item_growed
-    flex-grow: 1
+    &__item
+        &:first-child
+            padding-top: 1em
+        display: flex
+        margin-bottom: 1em
+        @media (min-width: $tablet-portrait)
+            padding: 0 1em
+            margin-bottom: 0em
+    &__item--growed
+        flex-grow: 1
 .logo
     display: flex
     flex-direction: column
     align-items: center
-
     padding: 0 1em
-
     color: $base-color-text-grey
     text-align: center
     &:hover
@@ -80,18 +77,17 @@
 .search
     display: flex
     width: 100%
-
     border: 1px solid #919191
-.search__image
-    object-fit: contain
-    padding-right: 1em
-.search__input
-    margin-bottom: 0
-    border: none
-    box-shadow: none
-    &:focus
+    &__image
+        object-fit: contain
+        padding-right: 1em
+    &__input
+        margin-bottom: 0
         border: none
         box-shadow: none
+        &:focus
+            border: none
+            box-shadow: none
 .cart
     justify-content: space-evenly
     width: 12em
@@ -99,14 +95,14 @@
     padding: 0.5em
     background-color: #f0f0f0
     border: 1px solid #929292
-.cart__items-count
-    background-color: #c19c4f
-    border-radius: 50%
-    width: 2em
-    color: white
-    text-align: center
+    &__items-count
+        background-color: #c19c4f
+        border-radius: 50%
+        width: 2em
+        color: white
+        text-align: center
 //</editor-fold>
-.mainMenu
+.header-menu
     border-bottom: 2px solid #ed3642
     ul
         justify-content: space-between
@@ -141,7 +137,7 @@
                     &:hover
                         color: white
             .menu.lvl3
-                @extend .menu.lvl2
+                @extend .menu, .lvl2
                 > div
                     border-left: 1px solid rgb(150,128,76)
                     padding: 1em
