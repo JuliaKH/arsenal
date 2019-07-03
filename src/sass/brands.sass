@@ -1,10 +1,31 @@
 @import "mixins"
+$tablet-width: 800px
+$phone-width: 550px
 
 .brands
   .slider-block
     width: 1200px
     height: 115px
     margin: 0 auto
+    &__control--left, &__control--right
+      position: absolute
+      border-width: 0 3px 3px 0
+      display: inline-block
+      width: 10px
+      top: 60px
+      border: solid #808080
+      border-width: 0 3px 3px 0
+      height: 20px
+      min-width: 20px
+      padding: 3px
+    &__control--left:hover, &__control--right:hover
+      cursor: pointer
+    &__control--left
+      @include arwTransform(135deg)
+      left: 20px
+    &__control--right
+      @include arwTransform(-45deg)
+      right: 20px
   .flex-container
     font-family: 'Noto Serif JP', sans-serif
     display: flex
@@ -12,11 +33,11 @@
     justify-content: space-around
     flex-wrap: wrap
     min-height: 400px
-  .flex-container__item
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    margin-top: 25px
+    &__item
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      margin-top: 25px
 #viewport
   position: relative
   overflow: hidden
@@ -42,28 +63,9 @@
     width: calc(100%/3)
     list-style: none
     float: left
-.slider-block__wrapper ul, .slider-block__wrapper li
-  margin: 0
-  padding: 0
-.slider-block__control_left, .slider-block__control_right
-  position: absolute
-  border-width: 0 3px 3px 0
-  display: inline-block
-  width: 10px
-  top: 60px
-  border: solid #808080
-  border-width: 0 3px 3px 0
-  height: 20px
-  min-width: 20px
-  padding: 3px
-.slider-block__control_left:hover, .slider-block__control_right:hover
-  cursor: pointer
-.slider-block__control_left
-  @include arwTransform(135deg)
-  left: 20px
-.slider-block__control_right
-  @include arwTransform(-45deg)
-  right: 20px
+  & ul, & li
+    margin: 0
+    padding: 0
 
 .brands
   .lines
@@ -82,98 +84,20 @@
       transform: translateY(-50%)
       background: #fff
 
-  .lines__item
-    height: 1px
-    background-color: $arrow-color
-    width: 76.0em
-    margin: 30px auto 0 auto
-    background-image: linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
-    background-image: -o-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
-    background-image: -moz-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
-    background-image: -webkit-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
-    background-image: -ms-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
-    background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white) )
+    &__item
+      height: 1px
+      background-color: $arrow-color
+      width: 76.0em
+      margin: 30px auto 0 auto
+      background-image: linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
+      background-image: -o-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
+      background-image: -moz-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
+      background-image: -webkit-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
+      background-image: -ms-linear-gradient(left , white 2%, $arrow-color 50%, white 98%)
+      background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white) )
 
 
-
-@media (min-width: 1287px)
-  .sm-slider
-    display: none
-
-  .md-slider
-    display: none
-
-@media (max-width: 1287px) and (min-width: 780px)
-  .lg-slider
-    display: none
-
-  .md-slider
-    display: block
-
-  .sm-slider
-    display: none
-
-
-@media (max-width: 800px)
-  .lg-slider
-    display: none
-
-  .md-slider
-    display: none
-
-  .sm-slider
-    display: block
-
-  .orbit-previous
-    left: 5030px
-
-  .orbit-next
-    right: 30px
-
-@media (max-width: 550px)
-  .orbit-previous
-    left: 0!important
-
-  .orbit-next
-    right: 0!important
-
-  #sellout
-    .btn
-      font-size: 12px
-      padding: 5px 10px
-
-  #news_items
-    .btn
-      font-size: 12px
-      padding: 5px 10px
-
-  #sellout
-    .links
-      a
-        font-size: 10px!important
-
-  #news_items
-    .links
-      a
-        font-size: 10px!important
-
-  #stock
-    a
-      font-size: 10px!important
-
-
-
-@media (max-width: 800px)
-  .brands
-    .lines__item
-      width: 36.0em
-
-
-@media (max-width: 550px)
-  .brands
-    .lines__item
-      width: 22.0em
-      //width: 22.0em
-
+@include  brands-media-query($tablet-width,36.0em)
+@include  brands-media-query($phone-width,22.0em)
 
 
