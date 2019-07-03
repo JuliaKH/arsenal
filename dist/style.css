@@ -135,13 +135,24 @@ footer {
 .headerCarousel {
   padding: 0; }
   .headerCarousel .orbit-bullets {
-    margin-top: -3em; }
+    margin-top: -3em;
+    display: flex;
+    justify-content: center; }
     .headerCarousel .orbit-bullets button {
       background-color: white;
       border: 1px solid #393a3b;
       border-radius: 50%; }
     .headerCarousel .orbit-bullets .is-active {
-      background-color: red; }
+      border-width: 5px;
+      border-style: solid;
+      border-color: red grey grey grey;
+      animation: move 5.5s linear infinite; }
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
   .headerCarousel .orbit-figure {
     height: 400px;
     background-size: cover; }
