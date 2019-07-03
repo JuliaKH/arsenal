@@ -1,33 +1,30 @@
 @import "variables"
+@import "mixins"
 
 //header
 .header
-//<editor-fold desc="top-bar">
-.top-bar
+//<editor-fold desc="upper-navigation">
+.upper-navigation
     display: flex
     flex-direction: column
-    @media (min-width: $md)
-        flex-direction: row
-        text-align: center
-        padding: 1em
+    @include upper-navigation-tablet-up
     justify-content: space-between
     align-items: center
     background-color: $base-color-dark-orange
-.top-bar__item
-    padding: 0.5em 0
-    align-items: center
-.top-bar__link
-    color: white
-    &:hover
+    &__item
+        padding: 0.5em 0
+        align-items: center
+    &__link
         color: white
-
-    .city
+        &:hover, &:visited
+            color: white
+    &__city
         border-bottom: 1px dotted white
-    .street
+    &__street
         border-bottom: 1px solid white
-    .account
+    &__account
         border-bottom: 1px dotted white
-.top-bar__social-image
+.upper-navigation__social-image
         object-fit: contain
 .header-navigation
     background-color: $base-color-dark-orange !important
@@ -50,10 +47,7 @@
     flex-direction: column
     justify-content: space-between
     align-items: center
-    @media (min-width: $md)
-        flex-direction: row
-        text-align: center
-        padding: 1em
+    @include upper-navigation-tablet-up
 
     border-bottom: 1px solid $base-color-light-grey
 .shop-bar__item
@@ -61,10 +55,10 @@
         margin-top: 1em
     display: flex
     margin-bottom: 1em
-    @media (min-width: $md)
+    @media (min-width: $screen-resolution-tablet)
         padding: 0 1em
         margin-bottom: 0em
-.shop-bar__item_growed
+.shop-bar__item--growed
     flex-grow: 1
 .logo
     display: flex
@@ -141,7 +135,7 @@
                     &:hover
                         color: white
             .menu.lvl3
-                @extend .menu.lvl2
+                @extend .menu, .lvl2
                 > div
                     border-left: 1px solid rgb(150,128,76)
                     padding: 1em
