@@ -1,31 +1,35 @@
 @import "mixins"
+$desktop-width: 1287px
 $tablet-width: 800px
 $phone-width: 550px
 
 .brands
+  position: relative
   .slider-block
-    width: 1200px
+    width: 1100px
     height: 115px
     margin: 0 auto
-    &__control--left, &__control--right
-      position: absolute
-      border-width: 0 3px 3px 0
-      display: inline-block
-      width: 10px
-      top: 60px
-      border: solid #808080
-      border-width: 0 3px 3px 0
-      height: 20px
-      min-width: 20px
-      padding: 3px
-    &__control--left:hover, &__control--right:hover
-      cursor: pointer
-    &__control--left
-      @include arwTransform(135deg)
-      left: 20px
-    &__control--right
-      @include arwTransform(-45deg)
-      right: 20px
+    z-index: 1
+  &__control--left, &__control--right
+    position: absolute
+    border: solid #808080
+    border-width: 0 3px 3px 0
+    height: 20px
+    min-width: 20px
+    display: inline-block
+    padding: 3px
+    top: 60px
+  &__control--left:hover, &__control--right:hover
+    cursor: pointer
+  &__control--left
+    @include arwTransform(135deg)
+    left: 115px
+    //bottom: 30px
+  &__control--right
+    @include arwTransform(-45deg)
+    right: 115px
+    //bottom: 30px
+
   .flex-container
     font-family: 'Noto Serif JP', sans-serif
     display: flex
@@ -97,6 +101,8 @@ $phone-width: 550px
       background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white) )
 
 
+@include controls-media-query($desktop-width, 30px)
+@include controls-media-query($tablet-width, 10px)
 @include  brands-media-query($tablet-width,36.0em)
 @include  brands-media-query($phone-width,22.0em)
 

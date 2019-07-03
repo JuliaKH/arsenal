@@ -7,3 +7,10 @@
     .brands
       .lines__item
         width: $line-width
+@mixin controls-media-query($max-width,$space)
+  @media (max-width: $max-width)
+    .brands__control--left
+      left: $space
+    .brands__control--right
+      right: $space
+
