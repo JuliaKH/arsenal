@@ -141,12 +141,28 @@
     padding: 0
     .orbit-bullets
         margin-top: -3em
+        display: flex
+        justify-content: center
         button
             background-color: white
             border: 1px solid #393a3b
             border-radius: 50%
+
         .is-active
-            background-color: red
+            //background-color: red
+            border:
+                width: 5px
+                style: solid
+                color: red grey grey grey
+            animation: move 5.5s linear infinite
+            @keyframes move
+                0%
+                    transform: rotate(0deg)
+                100%
+                    transform: rotate(360deg)
+
+        //button:not(.is-active)
+        //    margin-top: 1px
     .orbit-figure
         height: 400px
         background-size: cover
