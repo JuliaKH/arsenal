@@ -1,83 +1,111 @@
 @import "variables"
 
 //header
-
-.topBar
+.header
+//<editor-fold desc="top-bar">
+.top-bar
     display: flex
     flex-direction: column
     @media (min-width: $md)
         flex-direction: row
         text-align: center
+        padding: 1em
     justify-content: space-between
     align-items: center
     background-color: $base-color-dark-orange
-    div
-        padding: 0.5em 0
-        align-items: center
-        a
-            color: white
-            &:hover
-                color: white
-            img
-                object-fit: contain
-        .city
-            border-bottom: 1px dotted white
-        .street
-            border-bottom: 1px solid white
-        nav
-            ul
-                list-style-type: none
-                margin: 0
-                padding: 0
-                li
-                    display: inline
-                    margin-right: 1em
-                    border-bottom: 1px solid white
-                    &:nth-last-child(1)
-                        margin-right: 0em
-        .account
-            border-bottom: 1px dotted white
-.shopBar
-    border-bottom: 1px solid #e7e7e7
+.top-bar__item
+    padding: 0.5em 0
+    align-items: center
+.top-bar__link
+    color: white
+    &:hover
+        color: white
+
+    .city
+        border-bottom: 1px dotted white
+    .street
+        border-bottom: 1px solid white
+    .account
+        border-bottom: 1px dotted white
+.top-bar__social-image
+        object-fit: contain
+.header-navigation
+    background-color: $base-color-dark-orange !important
+    list-style-type: none
+    margin: 0
+    padding: 0
+.header-navigation__item
+    display: inline
+    margin-right: 1em
+    border-bottom: 1px solid white
+.header-navigation__link
+    margin-right: 0em
+    color: white
+    &:hover
+        color: white
+//</editor-fold>
+//<editor-fold desc="shop-bar">
+.shop-bar
     display: flex
+    flex-direction: column
     justify-content: space-between
     align-items: center
-    .logo-container
-        display: flex
-        justify-content: center
-        span
-            text-align: center
-            color: #9b9b9b
-            font-size: 0.85em
-    .search
-        flex-grow: 1
-        margin: 0 3em
-        display: flex
+    @media (min-width: $md)
         flex-direction: row
-        border: 1px solid #919191
-        div
-            padding: 0.5em
-        input
-            margin-bottom: 0
-            border: none
-            box-shadow: none
-            &:focus
-                border: none
-                box-shadow: none
-    .cart
-        display: flex
-        justify-content: space-evenly
-        width: 12em
+        text-align: center
+        padding: 1em
 
-        padding: 0.5em
-        background-color: #f0f0f0
-        border: 1px solid #929292
-        .itemsCount
-            background-color: #c19c4f
-            border-radius: 50%
-            width: 2em
-            color: white
-            text-align: center
+    border-bottom: 1px solid $base-color-light-grey
+.shop-bar__item
+    &:first-child
+        margin-top: 1em
+    display: flex
+    margin-bottom: 1em
+    @media (min-width: $md)
+        padding: 0 1em
+        margin-bottom: 0em
+.shop-bar__item_growed
+    flex-grow: 1
+.logo
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    padding: 0 1em
+
+    color: $base-color-text-grey
+    text-align: center
+    &:hover
+        color: darken($base-color-text-grey, 10%)
+.search
+    display: flex
+    width: 100%
+
+    border: 1px solid #919191
+.search__image
+    object-fit: contain
+    padding-right: 1em
+.search__input
+    margin-bottom: 0
+    border: none
+    box-shadow: none
+    &:focus
+        border: none
+        box-shadow: none
+.cart
+    justify-content: space-evenly
+    width: 12em
+
+    padding: 0.5em
+    background-color: #f0f0f0
+    border: 1px solid #929292
+.cart__items-count
+    background-color: #c19c4f
+    border-radius: 50%
+    width: 2em
+    color: white
+    text-align: center
+//</editor-fold>
 .mainMenu
     border-bottom: 2px solid #ed3642
     ul
