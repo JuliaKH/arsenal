@@ -1,86 +1,115 @@
-header > div,
-#services,
-#articles,
-#brands,
-footer {
-  padding: 1em 5em; }
-
-.topBar {
+.top-bar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background-color: #af9559; }
   @media (min-width: 768px) {
-    .topBar {
+    .top-bar {
       flex-direction: row;
-      text-align: center; } }
-  .topBar div {
-    padding: 0.5em 0;
-    align-items: center; }
-    .topBar div a {
-      color: white; }
-      .topBar div a:hover {
-        color: white; }
-      .topBar div a img {
-        object-fit: contain; }
-    .topBar div .city {
-      border-bottom: 1px dotted white; }
-    .topBar div .street {
-      border-bottom: 1px solid white; }
-    .topBar div nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0; }
-      .topBar div nav ul li {
-        display: inline;
-        margin-right: 1em;
-        border-bottom: 1px solid white; }
-        .topBar div nav ul li:nth-last-child(1) {
-          margin-right: 0em; }
-    .topBar div .account {
-      border-bottom: 1px dotted white; }
-
-.shopBar {
-  border-bottom: 1px solid #e7e7e7;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-  .shopBar .logo-container {
-    display: flex;
-    justify-content: center; }
-    .shopBar .logo-container span {
       text-align: center;
-      color: #9b9b9b;
-      font-size: 0.85em; }
-  .shopBar .search {
-    flex-grow: 1;
-    margin: 0 3em;
-    display: flex;
-    flex-direction: row;
-    border: 1px solid #919191; }
-    .shopBar .search div {
-      padding: 0.5em; }
-    .shopBar .search input {
-      margin-bottom: 0;
-      border: none;
-      box-shadow: none; }
-      .shopBar .search input:focus {
-        border: none;
-        box-shadow: none; }
-  .shopBar .cart {
-    display: flex;
-    justify-content: space-evenly;
-    width: 12em;
-    padding: 0.5em;
-    background-color: #f0f0f0;
-    border: 1px solid #929292; }
-    .shopBar .cart .itemsCount {
-      background-color: #c19c4f;
-      border-radius: 50%;
-      width: 2em;
-      color: white;
-      text-align: center; }
+      padding: 1em; } }
+
+.top-bar__item {
+  padding: 0.5em 0;
+  align-items: center; }
+
+.top-bar__link {
+  color: white; }
+  .top-bar__link:hover {
+    color: white; }
+  .top-bar__link .city {
+    border-bottom: 1px dotted white; }
+  .top-bar__link .street {
+    border-bottom: 1px solid white; }
+  .top-bar__link .account {
+    border-bottom: 1px dotted white; }
+
+.top-bar__social-image {
+  object-fit: contain; }
+
+.header-navigation {
+  background-color: #af9559 !important;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.header-navigation__item {
+  display: inline;
+  margin-right: 1em;
+  border-bottom: 1px solid white; }
+
+.header-navigation__link {
+  margin-right: 0em;
+  color: white; }
+  .header-navigation__link:hover {
+    color: white; }
+
+.shop-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e7e7e7; }
+  @media (min-width: 768px) {
+    .shop-bar {
+      flex-direction: row;
+      text-align: center;
+      padding: 1em; } }
+
+.shop-bar__item {
+  display: flex;
+  margin-bottom: 1em; }
+  .shop-bar__item:first-child {
+    margin-top: 1em; }
+  @media (min-width: 768px) {
+    .shop-bar__item {
+      padding: 0 1em;
+      margin-bottom: 0em; } }
+
+.shop-bar__item_growed {
+  flex-grow: 1; }
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1em;
+  color: #9b9b9b;
+  text-align: center; }
+  .logo:hover {
+    color: #828282; }
+
+.search {
+  display: flex;
+  width: 100%;
+  border: 1px solid #919191; }
+
+.search__image {
+  object-fit: contain;
+  padding-right: 1em; }
+
+.search__input {
+  margin-bottom: 0;
+  border: none;
+  box-shadow: none; }
+  .search__input:focus {
+    border: none;
+    box-shadow: none; }
+
+.cart {
+  justify-content: space-evenly;
+  width: 12em;
+  padding: 0.5em;
+  background-color: #f0f0f0;
+  border: 1px solid #929292; }
+
+.cart__items-count {
+  background-color: #c19c4f;
+  border-radius: 50%;
+  width: 2em;
+  color: white;
+  text-align: center; }
 
 .mainMenu {
   border-bottom: 2px solid #ed3642; }
@@ -135,13 +164,24 @@ footer {
 .headerCarousel {
   padding: 0; }
   .headerCarousel .orbit-bullets {
-    margin-top: -3em; }
+    margin-top: -3em;
+    display: flex;
+    justify-content: center; }
     .headerCarousel .orbit-bullets button {
       background-color: white;
       border: 1px solid #393a3b;
       border-radius: 50%; }
     .headerCarousel .orbit-bullets .is-active {
-      background-color: red; }
+      border-width: 5px;
+      border-style: solid;
+      border-color: red grey grey grey;
+      animation: move 5.5s linear infinite; }
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
   .headerCarousel .orbit-figure {
     height: 400px;
     background-size: cover; }

@@ -11,57 +11,57 @@
     <title>Arsenal</title>
 </head>
 <body>
-<header>
-    <div class="topBar">
-        <div>
-            <a href="#">
+<header class="header">
+    <div class="top-bar">
+        <div class="top-bar__item">
+            <a class="top-bar__link" href="#">
                 <span class="city">Новосибирск</span>
                 →
                 <span class="street">ул. Октябрьская, 34</span>
             </a>
         </div>
-        <div>
-            <a href="#">
+        <div class="top-bar__item">
+            <a class="top-bar__link" href="#">
                 <img src="img/phone-icon.png" alt="Phone">
                 <span>(383) 240-80-80, </span>
                 <span>240-80-00</span>
             </a>
         </div>
-        <div>
+        <div class="top-bar__item">
             <nav>
-                <ul>
-                    <li><a href="#">Как купить</a></li>
-                    <li><a href="#">Гарантия</a></li>
-                    <li><a href="#">Доставка</a></li>
+                <ul class="header-navigation">
+                    <li class="header-navigation__item"><a class="header-navigation__link" href="#">Как купить</a></li>
+                    <li class="header-navigation__item"><a class="header-navigation__link" href="#">Гарантия</a></li>
+                    <li class="header-navigation__item"><a class="header-navigation__link" href="#">Доставка</a></li>
                 </ul>
             </nav>
         </div>
-        <div>
-            <a href="#">
+        <div class="top-bar__item">
+            <a class="top-bar__link" href="#">
                 <span class="account">Мой арсенал</span>
             </a>
         </div>
-        <div>
-            <img src="img/VK-icon.png" alt="VK">
+        <div class="top-bar__item">
+            <img class="top-bar__social-image" src="img/VK-icon.png" alt="VK">
         </div>
     </div>
-    <div class="shopBar">
-        <div class="logo">
-            <div class="logo-container">
+    <div class="shop-bar">
+        <div class="shop-bar__item">
+            <a href="#" class="logo">
                 <img src="img/logo.png" alt="Музыкальный арсенал">
-            </div>
-            <div class="logo-container">
-                <span>Мы работаем на ваш талант!</span>
+                <span class="logo__text">Мы работаем на ваш талант!</span>
+            </a>
+        </div>
+        <div class="shop-bar__item shop-bar__item_growed">
+            <div class="search">
+                <input class="search__input" type="text" placeholder="Поиск товаров">
+                <img class="search__image" src="img/search-icon.png" alt="search">
             </div>
         </div>
-        <div class="search">
-            <input type="text" placeholder="Поиск товаров">
-            <div><img src="img/search-icon.png" alt="search"></div>
-        </div>
-        <div class="cart">
+        <div class="shop-bar__item cart">
             <img src="img/cart-icon.png" alt="cart">
             <span>Корзина</span>
-            <span class="itemsCount">25</span>
+            <span class="cart__items-count">25</span>
         </div>
     </div>
     <div class="mainMenu">
