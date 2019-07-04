@@ -8,9 +8,3 @@ body {
     font-family: sans-serif;
     /*overflow-x: hidden;*/
 }
-.orbit-figure.img1 {
-    background-image: url("../img/headerCarouselImage1.png");
-}
-.orbit-figure.img2 {
-    background-image: url("../img/headerCarouselImage2.png");
-}
