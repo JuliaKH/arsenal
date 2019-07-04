@@ -4,8 +4,7 @@
   transform: rotate($prop)
   -webkit-transform: rotate($prop)
 
-@mixin upper-navigation-tablet-up
-  @media (min-width: $screen-resolution-tablet)
-    flex-direction: row
-    text-align: center
-    padding: 1em
+@mixin for-tablet-up
+  @media (min-width: $tablet-portrait)
+    @content
+

@@ -22,26 +22,23 @@
     border-bottom: 1px solid white; }
   .upper-navigation__account {
     border-bottom: 1px dotted white; }
-
-.upper-navigation__social-image {
-  object-fit: contain; }
+  .upper-navigation__social-image {
+    object-fit: contain; }
 
 .header-navigation {
   background-color: #af9559 !important;
   list-style-type: none;
   margin: 0;
   padding: 0; }
-
-.header-navigation__item {
-  display: inline;
-  margin-right: 1em;
-  border-bottom: 1px solid white; }
-
-.header-navigation__link {
-  margin-right: 0em;
-  color: white; }
-  .header-navigation__link:hover {
+  .header-navigation__item {
+    display: inline;
+    margin-right: 1em;
+    border-bottom: 1px solid white; }
+  .header-navigation__link {
+    margin-right: 0em;
     color: white; }
+    .header-navigation__link:hover {
+      color: white; }
 
 .shop-bar {
   display: flex;
@@ -54,19 +51,17 @@
       flex-direction: row;
       text-align: center;
       padding: 1em; } }
-
-.shop-bar__item {
-  display: flex;
-  margin-bottom: 1em; }
-  .shop-bar__item:first-child {
-    margin-top: 1em; }
-  @media (min-width: 768px) {
-    .shop-bar__item {
-      padding: 0 1em;
-      margin-bottom: 0em; } }
-
-.shop-bar__item--growed {
-  flex-grow: 1; }
+  .shop-bar__item {
+    display: flex;
+    margin-bottom: 1em; }
+    .shop-bar__item:first-child {
+      padding-top: 1em; }
+    @media (min-width: 768px) {
+      .shop-bar__item {
+        padding: 0 1em;
+        margin-bottom: 0em; } }
+  .shop-bar__item--growed {
+    flex-grow: 1; }
 
 .logo {
   display: flex;
@@ -82,18 +77,16 @@
   display: flex;
   width: 100%;
   border: 1px solid #919191; }
-
-.search__image {
-  object-fit: contain;
-  padding-right: 1em; }
-
-.search__input {
-  margin-bottom: 0;
-  border: none;
-  box-shadow: none; }
-  .search__input:focus {
+  .search__image {
+    object-fit: contain;
+    padding-right: 1em; }
+  .search__input {
+    margin-bottom: 0;
     border: none;
     box-shadow: none; }
+    .search__input:focus {
+      border: none;
+      box-shadow: none; }
 
 .cart {
   justify-content: space-evenly;
@@ -101,61 +94,60 @@
   padding: 0.5em;
   background-color: #f0f0f0;
   border: 1px solid #929292; }
+  .cart__items-count {
+    background-color: #c19c4f;
+    border-radius: 50%;
+    width: 2em;
+    color: white;
+    text-align: center; }
 
-.cart__items-count {
-  background-color: #c19c4f;
-  border-radius: 50%;
-  width: 2em;
-  color: white;
-  text-align: center; }
-
-.mainMenu {
+.header-menu {
   border-bottom: 2px solid #ed3642; }
-  .mainMenu ul {
+  .header-menu ul {
     justify-content: space-between; }
-    .mainMenu ul li a {
+    .header-menu ul li a {
       color: #5f4849; }
-  .mainMenu .dropdown.menu li.is-dropdown-submenu-parent a::after, .mainMenu .menu.lvl1 .menu.lvl2 .dropdown.menu.lvl3 li.is-dropdown-submenu-parent a::after {
+  .header-menu .dropdown.menu li.is-dropdown-submenu-parent a::after, .header-menu .menu.lvl1 .menu.lvl2 .dropdown.menu.lvl3 li.is-dropdown-submenu-parent a::after {
     display: none; }
-  .mainMenu .dropdown.menu > li.is-active > a, .mainMenu .menu.lvl1 .menu.lvl2 .dropdown.menu.lvl3 > li.is-active > a {
+  .header-menu .dropdown.menu > li.is-active > a, .header-menu .menu.lvl1 .menu.lvl2 .dropdown.menu.lvl3 > li.is-active > a {
     color: white;
     background-color: red;
     border-radius: 3em; }
-  .mainMenu .menu.lvl1, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 {
+  .header-menu .menu.lvl1, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 {
     background-color: rgba(0, 0, 0, 0.8);
     border: none;
     margin-top: 1.1em; }
-    .mainMenu .menu.lvl1 li a, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 li a {
+    .header-menu .menu.lvl1 li a, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 li a {
       color: white; }
-    .mainMenu .menu.lvl1 .is-active a, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .is-active a {
+    .header-menu .menu.lvl1 .is-active a, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .is-active a {
       background-color: #af9559; }
-    .mainMenu .menu.lvl1 .menu.lvl2, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2, .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 {
+    .header-menu .menu.lvl1 .menu.lvl2, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2, .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 {
       background-color: #af9559;
       border: none; }
-      .mainMenu .menu.lvl1 .menu.lvl2 li a, .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 li a {
+      .header-menu .menu.lvl1 .menu.lvl2 li a, .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 li a {
         color: #ebe4d5; }
-        .mainMenu .menu.lvl1 .menu.lvl2 li a:hover, .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 li a:hover {
+        .header-menu .menu.lvl1 .menu.lvl2 li a:hover, .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 li a:hover {
           color: white; }
-      .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div, .mainMenu .menu.lvl1 .menu.lvl2 .lvl3.menu > div, .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div {
+      .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div, .header-menu .menu.lvl1 .menu.lvl2 .lvl3.menu > div, .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div {
         border-left: 1px solid #96804c;
         padding: 1em;
         display: flex;
         flex-direction: column;
         align-items: center; }
-        .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div h4, .mainMenu .menu.lvl1 .menu.lvl2 .lvl3.menu > div h4, .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div h4, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div h4, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div p, .mainMenu .menu.lvl1 .menu.lvl2 .lvl3.menu > div p, .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div p, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div p {
+        .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div h4, .header-menu .menu.lvl1 .menu.lvl2 .lvl3.menu > div h4, .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div h4, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div h4, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div p, .header-menu .menu.lvl1 .menu.lvl2 .lvl3.menu > div p, .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div p, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div p {
           color: #555047; }
-        .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div h4, .mainMenu .menu.lvl1 .menu.lvl2 .lvl3.menu > div h4, .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div h4, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div h4 {
+        .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div h4, .header-menu .menu.lvl1 .menu.lvl2 .lvl3.menu > div h4, .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div h4, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div h4 {
           border-bottom: 1px solid #555047; }
-        .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div p, .mainMenu .menu.lvl1 .menu.lvl2 .lvl3.menu > div p, .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div p, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div p {
+        .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div p, .header-menu .menu.lvl1 .menu.lvl2 .lvl3.menu > div p, .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div p, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div p {
           font-size: 0.8em;
           text-align: center; }
-        .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div div, .mainMenu .menu.lvl1 .menu.lvl2 .lvl3.menu > div div, .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div div, .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div div {
+        .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div div, .header-menu .menu.lvl1 .menu.lvl2 .lvl3.menu > div div, .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div div, .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div div {
           background-color: white;
           padding: 0 1em; }
-          .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div div span:nth-child(1), .mainMenu .menu.lvl1 .menu.lvl2 .lvl3.menu > div div span:nth-child(1), .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div div span:nth-child(1), .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div div span:nth-child(1) {
+          .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div div span:nth-child(1), .header-menu .menu.lvl1 .menu.lvl2 .lvl3.menu > div div span:nth-child(1), .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div div span:nth-child(1), .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div div span:nth-child(1) {
             text-decoration: line-through;
             color: #7e7e7e; }
-          .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div div span:nth-child(2), .mainMenu .menu.lvl1 .menu.lvl2 .lvl3.menu > div div span:nth-child(2), .mainMenu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div div span:nth-child(2), .mainMenu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div div span:nth-child(2) {
+          .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl2 .menu.lvl3 > div div span:nth-child(2), .header-menu .menu.lvl1 .menu.lvl2 .lvl3.menu > div div span:nth-child(2), .header-menu .menu.lvl1 .menu.lvl2 .menu.lvl3 .lvl3.menu > div div span:nth-child(2), .header-menu .menu.lvl1 .menu.lvl2 .lvl1.menu.lvl3 .menu.lvl3 .lvl3.menu > div div span:nth-child(2) {
             color: red;
             font-size: 1.3em; }
 
