@@ -7,7 +7,7 @@
 .upper-navigation
     display: flex
     flex-direction: column
-    @include for-tablet-up
+    +tablet-portrait
         flex-direction: row
         text-align: center
         padding: 1em
@@ -51,7 +51,7 @@
     justify-content: space-between
     align-items: center
     border-bottom: 1px solid $base-color-light-grey
-    @include for-tablet-up
+    +tablet-portrait
         flex-direction: row
         text-align: center
         padding: 1em
