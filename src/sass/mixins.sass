@@ -1,16 +1,3 @@
-@mixin arwTransform($prop)
+@mixin arrow-transform($prop)
   transform: rotate($prop)
   -webkit-transform: rotate($prop)
-
-@mixin brands-media-query($screen-width,$line-width)
-  @media (max-width: $screen-width)
-    .brands
-      .lines__item
-        width: $line-width
-@mixin controls-media-query($max-width,$space)
-  @media (max-width: $max-width)
-    .brands__control--left
-      left: $space
-    .brands__control--right
-      right: $space
-
