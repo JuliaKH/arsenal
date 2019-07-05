@@ -175,6 +175,10 @@
   .headerCarousel .orbit-figure {
     height: 400px;
     background-size: cover; }
+  .headerCarousel .orbit-figure.img1 {
+    background-image: url(71a629d7aec6e5aed7cfdbbe8b56ac60.png); }
+  .headerCarousel .orbit-figure.img2 {
+    background-image: url(edfaa9cadcad131eb62ace03fcc00d60.png); }
   .headerCarousel .headerSliderContainer {
     display: flex;
     flex-direction: column;
