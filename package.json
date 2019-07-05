@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/JuliaKH/arsenal#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
@@ -37,5 +40,7 @@
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel": "^6.23.0"
+  }
 }
