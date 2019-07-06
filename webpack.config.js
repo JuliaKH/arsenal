@@ -28,12 +28,20 @@ module.exports = {
                     }
                 }
             },
+            // {
+            //     test: /\.(jpe?g|png|gif|svg)$/i,
+            //     loader: "file-loader?name=/dist/img/[name].[ext]"
+            // },
             {
                 test: /\.(sass|scss)$/,
                 include: path.resolve(__dirname, 'src/sass'),
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
+                    use: [
+                        'css-loader',
+                        // 'resolve-url-loader',
+                        'sass-loader'
+                    ]
                 })
             },
             {
@@ -56,6 +64,10 @@ module.exports = {
             {
                 from: './src/fonts',
                 to: './fonts'
+            },
+            {
+                from: './src/js/vendor',
+                to: './js/vendor'
             },
             {
                 from: './src/img',
