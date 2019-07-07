@@ -4,15 +4,24 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
 
 
 module.exports = {
+    optimization: {
+        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    },
     entry: [
         './src/js/index.js',
         './src/sass/base.sass',
     ],
     output: {
-        filename: './js/bundle.js'
+        filename: './js/bundle[contenthash].js',
+        path: path.resolve(__dirname, './dist'),
+        publicPath: '/dist'
     },
     devtool: "source-map",
     module: {
@@ -43,6 +52,10 @@ module.exports = {
                         'sass-loader'
                     ]
                 })
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.pug$/,

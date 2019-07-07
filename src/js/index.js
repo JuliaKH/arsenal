@@ -8,3 +8,4 @@ import foundation from 'foundation-sites';
 // const proc = require('process');
 // console.log(proc);
 $(document).foundation();
+
