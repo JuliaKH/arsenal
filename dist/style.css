@@ -657,6 +657,14 @@ footer a:visited {
   .social > img {
     margin-right: 1em; }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  font-family: sans-serif; }
+
 .arrow {
   position: relative;
   border: solid #808080;
