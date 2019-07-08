@@ -53,6 +53,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.pug',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/another.pug',
+      filename: 'another.html',
+    }),
   ],
   devtool: 'source-map',
   externals: {
