@@ -70,14 +70,14 @@ module.exports = {
             allChunks: true,
         }),
         new HtmlWebpackPlugin({
-            template: 'src/views/index.pug',
+            template: 'src/views/base.pug',
             filename: 'index.html'
         }),
         new CopyWebpackPlugin([
-            {
-                from: './src/fonts',
-                to: './fonts'
-            },
+            // {
+            //     from: './src/fonts',
+            //     to: './fonts'
+            // },
             {
                 from: './src/js/vendor',
                 to: './js/vendor'
