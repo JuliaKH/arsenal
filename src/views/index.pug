@@ -185,7 +185,7 @@ body
            span.close ×
            form(action='/action_page.php')
                .container
-                   h1 Register
+                   h1.heading Log in
                    p Please fill in this form to create an account.
                    hr
                    label(for='email')
@@ -194,19 +194,16 @@ body
                    label(for='psw')
                        b Password
                    input(type='password', placeholder='Enter Password', name='psw', required='')
-                   label(for='psw-repeat')
-                       b Repeat Password
-                   input(type='password', placeholder='Repeat Password', name='psw-repeat', required='')
-                   hr
-                   p
-                       | By creating an account you agree to our
-                       a(href='#') Terms & Privacy
-                       | .
-                   button.registerbtn(type='submit') Register
+                   .url
+                      label(for='url')
+                          b Image url
+                      input(type='url', placeholder='Image url', name='url', required='')
+                   hr.
+                   button.submit(type='submit') Log in
                .container.signin
                    p
                        | Already have an account?
-                       a(href='#') Sign in
+                       a(href='#' class='registration') Registration
                        | .
 
            //span.close &times;
