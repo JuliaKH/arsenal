@@ -1,3 +1,7 @@
+import './sign-in.sass'
+
+import './popup'
+
 let registered_users = [
     {
         login:'Julia',
@@ -47,3 +51,4 @@ submitBtn.onclick = (event) => {
         console.log(registered_users);
     }
 };
+

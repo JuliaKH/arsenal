@@ -10,53 +10,45 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 
 
-module.exports = {
+var config = {
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
     entry: [
-        './src/js/index.js',
-        './src/sass/base.sass',
+        './src/index.js',
     ],
     output: {
-        filename: './js/bundle[contenthash].js',
+        // filename: './bundle[contenthash].js',
+        filename: './bundle.js',
         path: path.resolve(__dirname, './dist'),
-        // publicPath: '/dist'
     },
-    devtool: "source-map",
     module: {
         rules: [
             {
                 test: /\.js$/,
-                include: path.resolve(__dirname, 'src/js'),
+                exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                        plugins: ['@babel/plugin-proposal-object-rest-spread']
-                    }
+                    loader: "babel-loader"
                 }
             },
+            {
+                test: /\.(png|jp(e*)g|svg)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        limit: 8000, // Convert images < 8kb to base64 strings
+                        name: '[path][name].[ext]',
+                    }
+                }]
+            },
+            {
+                test: /\.(css|sass)$/,
+                use: ['style-loader', 'css-loader?url=false', 'sass-loader']
+            },
             // {
-            //     test: /\.(jpe?g|png|gif|svg)$/i,
-            //     loader: "file-loader?name=/dist/img/[name].[ext]"
+            //     test: /\.css$/,
+            //     use: [MiniCssExtractPlugin.loader, 'css-loader'],
             // },
-            {
-                test: /\.(sass|scss)$/,
-                include: path.resolve(__dirname, 'src/sass'),
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        'css-loader',
-                        // 'resolve-url-loader',
-                        'sass-loader'
-                    ]
-                })
-            },
-            {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
-            },
             {
                 test: /\.pug$/,
                 use: ["pug-loader"]
@@ -65,12 +57,12 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new ExtractTextPlugin({
-            filename: './css/style.bundle.css',
-            allChunks: true,
-        }),
+        // new ExtractTextPlugin({
+        //     filename: './css/style.bundle.css',
+        //     allChunks: true,
+        // }),
         new HtmlWebpackPlugin({
-            template: 'src/views/base.pug',
+            template: 'src/index.pug',
             filename: 'index.html'
         }),
         new CopyWebpackPlugin([
@@ -78,15 +70,29 @@ module.exports = {
             //     from: './src/fonts',
             //     to: './fonts'
             // },
-            {
-                from: './src/js/vendor',
-                to: './js/vendor'
-            },
-            {
-                from: './src/img',
-                to: './img'
-            },
+            // {
+            //     from: './src/js/vendor',
+            //     to: './js/vendor'
+            // },
+            // {
+            //     from: './src/img',
+            //     to: './img'
+            // },
         ]),
         //new HtmlWebpackPugPlugin()
     ]
+};
+module.exports = (env, argv) => {
+    if (argv.mode === 'development') {
+        config.devtool = 'source-map';
+        config.devServer = {
+            contentBase: './src'
+        }
+    }
+    if (argv.mode === 'production') {
+        config.devServer = {
+            contentBase: './dist'
+        }
+    }
+    return config;
 };

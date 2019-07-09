@@ -43,7 +43,7 @@
     "resolve-url-loader": "^3.1.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.35.2",
+    "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2"
   },
@@ -52,6 +52,7 @@
     "foundation-sites": "^6.5.3",
     "jade": "^1.11.0",
     "jquery": "^3.4.1",
+    "nunjucks": "^3.2.0",
     "owl.carousel2": "^2.2.1",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
