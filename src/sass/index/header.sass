@@ -1,8 +1,6 @@
 @import "../variables"
 @import "../mixins"
 
-//header
-.header
 //<editor-fold desc="upper-navigation">
 .upper-navigation
     display: flex
@@ -17,9 +15,9 @@
     &__item
         padding: 0.5em 0
         align-items: center
-    &__link
+    &__link, &__city, &__street, &__phone
         color: white
-        &:hover, &:visited
+        &:hover, &:visited, &:focus
             color: white
     &__city
         border-bottom: 1px dotted white
@@ -102,67 +100,78 @@
         color: white
         text-align: center
 //</editor-fold>
+//<editor-fold desc="Header menu">
 .header-menu
     border-bottom: 2px solid #ed3642
-    ul
-        justify-content: space-between
-        li
-            a
-                color: #5f4849
-    .dropdown.menu
-        li.is-dropdown-submenu-parent
-            a::after
-                display: none
-        > li.is-active
-            > a
-                color: white
-                background-color: red
-                border-radius: 3em
-    .menu.lvl1
-        background-color: rgba(0,0,0,0.8)
-        border: none
-        margin-top: 1.1em
-        li
-            a
-                color: white
-        .is-active
-            a
-                background-color: rgb(175, 149, 89)
-        .menu.lvl2
-            background-color: rgb(175, 149, 89)
-            border: none
-            li
-                a
-                    color: rgb(235, 228, 213)
-                    &:hover
-                        color: white
-            .menu.lvl3
-                @extend .menu, .lvl2
-                > div
-                    border-left: 1px solid rgb(150,128,76)
-                    padding: 1em
+.level-1-menu
+    justify-content: space-between
+    &__link
+        +link-color(#5f4849)
+    > .is-active
+        +link-color(white)
+        background-color: red
+        border-radius: 3em
 
-                    display: flex
-                    flex-direction: column
-                    align-items: center
-                    h4, p
-                        color: rgb(85,80,71)
-                    h4
-                        border-bottom: 1px solid rgb(85,80,71)
-                    p
-                        font-size: 0.8em
-                        text-align: center
-                    div
-                        background-color: white
-                        padding: 0 1em
-                        span:nth-child(1)
-                            text-decoration: line-through
-                            color: rgb(126,126,126)
-                        span:nth-child(2)
-                            color: red
-                            font-size: 1.3em
-.headerCarousel
+.level-2-menu
+    background-color: rgba(0,0,0,0.8)
+    border: none
+    margin-top: 1.1em
+    &__link
+        +link-color(white)
+    > .is-active
+        background-color: rgb(175, 149, 89)
+
+.level-3-menu
+    background-color: rgb(175, 149, 89)
+    border: none
+    &__link
+        +link-color(white)
+
+.level-4-menu
+    background-color: rgb(175, 149, 89)
+    border: none
+    &__item
+        border-left: 1px solid rgb(150,128,76)
+        padding: 1em
+        color: rgb(85,80,71)
+
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__name
+        border-bottom: 1px solid rgb(85,80,71)
+    &__info
+        font-size: 0.8em
+        text-align: center
+    &__price-container
+        background-color: white
+        padding: 0 1em
+    &__price-old
+        text-decoration: line-through
+        color: rgb(126,126,126)
+        padding-right: 0.5em
+    &__price-new
+        color: red
+        font-size: 1.3em
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after,
+.dropdown.menu.vertical > li.opens-right > a::after
+    display: none // foundation styles
+
+//</editor-fold>
+//<editor-fold desc="Header carousel">
+.header-carousel
     padding: 0
+    &__container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding-left: 50%
+        height: 400px
+        color: white
+        & > span
+            color: rgb(170, 170, 170)
+
     .orbit-bullets
         margin-top: -3em
         display: flex
@@ -184,9 +193,6 @@
                     transform: rotate(0deg)
                 100%
                     transform: rotate(360deg)
-
-        //button:not(.is-active)
-        //    margin-top: 1px
     .orbit-figure
         height: 400px
         background-size: cover
@@ -195,12 +201,4 @@
             background-image: url('/../../img/header-carousel/headerCarouselImage1.png')
         &.img2
             background-image: url('/../../img/header-carousel/headerCarouselImage2.png')
-    .headerSliderContainer
-        display: flex
-        flex-direction: column
-        justify-content: center
-        padding-left: 50%
-        height: 400px
-        color: white
-        & > span
-            color: rgb(170, 170, 170)
+//</editor-fold>

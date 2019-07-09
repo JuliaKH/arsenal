@@ -1,8 +1,8 @@
 const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
+// const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

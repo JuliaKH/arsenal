@@ -5,3 +5,8 @@
 @mixin tablet-portrait
   @media (min-width: $tablet-portrait)
     @content
+
+@mixin link-color($color, $color2:$color)
+  color: $color !important
+  &:hover, &:active, &:focus
+    color: darken($color2,10%) !important
