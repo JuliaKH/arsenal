@@ -21,7 +21,7 @@ module.exports = {
     output: {
         filename: './js/bundle[contenthash].js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist'
+        // publicPath: '/dist'
     },
     devtool: "source-map",
     module: {
