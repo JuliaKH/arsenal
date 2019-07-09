@@ -1,11 +1,4 @@
-include mixins
-doctype html
-head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi')
-    meta(http-equiv='X-UA-Compatible' content='ie=edge')
-    title Music Arsenal
-body
+mixin header
     header.header
         .upper-navigation
             .upper-navigation__item
@@ -23,9 +16,9 @@ body
                     ul.header-navigation
                         -
                             let headerNavigation = [
-                                ['#', 'Как купить'],
-                                ['#', 'Гарантия'],
-                                ['#', 'Доставка']
+                            ['#', 'Как купить'],
+                            ['#', 'Гарантия'],
+                            ['#', 'Доставка']
                             ];
                         each val in headerNavigation
                             li.header-navigation__item
@@ -51,36 +44,36 @@ body
         .header-menu
             -
                 var headerMenu = [
-                    ['#', 'Акции'],
-                    ['#', 'Музыкальные инструменты', [
-                        ['#', 'Гитары'],
-                        ['#', 'Ударные', [
-                            ['#', 'Тарелки'],
-                            ['#', 'Тренировочные пэды', [
-                                'img/headerMainMenuImage1.png',
-                                'DBZ Halifire',
-                                'Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.',
-                                '89 750',
-                                '83 550',
-                            ]],
-                            ['#', 'Пластики'],
-                            ['#', 'Барабанные палочки'],
-                            ['#', 'Чехлы, кейсы, сумки'],
-                            ['#', 'Аксессуары'],
-                            ['#', 'Перкуссия'],
-                        ]],
-                        ['#', 'Клавишные'],
-                        ['#', 'Духовые'],
-                        ['#', 'Смычковые'],
-                        ['#', 'Народные'],
+                ['#', 'Акции'],
+                ['#', 'Музыкальные инструменты', [
+                    ['#', 'Гитары'],
+                    ['#', 'Ударные', [
+                    ['#', 'Тарелки'],
+                    ['#', 'Тренировочные пэды', [
+                        'img/headerMainMenuImage1.png',
+                        'DBZ Halifire',
+                        'Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.',
+                        '89 750',
+                        '83 550',
                     ]],
-                    ['#', 'DJ'],
-                    ['#', 'Шоу-техника'],
-                    ['#', 'Студия'],
-                    ['#', 'Звук'],
-                    ['#', 'Свет'],
-                    ['#', 'Коммутация'],
-                    ['#', 'Стойки'],
+                ['#', 'Пластики'],
+                ['#', 'Барабанные палочки'],
+                ['#', 'Чехлы, кейсы, сумки'],
+                ['#', 'Аксессуары'],
+                ['#', 'Перкуссия'],
+                ]],
+                ['#', 'Клавишные'],
+                ['#', 'Духовые'],
+                ['#', 'Смычковые'],
+                ['#', 'Народные'],
+                ]],
+                ['#', 'DJ'],
+                ['#', 'Шоу-техника'],
+                ['#', 'Студия'],
+                ['#', 'Звук'],
+                ['#', 'Свет'],
+                ['#', 'Коммутация'],
+                ['#', 'Стойки'],
                 ];
                 var headerMenuLevel = 1;
             //- Declaration
@@ -104,10 +97,10 @@ body
                             a(class=className + '__link' href=items[i][0])= items[i][1]
                             if items[i][2]
                                 - headerMenuLevel++
-                                    if headerMenuLevel <= 3
-                                        +headerMenu(headerMenuLevel, items[i][2])
-                                    else
-                                        +headerMenuItem(headerMenuLevel, items[i][2])
+                                if headerMenuLevel <= 3
+                                    +headerMenu(headerMenuLevel, items[i][2])
+                                else
+                                    +headerMenuItem(headerMenuLevel, items[i][2])
                         - i++
                     - i = 0
             //- Use
@@ -143,77 +136,3 @@ body
                     span.show-for-sr Third slide details.
                 button(data-slide='3')
                     span.show-for-sr Fourth slide details.
-    section.brands
-        .slider-block.brands__slider-block
-            #viewport
-                ul#slidewrapper.slider-block__wrapper
-                    li.slider-block__slide
-                        .flex-container
-                            +slider-image("img/ABK.png","abk")
-                            +slider-image("img/aria.png","aria")
-                            +slider-image("img/jts.png","jts")
-                            +slider-image("img/pioneer.png","pioneer")
-                            +slider-image("img/Robe.png","robe")
-                            +slider-image("img/daddario.png","daddario")
-                            +slider-image("img/schecter.png","schecter")
-                    li.slider-block__slide
-                        .flex-container
-                            +slider-image("img/ABK.png","abk")
-                            +slider-image("img/aria.png","aria")
-                            +slider-image("img/jts.png","jts")
-                            +slider-image("img/pioneer.png","pioneer")
-                            +slider-image("img/Robe.png","robe")
-                            +slider-image("img/daddario.png","daddario")
-                            +slider-image("img/schecter.png","schecter")
-
-        .brands__control
-            #prev-btn.brands__control--left
-            #next-btn.brands__control--right
-
-        .lines.brands__lines
-             .lines__item
-             .lines__text
-                 a(href='#' class='lines__link') Все производители
-
-
-    <!-- Trigger/Open The Modal -->
-    button#myBtn Open Modal
-
-    <!-- The Modal -->
-    div#myModal.modal
-       .modal-content
-           span.close ×
-           form(action='/action_page.php')
-               .container
-                   h1 Register
-                   p Please fill in this form to create an account.
-                   hr
-                   label(for='email')
-                       b Email
-                   input(type='text', placeholder='Enter Email', name='email', required='')
-                   label(for='psw')
-                       b Password
-                   input(type='password', placeholder='Enter Password', name='psw', required='')
-                   label(for='psw-repeat')
-                       b Repeat Password
-                   input(type='password', placeholder='Repeat Password', name='psw-repeat', required='')
-                   hr
-                   p
-                       | By creating an account you agree to our
-                       a(href='#') Terms & Privacy
-                       | .
-                   button.registerbtn(type='submit') Register
-               .container.signin
-                   p
-                       | Already have an account?
-                       a(href='#') Sign in
-                       | .
-
-           //span.close &times;
-           //p Some text in the Modal..
-
-    script(src="js/vendor/jquery.js")
-    script(src="js/vendor/what-input.js")
-    script(src="js/vendor/foundation.js")
-    script(src="js/vendor/slider.js")
-    script(src="js/vendor/popup.js")
