@@ -20,13 +20,15 @@ window.onclick = (event) => {
     }
 } ;
 
-let regBtn = document.getElementsByClassName('registration')[0];
+let regBtn = document.getElementsByClassName('get-registration')[0];
 let submitBtn = document.getElementsByClassName('submit')[0];
-let url_input = document.getElementsByClassName('url')[0];
+let url = document.getElementsByClassName('url')[0];
 let heading = document.getElementsByClassName('heading')[0];
 
 regBtn.onclick = () => {
-    url_input.style.display = "block";
+    url.style.display = "block";
     heading.innerHTML = 'Registration';
     submitBtn.innerHTML = 'Register';
+    submitBtn.classList.add('registration');
+    submitBtn.classList.remove('login');
 };
