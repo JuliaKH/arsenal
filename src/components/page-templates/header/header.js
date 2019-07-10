@@ -1,4 +1,5 @@
 import '../sign-in/sign-in'
+import '../sign-in/sign-in-view'
 
 import './header.sass'
 

@@ -1,54 +1,40 @@
-import './sign-in.sass'
+const registeredUsers = [
+            {
+                login:'Julia',
+                password:'12345',
+                url: ''
+            },
+            {
+                login:'Dima',
+                password:'12345',
+                url: ''
+            },
+        ];
 
-import './popup'
-
-let registered_users = [
-    {
-        login:'Julia',
-        password:'12345',
-        url: ''
-    },
-    {
-        login:'Dima',
-        password:'12345',
-        url: ''
-    },
-];
-console.log(registered_users);
-
-let submitBtn = document.getElementsByClassName('submit')[0];
-let email_input = document.getElementsByName('email');
-let passw_input = document.getElementsByName('psw');
-let url_input = document.getElementsByName('url');
-
-submitBtn.onclick = (event) => {
+document.querySelector('.login').addEventListener('click', ()=>{
+    const userEmail = document.querySelector('.login-email').value;
+    const userPassword = document.querySelector('.login-password').value;
     let isRegistered = false;
-    //Log in
-    if(event.target.classList.contains('login')){
-        // console.log('log');
-        registered_users.forEach(function(obj) {
-            for (let i = 0; i < email_input.length; i++){
-                if (obj.login === email_input[i].value && obj.password === passw_input[i].value){
-                    console.log('ok');
-                    isRegistered = true;
-                }
-            }
-        });
-        if(isRegistered === true)
-            document.getElementById("regForm").submit();
-        else alert('Login or password doesn`t fit. Register, please');
-    }
-    //Registration
-    if (event.target.classList.contains('registration')){
-        console.log('reg');
-        let obj = {};
-        obj.login = email_input[0].value;
-        obj.password = passw_input[0].value;
-        obj.url = url_input[0].value;
-        registered_users.push(obj);
-        document.getElementById("regForm").submit();
-        // registered_users.login.push = email_input[0].value;
-        console.log(registered_users);
-    }
-};
+    registeredUsers.forEach(({ login, password }) => {
+        if(login === userEmail &&  password === userPassword) {
+            alert('ok');
+            isRegistered = true;
+        }
+    });
+    if(isRegistered === true)
+        document.getElementById('loginForm').submit();
+    else alert('Login or password doesn`t fit. Register, please');
+});
+document.querySelector('.register').addEventListener('click', ()=>{
+    const   newUser = {},
+            registerEmail = document.querySelector('.registration-email').value,
+            registerPassword = document.querySelector('.registration-password').value,
+            registerUrl = document.querySelector('.registration-url').value;
+
+    newUser.login = registerEmail;
+    newUser.password = registerPassword;
+    newUser.url = registerUrl;
+    registeredUsers.push(newUser);
+    document.getElementById('registrationForm').submit();
+});
 
