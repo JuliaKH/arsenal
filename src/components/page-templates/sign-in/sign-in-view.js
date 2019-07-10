@@ -1,21 +1,21 @@
 import './sign-in.sass';
 
-const authorizationButton = document.querySelector('.authorization-button');
-const authorizationFormContainer = document.querySelector('.authorization-form-container');
-// close buttons
-const signInCloseFormElement = document.querySelector('.sign-in__close-form');
-const registrationCloseFormElement = document.querySelector('.registration__close-form');
-// --
-// forms
-const signInForm = document.querySelector('.sign-in.form');
-const registrationForm = document.querySelector('.registration.form');
-// --
-// switch buttons
-const switchToRegistrationButton = document.querySelector('.switch-to-registration');
-const switchToSignIn = document.querySelector('.switch-to-sign-in');
-// --
+const   openSignInFormButton = document.querySelector('.authorization-button'),
+        authorizationFormContainer = document.querySelector('.authorization-form-container'),
+        // close buttons
+        signInCloseFormElement = document.querySelector('.sign-in__close-form'),
+        registrationCloseFormElement = document.querySelector('.registration__close-form'),
+        // --
+        // forms
+        signInForm = document.querySelector('.sign-in.form'),
+        registrationForm = document.querySelector('.registration.form'),
+        // --
+        // switch buttons
+        switchToRegistrationButton = document.querySelector('.switch-to-registration'),
+        switchToSignIn = document.querySelector('.switch-to-sign-in');
+        // --
 
-authorizationButton.addEventListener('click', ()=> {
+openSignInFormButton.addEventListener('click', ()=> {
     authorizationFormContainer.classList.add('is-active');
     signInForm.classList.add('is-active');
 });

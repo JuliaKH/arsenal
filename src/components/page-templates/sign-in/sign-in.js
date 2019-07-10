@@ -1,41 +1,22 @@
-import './popup'
-
 const registeredUsers = [
-    {
-        login:'Julia',
-        password:'12345',
-        url: ''
-    },
-    {
-        login:'Dima',
-        password:'12345',
-        url: ''
-    },
-];
-console.log(registeredUsers);
-const loginButton = document.querySelector('.login');
-const registrationButton = document.querySelector('.register');
+            {
+                login:'Julia',
+                password:'12345',
+                url: ''
+            },
+            {
+                login:'Dima',
+                password:'12345',
+                url: ''
+            },
+        ];
 
-const loginEmail = document.querySelector('.login-email');
-const loginPassword = document.querySelector('.login-password');
-
-const registerEmail = document.querySelector('.registration-email');
-const registerPassword = document.querySelector('.registration-password');
-const registerUrl = document.querySelector('.registration-url');
-
-
-
-// const url = document.querySelector('.url').value;
-//
-//
-//
-loginButton.addEventListener('click', ()=>{
-    const userEmail = loginEmail.value;
-    const userPassword = loginPassword.value;
+document.querySelector('.login').addEventListener('click', ()=>{
+    const userEmail = document.querySelector('.login-email').value;
+    const userPassword = document.querySelector('.login-password').value;
     let isRegistered = false;
-    registeredUsers.forEach(user => {
-        console.log(userEmail ,userPassword);
-        if(user.login === loginEmail.value &&  user.password === loginPassword.value) {
+    registeredUsers.forEach(({ login, password }) => {
+        if(login === userEmail &&  password === userPassword) {
             alert('ok');
             isRegistered = true;
         }
@@ -44,14 +25,16 @@ loginButton.addEventListener('click', ()=>{
         document.getElementById('loginForm').submit();
     else alert('Login or password doesn`t fit. Register, please');
 });
-registrationButton.addEventListener('click', ()=>{
-    console.log('reg');
-    const newUser = {};
-    newUser.login = registerEmail.value;
-    newUser.password = registerPassword.value;
-    newUser.url = registerUrl.value;
+document.querySelector('.register').addEventListener('click', ()=>{
+    const   newUser = {},
+            registerEmail = document.querySelector('.registration-email').value,
+            registerPassword = document.querySelector('.registration-password').value,
+            registerUrl = document.querySelector('.registration-url').value;
+
+    newUser.login = registerEmail;
+    newUser.password = registerPassword;
+    newUser.url = registerUrl;
     registeredUsers.push(newUser);
-    document.getElementById('regForm').submit();
-    console.log(registeredUsers);
+    document.getElementById('registrationForm').submit();
 });
 
