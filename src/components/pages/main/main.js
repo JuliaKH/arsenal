@@ -1,1 +1,1 @@
-import 'brands/brands'
+import './brands/brands'

@@ -1,4 +1,6 @@
 import './components/page-templates/header/header'
+import './components/page-templates/footer/footer'
+import  './components/pages/main/main'
 
 import './index.sass'
 
