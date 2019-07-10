@@ -1,4 +1,4 @@
-import './sign-in/sign-in'
+import '../sign-in/sign-in'
 
 import './header.sass'
 
