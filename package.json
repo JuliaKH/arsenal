@@ -7,7 +7,8 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open",
+    "lint": ""
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "firebase": "^6.2.4",
     "foundation-sites": "^6.5.3",
     "jade": "^1.11.0",
     "jquery": "^3.4.1",
