@@ -1,45 +1,39 @@
-// Get the modal
-let modal = document.getElementById("Modal");
+import './sign-in.sass';
 
-// Get the button that opens the modal
-let btn = document.getElementById("openModalBtn");
+const authorizationButton = document.querySelector('.authorization-button');
+const authorizationFormContainer = document.querySelector('.authorization-form-container');
+// close buttons
+const signInCloseFormElement = document.querySelector('.sign-in__close-form');
+const registrationCloseFormElement = document.querySelector('.registration__close-form');
+// --
+// forms
+const signInForm = document.querySelector('.sign-in.form');
+const registrationForm = document.querySelector('.registration.form');
+// --
+// switch buttons
+const switchToRegistrationButton = document.querySelector('.switch-to-registration');
+const switchToSignIn = document.querySelector('.switch-to-sign-in');
+// --
 
-// Get the <span> element that closes the modal
-let span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = () => modal.style.display = "block";
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = () => modal.style.display = "none";
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = (event) => {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-} ;
-
-const regBtn = document.getElementsByClassName('get-registration')[0];
-const modalRegistration= document.querySelector('.modal-registration');
-const modalLogin = document.querySelector('.modal-login');
-// const submitBtn = document.getElementsByClassName('submit')[0];
-let url = document.getElementsByClassName('url')[0];
-// const heading = document.getElementsByClassName('heading')[0];
-
-regBtn.onclick = () => {
-    // url.style.display = "block";
-    // heading.innerHTML = 'Registration';
-    // submitBtn.innerHTML = 'Register';
-    if(regBtn.classList.contains('login')){
-        modalRegistration.style.display = "block";
-        modalLogin.style.display = "none";
-    }
-    if(regBtn.classList.contains('registration')){
-        modalRegistration.style.display = "none";
-        modalLogin.style.display = "block";
-    }
-
-    // submitBtn.classList.remove('login');
-
-};
+authorizationButton.addEventListener('click', ()=> {
+    authorizationFormContainer.classList.add('is-active');
+    signInForm.classList.add('is-active');
+});
+signInCloseFormElement.addEventListener('click', ()=>{
+    authorizationFormContainer.classList.remove('is-active')
+    signInForm.classList.remove('is-active');
+    registrationForm.classList.remove('is-active');
+});
+registrationCloseFormElement.addEventListener('click', ()=>{
+    authorizationFormContainer.classList.remove('is-active')
+    signInForm.classList.remove('is-active');
+    registrationForm.classList.remove('is-active');
+});
+switchToRegistrationButton.addEventListener('click', ()=>{
+    signInForm.classList.remove('is-active');
+    registrationForm.classList.add('is-active');
+});
+switchToSignIn.addEventListener('click', ()=>{
+    signInForm.classList.add('is-active');
+    registrationForm.classList.remove('is-active');
+});

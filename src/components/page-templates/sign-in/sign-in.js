@@ -1,5 +1,3 @@
-import './sign-in.sass'
-
 import './popup'
 
 const registeredUsers = [
@@ -15,37 +13,45 @@ const registeredUsers = [
     },
 ];
 console.log(registeredUsers);
+const loginButton = document.querySelector('.login');
+const registrationButton = document.querySelector('.register');
 
-const submitBtn = document.querySelector('.submit');
-const email = document.querySelector('.email');
-const password = document.getElementsByClassName('psw')[0];
-const url = document.querySelector('.url').value;
+const loginEmail = document.querySelector('.login-email');
+const loginPassword = document.querySelector('.login-password');
 
-submitBtn.onclick = (event) => {
+const registerEmail = document.querySelector('.registration-email');
+const registerPassword = document.querySelector('.registration-password');
+const registerUrl = document.querySelector('.registration-url');
+
+
+
+// const url = document.querySelector('.url').value;
+//
+//
+//
+loginButton.addEventListener('click', ()=>{
+    const userEmail = loginEmail.value;
+    const userPassword = loginPassword.value;
     let isRegistered = false;
-    //Log in
-    if(event.target.classList.contains('login')){
-        registeredUsers.forEach(user => {
-            console.log(email.value ,password.value);
-            if(user.login === email.value &&  user.password === password.value) {
-                console.log('ok');
-                isRegistered = true;
-            }
-        });
-        if(isRegistered === true)
-            document.getElementById('regForm').submit();
-        else alert('Login or password doesn`t fit. Register, please');
-    }
-    //Registration
-    if (event.target.classList.contains('registration')){
-        console.log('reg');
-        const obj = {};
-        obj.login = email.value;
-        obj.password = password.value;
-        obj.url = url;
-        registeredUsers.push(obj);
-        document.getElementById('regForm').submit();
-        console.log(registeredUsers);
-    }
-};
+    registeredUsers.forEach(user => {
+        console.log(userEmail ,userPassword);
+        if(user.login === loginEmail.value &&  user.password === loginPassword.value) {
+            alert('ok');
+            isRegistered = true;
+        }
+    });
+    if(isRegistered === true)
+        document.getElementById('loginForm').submit();
+    else alert('Login or password doesn`t fit. Register, please');
+});
+registrationButton.addEventListener('click', ()=>{
+    console.log('reg');
+    const newUser = {};
+    newUser.login = registerEmail.value;
+    newUser.password = registerPassword.value;
+    newUser.url = registerUrl.value;
+    registeredUsers.push(newUser);
+    document.getElementById('regForm').submit();
+    console.log(registeredUsers);
+});
 
