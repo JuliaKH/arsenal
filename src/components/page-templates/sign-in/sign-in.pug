@@ -1,31 +1,56 @@
     <!-- Trigger/Open The Modal -->
 mixin sign-in
     <!-- Trigger/Open The Modal -->
-    button#myBtn Open Modal
+    button.authorization-button Open Modal
 
     <!-- The Modal -->
-    div#myModal.modal
-        .modal-content
-            span.close ×
-            form(action='' id="regForm")
-                .container
-                    h1.heading Log in
-                    p Please fill in this form to create an account.
-                    hr
-                    label(for='email')
-                        b Email
-                    input(type='text', placeholder='Enter Email', name='email', required='')
-                    label(for='psw')
-                        b Password
-                    input(type='password', placeholder='Enter Password', name='psw', required='')
-                    .url
-                        label(for='url')
-                            b Image url
-                        input(type='url', placeholder='Image url', name='url', required='')
-                    hr.
-                    button.submit(type='button' class = "login") Log in
-                .container.signin
-                    p
-                        | Already have an account?
-                        a(href='#' class='get-registration') Registration
-                        | .
+    .authorization-form-container
+        .sign-in.form
+            .sign-in__header
+                span
+                h1 Log in
+                span.sign-in__close-form ×
+            .sign-in__content
+                form(action='' id="loginForm")
+                    .container
+                        p Please fill in this form to create an account.
+                        hr
+                        label(for='login-email')
+                            b Email
+                        input(type='text', placeholder='Enter Email', name='login-email', class='login-email', required='')
+                        label(for='login-password')
+                            b Password
+                        input(type='password', placeholder='Enter Password', name='login-password', class='login-password', required='')
+                        hr.
+                        button.submit(type='button' class = "login") Log in
+                    .container.signin
+                        p
+                            | Already have an account?
+                            a(href='#' class='switch-to-registration') Registration
+                            | .
+        .registration.form
+            .registration__header
+                span
+                h1 Registration
+                span.registration__close-form ×
+            .registration__content
+                form(action='' id="registrationForm")
+                    .container
+                        p Please fill in this form to create an account.
+                        hr
+                        label(for='registration-email')
+                            b Email
+                        input(type='text', placeholder='Enter Email', name='registration-email', class='registration-email', required='')
+                        label(for='registration-password')
+                            b Password
+                        input(type='password', placeholder='Enter Password', name='registration-password', class='registration-password', required='')
+                        label(for='registration-url')
+                            b Image URL
+                        input(type='url', placeholder='Paste your url image', name='registration-url', class='registration-url', required='')
+                        hr.
+                        button.submit(type='button' class = "register") Registration
+                    .container.signin
+                        p
+                            | Create an account?
+                            a(href='#' class='switch-to-sign-in') Sign-in
+                            | .
