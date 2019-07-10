@@ -1,12 +1,13 @@
     <!-- Trigger/Open The Modal -->
 mixin sign-in
-    button#myBtn Sign-in
+    <!-- Trigger/Open The Modal -->
+    button#myBtn Open Modal
 
     <!-- The Modal -->
     div#myModal.modal
         .modal-content
             span.close ×
-            form(action='/action_page.php')
+            form(action='' id="regForm")
                 .container
                     h1.heading Log in
                     p Please fill in this form to create an account.
@@ -22,12 +23,9 @@ mixin sign-in
                             b Image url
                         input(type='url', placeholder='Image url', name='url', required='')
                     hr.
-                    button.submit(type='submit') Log in
+                    button.submit(type='button' class = "login") Log in
                 .container.signin
                     p
                         | Already have an account?
-                        a(href='#' class='registration') Registration
+                        a(href='#' class='get-registration') Registration
                         | .
-
-            //span.close &times;
-            //p Some text in the Modal..

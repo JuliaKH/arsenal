@@ -1,4 +1,4 @@
-include sign-in/sign-in
+include ../sign-in/sign-in
 
 mixin header
     header.header
@@ -10,7 +10,7 @@ mixin header
                     a.upper-navigation__street(href='#') ул. Октябрьская, 34
             .upper-navigation__item
                 span.upper-navigation__link
-                    img(src='img/phone-icon.png' alt='Phone')
+                    img(src='./assets/img/header/phone-icon.png' alt='Phone')
                     a.upper-navigation__phone(href='tel:3832408080') (383) 240-80-80,
                     a.upper-navigation__phone(href='tel:3832408080') 240-80-00
             .upper-navigation__item
@@ -29,19 +29,19 @@ mixin header
                 a.upper-navigation__link(href='#')
                     span.upper-navigation__account Мой арсенал
             .upper-navigation__item
-                // img.upper-navigation__social-image(src='img/VK-icon.png' alt='VK')
+                // img.upper-navigation__social-image(src='./assets/img/header/VK-icon.png' alt='VK')
                 +sign-in
         .shop-bar
             .shop-bar__item
                 a.logo(href='#')
-                    img(src='img/logo.png' alt='Музыкальный арсенал')
+                    img(src='./assets/img/header/logo.png' alt='Музыкальный арсенал')
                     span.logo__text Мы работаем на ваш талант!
             .shop-bar__item.shop-bar__item--growed
                 .search
                     input.search__input(type='text' placeholder='Поиск товаров')
-                    img.search__image(src='img/search-icon.png' alt='search')
+                    img.search__image(src='./assets/img/header/search-icon.png' alt='search')
             .shop-bar__item.cart
-                img(src='img/cart-icon.png' alt='cart')
+                img(src='./assets/img/header/cart-icon.png' alt='cart')
                 span Корзина
                 span.cart__items-count 25
         .header-menu
@@ -53,7 +53,7 @@ mixin header
                     ['#', 'Ударные', [
                     ['#', 'Тарелки'],
                     ['#', 'Тренировочные пэды', [
-                        'img/headerMainMenuImage1.png',
+                        './assets/img/header/headerMainMenuImage1.png',
                         'DBZ Halifire',
                         'Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.',
                         '89 750',
