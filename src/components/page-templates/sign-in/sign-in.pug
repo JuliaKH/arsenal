@@ -29,3 +29,26 @@ mixin sign-in
                         | Already have an account?
                         a(href='#' class='get-registration') Registration
                         | .
+
+            form(action='' id="regForm")
+                .container
+                    h1.heading Log in
+                    p Please fill in this form to create an account.
+                    hr
+                    label(for='email')
+                        b Email
+                    input(type='text', placeholder='Enter Email', name='email', required='')
+                    label(for='psw')
+                        b Password
+                    input(type='password', placeholder='Enter Password', name='psw', required='')
+                    .url
+                        label(for='url')
+                            b Image url
+                        input(type='url', placeholder='Image url', name='url', required='')
+                    hr.
+                    button.submit(type='button' class = "login") Log in
+                .container.signin
+                    p
+                        | Already have an account?
+                        a(href='#' class='get-registration') Registration
+                        | .
