@@ -16,10 +16,10 @@ let registered_users = [
 ];
 console.log(registered_users);
 
+let submitBtn = document.getElementsByClassName('submit')[0];
 let email_input = document.getElementsByName('email');
 let passw_input = document.getElementsByName('psw');
 let url_input = document.getElementsByName('url');
-
 
 submitBtn.onclick = (event) => {
     let isRegistered = false;
