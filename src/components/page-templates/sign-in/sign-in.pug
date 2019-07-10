@@ -1,10 +1,10 @@
     <!-- Trigger/Open The Modal -->
 mixin sign-in
     <!-- Trigger/Open The Modal -->
-    button#myBtn Open Modal
+    button#openModalBtn Open Modal
 
     <!-- The Modal -->
-    div#myModal.modal
+    div#Modal.modal.modal-login
         .modal-content
             span.close ×
             form(action='' id="regForm")
@@ -14,18 +14,42 @@ mixin sign-in
                     hr
                     label(for='email')
                         b Email
-                    input(type='text', placeholder='Enter Email', name='email', required='')
+                    input(type='text', placeholder='Enter Email', name='email', class='email', required='')
                     label(for='psw')
                         b Password
-                    input(type='password', placeholder='Enter Password', name='psw', required='')
-                    .url
-                        label(for='url')
-                            b Image url
-                        input(type='url', placeholder='Image url', name='url', required='')
+                    input(type='password', placeholder='Enter Password', name='psw', class='psw', required='')
                     hr.
                     button.submit(type='button' class = "login") Log in
                 .container.signin
                     p
                         | Already have an account?
-                        a(href='#' class='get-registration') Registration
+                        a(href='#' class='get-registration login') Registration
+                        | .
+
+
+
+    <!-- The Modal -->
+    div#Modal.modal.modal-registration
+        .modal-content
+            span.close ×
+            form(action='' id="regForm")
+                .container
+                    h1.heading Registration
+                    p Please fill in this form to create an account.
+                    hr
+                    label(for='email')
+                        b Email
+                    input(type='text', placeholder='Enter Email', name='email', class='email', required='')
+                    label(for='psw')
+                        b Password
+                    input(type='password', placeholder='Enter Password', name='psw', class='psw', required='')
+                    .url
+                        label(for='url')
+                            b Image url
+                        input(type='url', placeholder='Image url', name='url', class='url', required='')
+                    hr.
+                    button.submit(type='button' class = "login") Register
+                    p
+                        | Already have an account?
+                        a(href='#' class='get-registration registration') Log in
                         | .

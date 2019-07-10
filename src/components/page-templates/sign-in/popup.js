@@ -1,8 +1,8 @@
 // Get the modal
-let modal = document.getElementById("myModal");
+let modal = document.getElementById("Modal");
 
 // Get the button that opens the modal
-let btn = document.getElementById("myBtn");
+let btn = document.getElementById("openModalBtn");
 
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
@@ -20,15 +20,26 @@ window.onclick = (event) => {
     }
 } ;
 
-let regBtn = document.getElementsByClassName('get-registration')[0];
-let submitBtn = document.getElementsByClassName('submit')[0];
+const regBtn = document.getElementsByClassName('get-registration')[0];
+const modalRegistration= document.querySelector('.modal-registration');
+const modalLogin = document.querySelector('.modal-login');
+// const submitBtn = document.getElementsByClassName('submit')[0];
 let url = document.getElementsByClassName('url')[0];
-let heading = document.getElementsByClassName('heading')[0];
+// const heading = document.getElementsByClassName('heading')[0];
 
 regBtn.onclick = () => {
-    url.style.display = "block";
-    heading.innerHTML = 'Registration';
-    submitBtn.innerHTML = 'Register';
-    submitBtn.classList.add('registration');
-    submitBtn.classList.remove('login');
+    // url.style.display = "block";
+    // heading.innerHTML = 'Registration';
+    // submitBtn.innerHTML = 'Register';
+    if(regBtn.classList.contains('login')){
+        modalRegistration.style.display = "block";
+        modalLogin.style.display = "none";
+    }
+    if(regBtn.classList.contains('registration')){
+        modalRegistration.style.display = "none";
+        modalLogin.style.display = "block";
+    }
+
+    // submitBtn.classList.remove('login');
+
 };

@@ -1,4 +1,5 @@
 'use strict';
+import 'brands.sass'
 // document.querySelector('.slider__wrapper').style.transform = 'translateX('+ -19.9973% + '%)';
 var multiItemSlider = (function () {
 
