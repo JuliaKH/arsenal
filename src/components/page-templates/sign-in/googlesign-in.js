@@ -1,10 +1,12 @@
 import * as firebase from "firebase";
 
 var provider = new firebase.auth.GoogleAuthProvider();
-provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+// provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+// firebase.auth().languageCode = 'pt';
+
 
 provider.setCustomParameters({
-    'login_hint': 'sk8erfirl1007@gmail.com'
+    'login_hint': 'sk8ergirl1007@gmail.com'
 });
 
 
@@ -36,6 +38,14 @@ googleSignInBtn.addEventListener('click', () => {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // print_user(user);
+            var displayName = user.displayName;
+            var email = user.email;
+            var emailVerified = user.emailVerified;
+            var photoURL = user.photoURL;
+            var isAnonymous = user.isAnonymous;
+            var uid = user.uid;
+            var providerData = user.providerData;
+
             alert('Hello!');
         } else {
             googleLogIn();
