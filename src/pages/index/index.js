@@ -1,6 +1,6 @@
-import './components/page-templates/header/header'
-import './components/page-templates/footer/footer'
-import  './components/pages/main/main'
+import '../../components/header/header'
+import './components/footer/footer'
+import './pages/main/main'
 
 import './index.sass'
 
