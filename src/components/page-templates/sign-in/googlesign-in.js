@@ -9,6 +9,8 @@ provider.setCustomParameters({
     'login_hint': 'sk8ergirl1007@gmail.com'
 });
 
+import {googleSignOutBtn} from '../sign-out/googlesign-out'
+
 
 function googleLogIn () {
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -32,7 +34,8 @@ function googleLogIn () {
 
 
 
-const googleSignInBtn = document.getElementById('google');
+const googleSignInBtn = document.getElementById('google-sign-in');
+// const googleSignOutBtn = document.getElementById('google-sign-out');
 
 googleSignInBtn.addEventListener('click', () => {
     firebase.auth().onAuthStateChanged(function(user) {
@@ -46,10 +49,16 @@ googleSignInBtn.addEventListener('click', () => {
             var uid = user.uid;
             var providerData = user.providerData;
 
-            alert('Hello!');
+            alert(`Hello! ${displayName}`);
+            googleSignOutBtn.classList.add('is-active');
+            googleSignOutBtn.classList.remove('none-active');
+
         } else {
             googleLogIn();
+            googleSignOutBtn.classList.add('none-active');
         }
     });
 });
+
+
 
