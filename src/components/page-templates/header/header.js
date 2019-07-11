@@ -1,5 +1,7 @@
 import '../sign-in/sign-in'
 import '../sign-in/sign-in-view'
+import '../sign-in/googlesign-in'
+import '../sign-out/googlesign-out'
 
 import './header.sass'
 

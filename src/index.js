@@ -11,3 +11,18 @@ import 'foundation-sites/dist/css/foundation.css';
 
 
 $(document).foundation();
+
+
+// import * as firebase from "firebase/app";
+// import "firebase/auth";
+// import "firebase/firestore";
+
+const firebase = require('firebase/app');
+require('firebase/auth');
+require('firebase/firestore');
+
+
+import firebaseConfig from './components/page-templates/sign-in/firebase.config'
+// const firebaseConfig = require('./components/page-templates/sign-in/firebase.config');
+
+firebase.initializeApp(firebaseConfig);
