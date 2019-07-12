@@ -1,13 +1,13 @@
 const registeredUsers = [
             {
-                login:'Julia',
+                email:'Julia',
                 password:'12345',
-                url: ''
+                photoURL: ''
             },
             {
-                login:'Dima',
+                email:'Dima',
                 password:'12345',
-                url: ''
+                photoURL: ''
             },
         ];
 
