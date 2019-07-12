@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "firebase": "^6.3.0",
     "foundation-sites": "^6.5.3",
     "jade": "^1.11.0",
     "jquery": "^3.4.1",

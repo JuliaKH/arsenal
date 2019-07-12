@@ -15,7 +15,7 @@ var config = {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
     entry: [
-        './src/index.js',
+        './src/pages/index/index.js',
     ],
     output: {
         // filename: './bundle[contenthash].js',
@@ -62,7 +62,7 @@ var config = {
         //     allChunks: true,
         // }),
         new HtmlWebpackPlugin({
-            template: 'src/index.pug',
+            template: 'src/pages/index/index.pug',
             filename: 'index.html'
         }),
         new CopyWebpackPlugin([

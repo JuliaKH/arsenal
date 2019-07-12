@@ -35,6 +35,9 @@ document.querySelector('.register').addEventListener('click', ()=>{
     newUser.password = registerPassword;
     newUser.url = registerUrl;
     registeredUsers.push(newUser);
-    document.getElementById('registrationForm').submit();
+    document.querySelector('.avatar').src = registerUrl;
+    document.querySelector('.authorization-button').innerHTML = registerEmail
+    document.querySelector('.authorization-form-container').classList.remove('is-active');
+    // document.getElementById('registrationForm').submit();
 });
 

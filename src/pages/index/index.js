@@ -1,6 +1,6 @@
-import './components/page-templates/header/header'
-import './components/page-templates/footer/footer'
-import  './components/pages/main/main'
+import './../../components/header/header'
+import './../../components/footer/footer'
+import './brands/brands'
 
 import './index.sass'
 
@@ -21,8 +21,7 @@ const firebase = require('firebase/app');
 require('firebase/auth');
 require('firebase/firestore');
 
-
-import firebaseConfig from './components/page-templates/sign-in/firebase.config'
+import firebaseConfig from './../../components/sign-in/firebase.config'
 // const firebaseConfig = require('./components/page-templates/sign-in/firebase.config');
 
 firebase.initializeApp(firebaseConfig);
