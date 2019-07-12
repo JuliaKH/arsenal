@@ -1,12 +1,12 @@
 import './brands.sass'
 
-import  '../../../../../assets/img/brands/ABK.png'
-import  '../../../../../assets/img/brands/aria.png'
-import  '../../../../../assets/img/brands/daddario.png'
-import  '../../../../../assets/img/brands/jts.png'
-import  '../../../../../assets/img/brands/pioneer.png'
-import  '../../../../../assets/img/brands/Robe.png'
-import  '../../../../../assets/img/brands/schecter.png'
+import  '../../../../assets/img/brands/ABK.png'
+import  '../../../../assets/img/brands/aria.png'
+import  '../../../../assets/img/brands/daddario.png'
+import  '../../../../assets/img/brands/jts.png'
+import  '../../../../assets/img/brands/pioneer.png'
+import  '../../../../assets/img/brands/Robe.png'
+import  '../../../../assets/img/brands/schecter.png'
 
 import $ from 'jquery'
 

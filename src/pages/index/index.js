@@ -1,6 +1,6 @@
-import '../../components/header/header'
-import './components/footer/footer'
-import './pages/main/main'
+import './../../components/header/header'
+import './../../components/footer/footer'
+import './brands/brands'
 
 import './index.sass'
 
