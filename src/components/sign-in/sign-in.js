@@ -1,13 +1,15 @@
+import {authorizationFormContainer, openSignInFormButton, userAvatarImage} from "./sign-in-view";
+
 const registeredUsers = [
             {
                 email:'Julia',
                 password:'12345',
-                photoURL: ''
+                photoURL: 'https://picsum.photos/200/300'
             },
             {
                 email:'Dima',
                 password:'12345',
-                photoURL: ''
+                photoURL: 'https://picsum.photos/300/200'
             },
         ];
 
@@ -15,14 +17,18 @@ document.querySelector('.login').addEventListener('click', ()=>{
     const userEmail = document.querySelector('.login-email').value;
     const userPassword = document.querySelector('.login-password').value;
     let isRegistered = false;
-    registeredUsers.forEach(({ login, password }) => {
-        if(login === userEmail &&  password === userPassword) {
+    registeredUsers.forEach(({ email, password, photoURL }) => {
+        if(email === userEmail &&  password === userPassword) {
             alert('ok');
+
+            userAvatarImage.src = photoURL;
+            openSignInFormButton.innerHTML = userEmail;
+            authorizationFormContainer.classList.remove('is-active');
             isRegistered = true;
         }
     });
     if(isRegistered === true)
-        document.getElementById('loginForm').submit();
+        document.getElementById('loginForm')//.submit();
     else alert('Login or password doesn`t fit. Register, please');
 });
 document.querySelector('.register').addEventListener('click', ()=>{
