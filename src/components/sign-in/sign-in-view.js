@@ -1,7 +1,10 @@
 import './sign-in.sass';
 
+import placeholderImage from '../../../assets/img/header/avatar-plaseholder.png'
+
 const   openSignInFormButton = document.querySelector('.authorization-button'),
         authorizationFormContainer = document.querySelector('.authorization-form-container'),
+        userAvatarImage = document.querySelector('.avatar'),
         // close buttons
         signInCloseFormElement = document.querySelector('.sign-in__close-form'),
         registrationCloseFormElement = document.querySelector('.registration__close-form'),
@@ -15,6 +18,8 @@ const   openSignInFormButton = document.querySelector('.authorization-button'),
         switchToSignIn = document.querySelector('.switch-to-sign-in');
         // --
 
+userAvatarImage.src = placeholderImage;
+
 openSignInFormButton.addEventListener('click', ()=> {
     authorizationFormContainer.classList.add('is-active');
     signInForm.classList.add('is-active');
@@ -25,7 +30,7 @@ signInCloseFormElement.addEventListener('click', ()=>{
     registrationForm.classList.remove('is-active');
 });
 registrationCloseFormElement.addEventListener('click', ()=>{
-    authorizationFormContainer.classList.remove('is-active')
+    authorizationFormContainer.classList.remove('is-active');
     signInForm.classList.remove('is-active');
     registrationForm.classList.remove('is-active');
 });
@@ -37,3 +42,5 @@ switchToSignIn.addEventListener('click', ()=>{
     signInForm.classList.add('is-active');
     registrationForm.classList.remove('is-active');
 });
+
+export { authorizationFormContainer, openSignInFormButton, userAvatarImage }
