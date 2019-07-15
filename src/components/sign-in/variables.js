@@ -1,14 +1,30 @@
+import $ from 'jquery';
+
 const signInDom = {
-    openSignInFormButton: document.querySelector('.authorization-button'),
-    userAvatarImage: document.querySelector('.avatar'),
+    openSignInFormButton: $('.authorization-button')[0],
+    userAvatarImage: $('.avatar')[0],
     // Sign-in
-    signInFormContainer: document.querySelector('.sign-in-form-container'),
-    signInCloseFormElement: document.querySelector('.sign-in__close-form'),
-    switchToRegistrationButton: document.querySelector('.switch-to-registration'),
+    signInFormContainer: $('.sign-in-form-container')[0],
+    signInCloseFormElement: $('.sign-in__close-form')[0],
+    switchToRegistrationButton: $('.switch-to-registration')[0],
     // Sign-out
-    registrationFormContainer: document.querySelector('.registration-form-container'),
-    registrationCloseFormElement: document.querySelector('.registration__close-form'),
-    switchToSignIn: document.querySelector('.switch-to-sign-in'),
+    registrationFormContainer: $('.registration-form-container')[0],
+    registrationCloseFormElement: $('.registration__close-form')[0],
+    switchToSignIn: $('.switch-to-sign-in')[0],
+};
+const signInFormVars = {
+    button: signInDom.openSignInFormButton,
+    container: signInDom.signInFormContainer,
+    closeElement: signInDom.signInCloseFormElement,
+    switchButton: signInDom.switchToRegistrationButton,
+    switchedContainer: signInDom.registrationFormContainer,
+};
+const registrationFormVars = {
+    button: null,
+    container: signInDom.registrationFormContainer,
+    closeElement: signInDom.registrationCloseFormElement,
+    switchButton: signInDom.switchToSignIn,
+    switchedContainer: signInDom.signInFormContainer,
 };
 
-export {signInDom}
+export {signInDom, signInFormVars, registrationFormVars}

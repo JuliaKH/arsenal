@@ -46,4 +46,3 @@ document.querySelector('.register').addEventListener('click', ()=>{
     document.querySelector('.authorization-form-container').classList.remove('is-active');
     // document.getElementById('registrationForm').submit();
 });
-

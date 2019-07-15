@@ -11,6 +11,7 @@ import 'foundation-sites/dist/css/foundation.css';
 
 
 $(document).foundation();
+window.jQuery = window.$ = $.bind();
 
 
 // import * as firebase from "firebase/app";
