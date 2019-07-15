@@ -1,5 +1,5 @@
 import * as firebase from "firebase";
-
+import './variables'
 var provider = new firebase.auth.GoogleAuthProvider();
 
 
@@ -10,6 +10,8 @@ var provider = new firebase.auth.GoogleAuthProvider();
 // import {closeFormElement} from '../sign-in/sign-in-view'
 import {signInForm} from  '../sign-in/sign-in-view';
 import {googleSignOutBtn} from '../sign-out/googlesign-out'
+import {signInDom} from "./variables";
+const signInButton = signInDom.openSignInFormButton;
 export {signInButton};
 
 function googleSignIn () {
@@ -33,9 +35,6 @@ function googleSignIn () {
     });
 
 }
-const signInButton = document.querySelector(".authorization-button");
-
-
 window.addEventListener('load', function () {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
