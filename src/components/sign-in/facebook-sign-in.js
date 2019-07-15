@@ -2,68 +2,49 @@ import * as firebase from "firebase";
 firebase.initializeApp(firebaseConfig);
 
 import firebaseConfig from "./firebase.config";
+import {signInButton} from "./google-sign-in";
+import {closeFormElement} from "./sign-in-view";
 
-var Facebookprovider = new firebase.auth.FacebookAuthProvider();
+const facebookSignInBtn = document.getElementById('facebook-sign-in'),
+      facebookSignOutBtn = document.getElementById('facebook-sign-out');
 
-firebase.auth().signInWithPopup(Facebookprovider).then(function(result) {
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    // ...
-}).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-});
+const provider = new firebase.auth.FacebookAuthProvider();
 
-function facebookSignIn () {
-    firebase.auth().signInWithPopup(Facebookprovider).then(function(result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        // ...
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
+function facebookSignin() {
+    firebase.auth().signInWithPopup(provider)
+
+        .then(function(result) {
+            var token = result.credential.accessToken;
+            var user = result.user;
+
+            console.log(token);
+            console.log(user);
+        }).catch(function(error) {
+        console.log(error.code);
+        console.log(error.message);
     });
-
 }
 
-const facebookSignInBtn = document.getElementById('facebook-sign-in');
-// const googleSignOutBtn = document.getElementById('google-sign-out');
+function facebookSignout() {
+    firebase.auth().signOut()
+
+        .then(function() {
+            console.log('Signout successful!')
+        }, function(error) {
+            console.log('Signout failed')
+        });
+}
+
 
 facebookSignInBtn.addEventListener('click', () => {
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            // print_user(user);
-            var displayName = user.displayName;
-            // var email = user.email;
-            // var emailVerified = user.emailVerified;
-            // var photoURL = user.photoURL;
-            // var isAnonymous = user.isAnonymous;
-            // var uid = user.uid;
-            // var providerData = user.providerData;
-
-            alert(`Hello! ${displayName}`);
-            facebookSignInBtn.classList.add('is-active');
-            facebookSignInBtn.classList.remove('none-active');
-
-        } else {
-            facebookSignIn();
-            facebookSignInBtn.classList.add('none-active');
-        }
-    });
+    facebookSignin();
+    closeFormElement();
+    facebookSignOutBtn.classList.add('active');
+    if(facebookSignOutBtn.classList.contains('active'))
+        signInButton.classList.remove('active');
+});
+facebookSignOutBtn.addEventListener('click', () => {
+    facebookSignout();
+    facebookSignOutBtn.classList.remove('active');
+    signInButton.classList.add('active');
 });
