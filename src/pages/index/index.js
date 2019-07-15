@@ -1,6 +1,7 @@
 import './../../components/header/header'
 import './../../components/footer/footer'
 import './brands/brands'
+import './sellout/sellout'
 
 import './index.sass'
 

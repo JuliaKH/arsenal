@@ -14,8 +14,8 @@ function facebookSignin() {
     firebase.auth().signInWithPopup(provider)
 
         .then(function(result) {
-            var token = result.credential.accessToken;
-            var user = result.user;
+            let token = result.credential.accessToken;
+            let user = result.user;
 
             console.log(token);
             console.log(user);
