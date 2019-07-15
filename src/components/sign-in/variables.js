@@ -1,4 +1,4 @@
-const signInDom = {
+export const signInDom = {
     openSignInFormButton: document.querySelector('.authorization-button'),
     userAvatarImage: document.querySelector('.avatar'),
     // Sign-in
@@ -10,5 +10,3 @@ const signInDom = {
     registrationCloseFormElement: document.querySelector('.registration__close-form'),
     switchToSignIn: document.querySelector('.switch-to-sign-in'),
 };
-
-export {signInDom}

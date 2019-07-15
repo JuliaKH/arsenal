@@ -5,17 +5,17 @@ import './../popup/popup'
 import placeholderImage from '../../../assets/img/header/avatar-plaseholder.png'
 
 import {Popup} from "../popup/popup";
-
+console.log(signInDom.switchToRegistrationButton);
 class AuthForm extends Popup {
     constructor(button, container, closeFormElement, switchFormButton, switchedFormContainer) {
         super(button, container, closeFormElement);
 
-        closeFormElement.addEventListener('click', ()=>{
+        this.switchFormButton = switchFormButton;
+        this.switchedFormContainer = switchedFormContainer;
+
+        this.switchFormButton.addEventListener('click', ()=>{
             container.classList.remove('is-active');
-        });
-        switchFormButton.addEventListener('click', ()=>{
-            container.classList.remove('is-active');
-            switchedFormContainer.classList.add('is-active');
+            this.switchedFormContainer.classList.add('is-active');
         });
     }
 }
