@@ -1,12 +1,9 @@
 import './sign-out.sass';
 
 import * as firebase from "firebase";
+import {signInButton} from '../sign-in/google-sign-in';
+
 var provider = new firebase.auth.GoogleAuthProvider();
-
-provider.setCustomParameters({
-    'login_hint': 'sk8ergirl1007@gmail.com'
-});
-
 
 const googleSignOutBtn = document.getElementById('google-sign-out');
 
@@ -16,8 +13,8 @@ googleSignOutBtn.addEventListener('click', ()=> {
     firebase.auth().signOut().then(function() {
         // Sign-out successful.
         alert('Successful!');
-        // googleSignOutBtn.classList.remove('is-active');
-        googleSignOutBtn.classList.add('none-active');
+        googleSignOutBtn.classList.remove('active');
+        signInButton.classList.add('active');
     }).catch(function(error) {
         // An error happened.
     });

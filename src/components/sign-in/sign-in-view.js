@@ -1,3 +1,10 @@
+import './sign-in.sass';
+
+import './../popup/popup'
+import placeholderImage from '../../../assets/img/header/avatar-plaseholder.png'
+
+import {Popup} from "../popup/popup";
+
 const   openSignInFormButton = document.querySelector('.authorization-button'),
         userAvatarImage = document.querySelector('.avatar'),
         // Sign-in
@@ -8,13 +15,6 @@ const   openSignInFormButton = document.querySelector('.authorization-button'),
         registrationFormContainer = document.querySelector('.registration-form-container'),
         registrationCloseFormElement = document.querySelector('.registration__close-form'),
         switchToSignIn = document.querySelector('.switch-to-sign-in');
-
-import './sign-in.sass';
-
-import './../popup/popup'
-import placeholderImage from '../../../assets/img/header/avatar-plaseholder.png'
-
-import {Popup} from "../popup/popup";
 
 class AuthForm extends Popup {
     constructor(button, container, closeFormElement, switchFormButton, switchedFormContainer) {

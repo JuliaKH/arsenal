@@ -1,20 +1,5 @@
 import './popup.sass'
 
-// const   popupButton = document.querySelector('.popup-button'),
-//         popupContainer = document.querySelector('.popup-container');
-//
-// popupButton.addEventListener('click', ()=> {
-//     popupContainer.classList.toggle('is-active');
-// });
-// popupContainer.addEventListener('click', ()=> {
-//     popupContainer.classList.toggle('is-active');
-// });
-// document.onkeydown = function(event) {
-//     if (event.key === 'Escape') {
-//         popupContainer.classList.remove('is-active');
-//     }
-// };
-
 class Popup {
     constructor(button, container){
         this.button = button;
