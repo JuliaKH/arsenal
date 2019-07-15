@@ -1,31 +1,34 @@
 import './popup.sass'
 
 class Popup {
-    constructor(button, container){
+    constructor(button, container, closeFormElement){
         this.button = button;
         this.container = container;
-        console.log(button);
-        console.log(container);
+        this.closeFormElement = closeFormElement;
 
         if (this.button != null) {
             this.button.addEventListener('click', ()=> {
-                this.container.classList.toggle('is-active');
+                this.open();
             });
         }
-        this.container.addEventListener('click', ()=> {
+        this.container.addEventListener('click', (event)=> {
             if (event.target === this.container) {
                 this.close();
             }
         });
-        // document.onkeydown = (event) => {
-        //     if (event.key === 'Escape') {
-        //         console.log(this.close);
-        //         this.close();
-        //     }
-        // };
+        this.closeFormElement.addEventListener('click', ()=> {
+            this.close();
+        });
+        document.addEventListener('keyup', (event) => {
+            if (event.key === 'Escape') {
+                this.close();
+            }
+        })
+    }
+    open() {
+        this.container.classList.add('is-active');
     }
     close() {
-        console.log(this.container.classList)
         this.container.classList.remove('is-active');
     }
 }

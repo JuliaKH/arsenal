@@ -1,29 +1,18 @@
 import './sign-in.sass';
+import {signInDom} from "./variables";
 
 import './../popup/popup'
 import placeholderImage from '../../../assets/img/header/avatar-plaseholder.png'
 
 import {Popup} from "../popup/popup";
 
-const   openSignInFormButton = document.querySelector('.authorization-button'),
-        userAvatarImage = document.querySelector('.avatar'),
-        // Sign-in
-        signInFormContainer = document.querySelector('.sign-in-form-container'),
-        signInCloseFormElement = document.querySelector('.sign-in__close-form'),
-        switchToRegistrationButton = document.querySelector('.switch-to-registration'),
-        // Sign-out
-        registrationFormContainer = document.querySelector('.registration-form-container'),
-        registrationCloseFormElement = document.querySelector('.registration__close-form'),
-        switchToSignIn = document.querySelector('.switch-to-sign-in');
-
 class AuthForm extends Popup {
     constructor(button, container, closeFormElement, switchFormButton, switchedFormContainer) {
-        super(button, container);
+        super(button, container, closeFormElement);
 
         closeFormElement.addEventListener('click', ()=>{
             container.classList.remove('is-active');
         });
-
         switchFormButton.addEventListener('click', ()=>{
             container.classList.remove('is-active');
             switchedFormContainer.classList.add('is-active');
@@ -31,21 +20,21 @@ class AuthForm extends Popup {
     }
 }
 const signInForm = new AuthForm(
-    openSignInFormButton,
-    signInFormContainer,
-    signInCloseFormElement,
-    switchToRegistrationButton,
-    registrationFormContainer,
+    signInDom.openSignInFormButton,
+    signInDom.signInFormContainer,
+    signInDom.signInCloseFormElement,
+    signInDom.switchToRegistrationButton,
+    signInDom.registrationFormContainer,
 );
 
 const registrationForm = new AuthForm(
     null,
-    registrationFormContainer,
-    registrationCloseFormElement,
-    switchToSignIn,
-    signInFormContainer,
+    signInDom.registrationFormContainer,
+    signInDom.registrationCloseFormElement,
+    signInDom.switchToSignIn,
+    signInDom.signInFormContainer,
 );
 
-userAvatarImage.src = placeholderImage;
+signInDom.userAvatarImage.src = placeholderImage;
 
-export { signInForm, registrationForm, userAvatarImage }
+export { signInForm, registrationForm }
