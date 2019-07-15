@@ -16,15 +16,21 @@ import './popup.sass'
 // };
 
 class Popup {
-    constructor(){
-        this.button = document.querySelector('.popup-button');
-        this.container = document.querySelector('.popup-container');
+    constructor(button, container){
+        this.button = button;
+        this.container = container;
+        console.log(button);
+        console.log(container);
 
-        this.button.addEventListener('click', ()=> {
-            this.container.classList.toggle('is-active');
-        });
+        if (this.button != null) {
+            this.button.addEventListener('click', ()=> {
+                this.container.classList.toggle('is-active');
+            });
+        }
         this.container.addEventListener('click', ()=> {
-            this.container.classList.toggle('is-active');
+            if (event.target === this.container) {
+                this.container.classList.toggle('is-active');
+            }
         });
         document.onkeydown = (event) => {
             if (event.key === 'Escape') {
