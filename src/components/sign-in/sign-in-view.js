@@ -49,4 +49,4 @@ switchToSignIn.addEventListener('click', () => {
     registrationForm.classList.remove('is-active');
 });
 
-export { authorizationFormContainer, openSignInFormButton, userAvatarImage }
+export { authorizationFormContainer, openSignInFormButton, userAvatarImage };
