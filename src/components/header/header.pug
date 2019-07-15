@@ -1,3 +1,4 @@
+include  ../popup/popup
 include ../sign-in/sign-in
 include ../sign-out/sign-out
 
@@ -30,6 +31,7 @@ mixin header
                 a.upper-navigation__link(href='#')
                     span.upper-navigation__account Мой арсенал
             .upper-navigation__item
+                // +popup
                 // img.upper-navigation__social-image(src='./assets/img/header/VK-icon.png' alt='VK')
                 +sign-in
                 +sign-out

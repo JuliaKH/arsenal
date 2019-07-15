@@ -13,7 +13,7 @@
     &.active
        display: flex
 
-.authorization-form-container
+.sign-in-form-container, .registration-form-container
     display: none /* Hidden by default */
     flex-direction: column
     justify-content: center
@@ -32,7 +32,7 @@
 
 .form
     background-color: white
-    display: none
+    display: flex
     flex-direction: column
     text-align: center
 
@@ -42,8 +42,8 @@
     &__header
         display: flex
         justify-content: space-between
-    &.is-active
-        display: flex
+    &__close-form
+        cursor: pointer
 
 .submit
     background-color: green

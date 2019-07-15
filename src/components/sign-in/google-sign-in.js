@@ -7,7 +7,8 @@ var provider = new firebase.auth.GoogleAuthProvider();
 //     'login_hint': 'sk8ergirl1007@gmail.com'
 // });
 
-import {closeFormElement} from '../sign-in/sign-in-view'
+// import {closeFormElement} from '../sign-in/sign-in-view'
+import {signInForm} from  '../sign-in/sign-in-view';
 import {googleSignOutBtn} from '../sign-out/googlesign-out'
 export {signInButton};
 
@@ -17,7 +18,7 @@ function googleSignIn () {
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
-        closeFormElement();
+        // signInForm.closeFormElement();
         signInButton.classList.remove('active');
         googleSignOutBtn.classList.add('active');
     }).catch(function(error) {
@@ -33,6 +34,7 @@ function googleSignIn () {
 
 }
 const signInButton = document.querySelector(".authorization-button");
+
 
 window.addEventListener('load', function () {
     firebase.auth().onAuthStateChanged(function(user) {

@@ -3,7 +3,7 @@ firebase.initializeApp(firebaseConfig);
 
 import firebaseConfig from "./firebase.config";
 import {signInButton} from "./google-sign-in";
-import {closeFormElement} from "./sign-in-view";
+// import {closeFormElement} from "./sign-in-view";
 
 const facebookSignInBtn = document.getElementById('facebook-sign-in'),
       facebookSignOutBtn = document.getElementById('facebook-sign-out');
@@ -38,7 +38,7 @@ function facebookSignout() {
 
 facebookSignInBtn.addEventListener('click', () => {
     facebookSignin();
-    closeFormElement();
+    // closeFormElement();
     facebookSignOutBtn.classList.add('active');
     if(facebookSignOutBtn.classList.contains('active'))
         signInButton.classList.remove('active');
