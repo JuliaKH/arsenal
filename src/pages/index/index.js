@@ -9,9 +9,15 @@ import 'what-input/dist/what-input.min';
 import 'foundation-sites/dist/js/foundation';
 import 'foundation-sites/dist/css/foundation.css';
 
+import './../../../assets/img/responsive-img/320.jpg';
+import './../../../assets/img/responsive-img/768.jpg';
+import './../../../assets/img/responsive-img/1024.jpg';
+import './../../../assets/img/responsive-img/1440.jpg';
+import './../../../assets/img/responsive-img/1920.jpg';
+import './../../../assets/img/responsive-img/2560.jpg';
 
 $(document).foundation();
-window.jQuery = window.$ = $.bind();
+window.jQuery = window.$ = $;
 
 
 // import * as firebase from "firebase/app";
