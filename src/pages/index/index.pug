@@ -3,3 +3,27 @@ include brands/brands
 
 block content
     +brands
+    img.testSizes(
+        alt="hd-image",
+        srcset=`
+            https://picsum.photos/320 320w,
+            https://picsum.photos/768 768w,
+            https://picsum.photos/960 960w,
+            https://picsum.photos/1280 1280w,
+            https://picsum.photos/1600 1600w,
+            https://picsum.photos/1920 1920w,
+            https://picsum.photos/2560 2560w,
+            https://picsum.photos/3840 3840w,
+        `,
+        sizes=`
+            (min-width: 320px) 320px,
+            (min-width: 768px) 768px,
+            (min-width: 960px) 960px,
+            (min-width: 1280px) 1280px,
+            (min-width: 1600px) 1600px,
+            (min-width: 1920px) 1920px,
+            (min-width: 2560px) 2560px,
+            (min-width: 3840px) 3840px,
+            100vw
+        `
+    )
