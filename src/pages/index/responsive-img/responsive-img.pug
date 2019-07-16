@@ -1,0 +1,12 @@
+mixin responsive-img
+    img.responsive-img(
+        alt="hd-image",
+        srcset=`
+                assets/img/responsive-img/320.jpg 320w,
+                assets/img/responsive-img/768.jpg 768w,
+                assets/img/responsive-img/1024.jpg 1024w,
+                assets/img/responsive-img/1440.jpg 1440w,
+                assets/img/responsive-img/1920.jpg 1920w,
+                assets/img/responsive-img/2560.jpg 2560w,
+            `
+    )
