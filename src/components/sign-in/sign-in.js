@@ -1,4 +1,4 @@
-import {authorizationFormContainer, openSignInFormButton, userAvatarImage} from "./sign-in-view";
+import {authorizationFormContainer, openSignInFormButton} from "./sign-in-view";
 
 const registeredUsers = [
             {
@@ -42,8 +42,7 @@ document.querySelector('.register').addEventListener('click', ()=>{
     newUser.url = registerUrl;
     registeredUsers.push(newUser);
     document.querySelector('.avatar').src = registerUrl;
-    document.querySelector('.authorization-button').innerHTML = registerEmail
+    document.querySelector('.authorization-button').innerHTML = registerEmail;
     document.querySelector('.authorization-form-container').classList.remove('is-active');
     // document.getElementById('registrationForm').submit();
 });
-
