@@ -7,6 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 
 
@@ -28,7 +29,10 @@ var config = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
                 }
             },
             {
@@ -53,6 +57,10 @@ var config = {
                 test: /\.pug$/,
                 use: ["pug-loader"]
             },
+            {
+                test: /\.css$/,
+                use: ["postcss-loader"]
+            }
         ]
     },
     plugins: [
