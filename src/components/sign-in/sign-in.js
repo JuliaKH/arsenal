@@ -1,4 +1,5 @@
 import {authorizationFormContainer, openSignInFormButton} from "./sign-in-view";
+import {signInDom} from "./variables";
 
 const registeredUsers = [
             {
@@ -21,9 +22,9 @@ document.querySelector('.login').addEventListener('click', ()=>{
         if(email === userEmail &&  password === userPassword) {
             alert('ok');
 
-            userAvatarImage.src = photoURL;
-            openSignInFormButton.innerHTML = userEmail;
-            authorizationFormContainer.classList.remove('is-active');
+            signInDom.userAvatarImage.src = photoURL;
+            signInDom.openSignInFormButton.innerHTML = userEmail;
+            signInDom.signInFormContainer.classList.remove('is-active');
             isRegistered = true;
         }
     });

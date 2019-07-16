@@ -1,6 +1,7 @@
 import './../../components/header/header'
 import './../../components/footer/footer'
 import './brands/brands'
+import './responsive-img/responsive-img'
 import './sellout/sellout'
 
 import './index.sass'
@@ -12,7 +13,7 @@ import 'foundation-sites/dist/css/foundation.css';
 
 
 $(document).foundation();
-window.jQuery = window.$ = $.bind();
+window.jQuery = window.$ = $;
 
 
 // import * as firebase from "firebase/app";
