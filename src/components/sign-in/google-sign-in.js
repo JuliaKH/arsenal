@@ -2,17 +2,40 @@ import * as firebase from "firebase";
 import './variables'
 var provider = new firebase.auth.GoogleAuthProvider();
 
-
-// provider.setCustomParameters({
-//     'login_hint': 'sk8ergirl1007@gmail.com'
-// });
-
-// import {closeFormElement} from '../sign-in/sign-in-view'
-import {signInForm} from  '../sign-in/sign-in-view';
+import {signInForm} from './sign-in-view'
 import {googleSignOutBtn} from '../sign-out/googlesign-out'
 import {signInDom} from "./variables";
 const signInButton = signInDom.openSignInFormButton;
+const googleSignInBtn = document.getElementById('google-sign-in');
 export {signInButton};
+
+class EventObserver {
+    constructor () {
+        this.observers = []
+    }
+
+    subscribe (fn) {
+        this.observers.push(fn)
+    }
+    unsubscribe (fn) {
+        this.observers = this.observers.filter(subscriber => subscriber !== fn)
+    }
+
+    broadcast (data) {
+        this.observers.forEach(subscriber => subscriber(data))
+    }
+}
+const authObserver = new EventObserver();
+
+authObserver.subscribe(text => {
+    console.log('broadcast catched', text);
+    googleSignIn()
+});
+
+googleSignInBtn.addEventListener('click', () => {
+    authObserver.broadcast()
+});
+
 
 function googleSignIn () {
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -23,33 +46,21 @@ function googleSignIn () {
         // signInForm.closeFormElement();
         signInButton.classList.remove('active');
         googleSignOutBtn.classList.add('active');
-    }).catch(function(error) {
-        // Handle Errors here.
+    }).then(
+        signInForm.close()
+    ).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
     });
 
 }
 window.addEventListener('load', function () {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            // alert('Hello');
             googleSignOutBtn.classList.add('active');
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
+            const displayName = user.displayName;
+            const photoURL = user.photoURL;
             document.querySelector('.avatar').src = photoURL;
-
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            alert(`Hello! ${displayName}`);
         }
         else{
             signInButton.classList.add('active');
@@ -58,18 +69,17 @@ window.addEventListener('load', function () {
     });
 });
 
-const googleSignInBtn = document.getElementById('google-sign-in');
-
-googleSignInBtn.addEventListener('click', () => {
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            // print_user(user);
-
-        } else {
-            googleSignIn();
-        }
-    });
-});
-
-
-
+// firebase.auth().onAuthStateChanged(function(user) {
+// if (user) {
+//     // print_user(user);
+//     googleSignOutBtn.classList.add('active');
+//     const displayName = user.displayName;
+//     const photoURL = user.photoURL;
+//     document.querySelector('.avatar').src = photoURL;
+//     alert(`Hello! ${displayName}`);
+//
+// } else {
+//     googleSignIn();
+//     // signInForm.close();
+// }
+// }))

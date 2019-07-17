@@ -1,5 +1,5 @@
 import * as firebase from "firebase";
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
 import firebaseConfig from "./firebase.config";
 import {signInButton} from "./google-sign-in";
