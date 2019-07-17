@@ -4,18 +4,18 @@ mixin sellout
     h2 Распродажа инструментов
     .buttons
       .bckgr
-        button(class="btn instrum") Инструменты
-        button(class="btn light") Свет
-        button(class="btn sound") Звук
-        button(class="btn mrkdown") Уценка
+        button.btn.instrum Инструменты
+        button.btn.light Свет
+        button.btn.sound Звук
+        button.btn.mrkdown Уценка
     .row.lg-slider
       .columns
-        div(class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit)
+        .orbit(role='region', aria-label='Favorite Text Ever', data-orbit='')
           ul.orbit-container
-            button(class="orbit-previous" aria-label="previous")
+            button.orbit-previous(aria-label='previous')
               span.show-for-sr Previous Slide
               .arrow.left
-            button(class="orbit-next" aria-label="next")
+            button.orbit-next(aria-label='next')
               span.show-for-sr Next Slide
               .arrow.right
             li.is-active.orbit-slide
@@ -36,12 +36,12 @@ mixin sellout
                     +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
     .row.md-slider
       .columns
-        div(class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit)
+        .orbit(role='region', aria-label='Favorite Text Ever', data-orbit='')
           ul.orbit-container
-            button(class="orbit-previous" aria-label="previous")
+            button.orbit-previous(aria-label='previous')
               span.show-for-sr Previous Slide
               .arrow.left
-            button(class="orbit-next" aria-label="next")
+            button.orbit-next(aria-label='next')
               span.show-for-sr Next Slide
               .arrow.right
             li.is-active.orbit-slide
@@ -56,3 +56,36 @@ mixin sellout
                   .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
                     +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
                     +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+    .row.sm-slider
+      .columns
+        .orbit(role='region', aria-label='Favorite Text Ever', data-orbit='')
+          ul.orbit-container
+            button.orbit-previous(aria-label='previous')
+              span.show-for-sr Previous Slide
+              .arrow.left
+            button.orbit-next(aria-label='next')
+              span.show-for-sr Next Slide
+              .arrow.right
+            li.is-active.orbit-slide
+              .docs-example-orbit-slide
+                .slider-container
+                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
+                    +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
+            li.orbit-slide
+              .docs-example-orbit-slide
+                .slider-container
+                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
+                    +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+            li.orbit-slide
+              .docs-example-orbit-slide
+                .slider-container
+                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
+                    +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+            li.orbit-slide
+              .docs-example-orbit-slide
+                .slider-container
+                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
+                    +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+    .links.sellout__links
+      a(href='#') ВСЕ ПРЕДЛОЖЕНИЯ
+      a(href='#') ПОДПИСАТЬСЯ НА РАСПРОДАЖИ
