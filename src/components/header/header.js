@@ -1,6 +1,6 @@
 import '../sign-in/sign-in'
 import '../sign-in/sign-in-view'
-import '../sign-in/google-sign-in'
+import '../sign-in/google-sign-in/google-sign-in'
 import '../sign-in/facebook-sign-in'
 import '../sign-out/googlesign-out'
 

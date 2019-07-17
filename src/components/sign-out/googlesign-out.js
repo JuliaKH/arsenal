@@ -1,7 +1,7 @@
 import './sign-out.sass';
 
 import * as firebase from "firebase";
-import {signInButton} from '../sign-in/google-sign-in';
+import {signInButton} from '../sign-in/google-sign-in/google-sign-in';
 
 var provider = new firebase.auth.GoogleAuthProvider();
 

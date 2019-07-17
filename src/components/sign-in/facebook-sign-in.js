@@ -2,7 +2,7 @@ import * as firebase from "firebase";
 // firebase.initializeApp(firebaseConfig);
 
 import firebaseConfig from "./firebase.config";
-import {signInButton} from "./google-sign-in";
+import {signInButton} from "./google-sign-in/google-sign-in";
 
 const facebookSignInBtn = document.getElementById('facebook-sign-in'),
     facebookSignOutBtn = document.getElementById('facebook-sign-out');

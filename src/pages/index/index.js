@@ -18,17 +18,11 @@ window.jQuery = window.$ = $;
 
 
 import * as firebase from "firebase/app";
-import {auth} from "firebase/app";
-// import "firebase/auth";
+import "firebase/auth";
 // import "firebase/firestore";
 
-console.log('fire', firebase);
-
-// const firebase = require('firebase/app');
-// import 'firebase/auth';
-// require('firebase/firestore');
+// console.log('fire', firebase);
 
 import firebaseConfig from './../../components/sign-in/firebase.config'
-// const firebaseConfig = require('./components/page-templates/sign-in/firebase.config');
 
 firebase.initializeApp(firebaseConfig);
