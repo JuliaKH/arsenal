@@ -8,6 +8,7 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
 
 
 
@@ -73,21 +74,11 @@ var config = {
             template: 'src/pages/index/index.pug',
             filename: 'index.html'
         }),
-        new CopyWebpackPlugin([
-            // {
-            //     from: './src/fonts',
-            //     to: './fonts'
-            // },
-            // {
-            //     from: './src/js/vendor',
-            //     to: './js/vendor'
-            // },
-            // {
-            //     from: './src/img',
-            //     to: './img'
-            // },
-        ]),
-        //new HtmlWebpackPugPlugin()
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        }),
     ]
 };
 module.exports = (env, argv) => {

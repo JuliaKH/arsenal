@@ -13,3 +13,12 @@ import "../../../assets/img/header/headerCarouselImage2.png";
 import "../../../assets/img/header/logo.png";
 import "../../../assets/img/header/phone-icon.png";
 import "../../../assets/img/header/search-icon.png";
+
+import "owl.carousel2/dist/assets/owl.carousel.css";
+import "owl.carousel2";
+
+$('.head-carousel').owlCarousel({
+    items: 1,
+    dots: true,
+    loop: true,
+});
