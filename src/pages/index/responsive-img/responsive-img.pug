@@ -1,12 +1,8 @@
 mixin responsive-img
-    img.responsive-img(
-        alt="hd-image",
-        srcset=`
-                assets/img/responsive-img/320.jpg 320w,
-                assets/img/responsive-img/768.jpg 768w,
-                assets/img/responsive-img/1024.jpg 1024w,
-                assets/img/responsive-img/1440.jpg 1440w,
-                assets/img/responsive-img/1920.jpg 1920w,
-                assets/img/responsive-img/2560.jpg 2560w,
-            `
-    )
+    - var i = 0;
+        while i < 100
+            - size = 2000 + i;
+            - src = 'https://www.macmillandictionary.com/external/slideshow/thumb/Grey_thumb.png'
+            - data_src = 'https://picsum.photos/'+size
+            img.lzy_img(src=src data-src=data_src)
+            - i++

@@ -112,34 +112,18 @@ mixin header
                     - i = 0
             //- Use
             +headerMenu(headerMenuLevel, headerMenu)
-        .orbit.header-carousel(role='region', data-orbit)
-            .orbit-wrapper
-                ul.orbit-container
-                    li.is-active.orbit-slide
-                        figure.orbit-figure.img1
-                            .header-carousel__container
-                                span Новинка
-                                h2 ARIA MAC-STD
-                                p.
-                                    Станьте ближе к любимой музыке вместе с P5 Series 2. У последней версии полностью
-                                    обновлена конструкция динамиков, что подняло качество звука на новый уровень, а
-                                    материалы высокого качества обеспечивают комфорт.
-                    li.orbit-slide
-                        figure.orbit-figure.img2
-                            .header-carousel__container
-                                span Новинка
-                                h2 ARIA MAC-STD
-                                p.
-                                    Станьте ближе к любимой музыке вместе с P5 Series 2. У последней версии полностью
-                                    обновлена конструкция динамиков, что подняло качество звука на новый уровень, а
-                                    материалы высокого качества обеспечивают комфорт.
-            nav.orbit-bullets
-                button.is-active(data-slide='0')
-                    span.show-for-sr First slide details.
-                    span.show-for-sr Current Slide
-                button(data-slide='1')
-                    span.show-for-sr Second slide details.
-                button(data-slide='2')
-                    span.show-for-sr Third slide details.
-                button(data-slide='3')
-                    span.show-for-sr Fourth slide details.
+        .owl-carousel.head-carousel
+            .owl-content.head-carousel__container.img1
+                span Новинка
+                h2 ARIA MAC-STD
+                p.
+                    Станьте ближе к любимой музыке вместе с P5 Series 2. У последней версии полностью
+                    обновлена конструкция динамиков, что подняло качество звука на новый уровень, а
+                    материалы высокого качества обеспечивают комфорт.
+            .owl-content.head-carousel__container.img2
+                span Новинка
+                h2 ARIA MAC-STD
+                p.
+                    Станьте ближе к любимой музыке вместе с P5 Series 2. У последней версии полностью
+                    обновлена конструкция динамиков, что подняло качество звука на новый уровень, а
+                    материалы высокого качества обеспечивают комфорт.
