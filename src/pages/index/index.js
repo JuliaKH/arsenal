@@ -4,6 +4,7 @@ import "./brands/brands";
 import "./responsive-img/responsive-img";
 import "./sellout/sellout";
 import "./services/services"
+import "./articles/articles"
 import "./lazy_loading";
 
 import "./index.sass";

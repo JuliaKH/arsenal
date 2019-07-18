@@ -16,7 +16,7 @@ mixin header
                     a.upper-navigation__phone(href='tel:3832408080') (383) 240-80-80,
                     a.upper-navigation__phone(href='tel:3832408080') 240-80-00
             .upper-navigation__item
-                nav
+                nav.navigation-container
                     ul.header-navigation
                         -
                             let headerNavigation = [
@@ -30,7 +30,7 @@ mixin header
             .upper-navigation__item
                 a.upper-navigation__link(href='#')
                     span.upper-navigation__account Мой арсенал
-            .upper-navigation__item
+            .upper-navigation__item.header-auth
                 // +popup
                 // img.upper-navigation__social-image(src='./assets/img/header/VK-icon.png' alt='VK')
                 +sign-in
