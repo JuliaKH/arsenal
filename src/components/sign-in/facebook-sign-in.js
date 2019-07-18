@@ -2,50 +2,57 @@ import * as firebase from "firebase";
 // firebase.initializeApp(firebaseConfig);
 
 import firebaseConfig from "./firebase.config";
-import {signInButton} from "./google-sign-in/google-sign-in";
+import { signInButton } from "./google-sign-in/google-sign-in";
 
-const facebookSignInBtn = document.getElementById('facebook-sign-in'),
-    facebookSignOutBtn = document.getElementById('facebook-sign-out');
+const facebookSignInBtn = document.getElementById("facebook-sign-in");
+const facebookSignOutBtn = document.getElementById("facebook-sign-out");
 
 const provider = new firebase.auth.FacebookAuthProvider();
 
 function facebookSignin() {
-    firebase.auth().signInWithPopup(provider)
+  firebase
+    .auth()
+    .signInWithPopup(provider)
 
-        .then(function(result) {
-            let token = result.credential.accessToken;
-            let user = result.user;
+    .then(result => {
+      const token = result.credential.accessToken;
+      const { user } = result;
 
-            console.log(token);
-            console.log(user);
-        }).catch(function(error) {
-        console.log(error.code);
-        console.log(error.message);
+      console.log(token);
+      console.log(user);
+    })
+    .catch(error => {
+      console.log(error.code);
+      console.log(error.message);
     });
 }
 
 function facebookSignout() {
-    firebase.auth().signOut()
+  firebase
+    .auth()
+    .signOut()
 
-        .then(function() {
-            console.log('Signout successful!')
-        }, function(error) {
-            console.log('Signout failed')
-        });
+    .then(
+      () => {
+        console.log("Signout successful!");
+      },
+      error => {
+        console.log("Signout failed");
+      }
+    );
 }
 
-
-facebookSignInBtn.addEventListener('click', () => {
-    if (facebookSignin()){
-        // closeFormElement();
-        facebookSignOutBtn.classList.add('active');
-        if(facebookSignOutBtn.classList.contains('active'))
-            signInButton.classList.remove('active');
+facebookSignInBtn.addEventListener("click", () => {
+  if (facebookSignin()) {
+    // closeFormElement();
+    facebookSignOutBtn.classList.add("active");
+    if (facebookSignOutBtn.classList.contains("active")) {
+      signInButton.classList.remove("active");
     }
-
+  }
 });
-facebookSignOutBtn.addEventListener('click', () => {
-    facebookSignout();
-    facebookSignOutBtn.classList.remove('active');
-    signInButton.classList.add('active');
+facebookSignOutBtn.addEventListener("click", () => {
+  facebookSignout();
+  facebookSignOutBtn.classList.remove("active");
+  signInButton.classList.add("active");
 });
