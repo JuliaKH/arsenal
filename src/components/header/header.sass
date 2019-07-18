@@ -1,21 +1,23 @@
-@import "./src/variables.sass"
-@import "./src/mixins"
+@import "./../../variables"
+@import "./../../mixins"
 
 //<editor-fold desc="upper-navigation">
 .upper-navigation
     display: flex
     flex-direction: column
+    flex-wrap: wrap
     +tablet-portrait
         flex-direction: row
         text-align: center
         padding: 1em
-    justify-content: space-between
+    justify-content: space-around
     align-items: center
     background-color: $base-color-dark-orange
     &__item
         padding: 0.5em 0
         align-items: center
         display: flex
+        justify-content: space-between
     &__link, &__city, &__street, &__phone
         color: white
         &:hover, &:visited, &:focus
@@ -33,6 +35,8 @@
     list-style-type: none
     margin: 0
     padding: 0
+    display: flex
+    align-items: center
     &__item
         display: inline
         margin-right: 1em
@@ -106,7 +110,7 @@
     border-bottom: 2px solid #ed3642
     padding: 1em 0
 .level-1-menu
-    justify-content: space-between
+    justify-content: space-around
     &__link
         +link-color(#5f4849)
     > .is-active
@@ -164,6 +168,9 @@
 //<editor-fold desc="Header carousel">
 .head-carousel
     z-index: 0 !important
+    display: none !important
+    @media (min-width: $tablet-portrait)
+        display: flex !important
     &__container
         background-size: cover
         display: flex
