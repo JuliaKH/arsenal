@@ -3,6 +3,7 @@ import "../../components/footer/footer";
 import "./brands/brands";
 import "./responsive-img/responsive-img";
 import "./sellout/sellout";
+import "./services/services"
 import "./lazy_loading";
 
 import "./index.sass";
