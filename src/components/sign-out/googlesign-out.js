@@ -1,23 +1,25 @@
-import './sign-out.sass';
+import "./sign-out.sass";
 
 import * as firebase from "firebase";
-import {signInButton} from '../sign-in/google-sign-in/google-sign-in';
+import { signInButton } from "../sign-in/google-sign-in/google-sign-in";
 
-var provider = new firebase.auth.GoogleAuthProvider();
+const provider = new firebase.auth.GoogleAuthProvider();
 
-const googleSignOutBtn = document.getElementById('google-sign-out');
+const googleSignOutBtn = document.getElementById("google-sign-out");
 
-export {googleSignOutBtn};
+export { googleSignOutBtn };
 
-googleSignOutBtn.addEventListener('click', ()=> {
-    firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-        alert('Successful!');
-        googleSignOutBtn.classList.remove('active');
-        signInButton.classList.add('active');
-    }).catch(function(error) {
-        // An error happened.
+googleSignOutBtn.addEventListener("click", () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      // Sign-out successful.
+      alert("Successful!");
+      googleSignOutBtn.classList.remove("active");
+      signInButton.classList.add("active");
+    })
+    .catch(error => {
+      // An error happened.
     });
-
 });
-
