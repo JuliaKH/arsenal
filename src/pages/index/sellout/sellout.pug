@@ -9,21 +9,14 @@ mixin sellout
         button.btn.sound Звук
         button.btn.mrkdown Уценка
 
-    .slider-block.sellout__slider-block
-      #sellout__viewport
-        ul#sellout__slidewrapper.slider-block__wrapper
-          li.slider-block__slide
-            .flex-container
-                  +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
-                  +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-                  +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-                  +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-          li.slider-block__slide
-            .flex-container
-                 +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
-                 +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-                 +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-                 +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+    .owl-carousel.slider-block.sellout__slider-block
+        .owl-content
+            .slider-block__slide
+                .flex-container
+                    +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
+                    +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+                    +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+                    +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
     //.md-slider
     //  .slider-block.sellout__slider-block
     //    #sellout__viewport
