@@ -1,6 +1,6 @@
 include cell
 mixin sellout
-  section#sellout
+  section.sellout
     h2 Распродажа инструментов
     .buttons
       .bckgr
@@ -8,84 +8,47 @@ mixin sellout
         button.btn.light Свет
         button.btn.sound Звук
         button.btn.mrkdown Уценка
-    .row.lg-slider
-      .columns
-        .orbit(role='region', aria-label='Favorite Text Ever', data-orbit='')
-          ul.orbit-container
-            button.orbit-previous(aria-label='previous')
-              span.show-for-sr Previous Slide
-              .arrow.left
-            button.orbit-next(aria-label='next')
-              span.show-for-sr Next Slide
-              .arrow.right
-            li.is-active.orbit-slide
-              .docs-example-orbit-slide
-                .slider-container
-                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
+
+    .owl-carousel.slider-block.sellout__slider-block
+        .owl-content
+            .slider-block__slide
+                .flex-container
                     +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
                     +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
                     +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
                     +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-            li.orbit-slide
-              .docs-example-orbit-slide
-                .slider-container
-                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
-                    +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
-                    +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-                    +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-                    +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-    .row.md-slider
-      .columns
-        .orbit(role='region', aria-label='Favorite Text Ever', data-orbit='')
-          ul.orbit-container
-            button.orbit-previous(aria-label='previous')
-              span.show-for-sr Previous Slide
-              .arrow.left
-            button.orbit-next(aria-label='next')
-              span.show-for-sr Next Slide
-              .arrow.right
-            li.is-active.orbit-slide
-              .docs-example-orbit-slide
-                .slider-container
-                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
-                    +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
-                    +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-            li.orbit-slide
-              .docs-example-orbit-slide
-                .slider-container
-                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
-                    +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-                    +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-    .row.sm-slider
-      .columns
-        .orbit(role='region', aria-label='Favorite Text Ever', data-orbit='')
-          ul.orbit-container
-            button.orbit-previous(aria-label='previous')
-              span.show-for-sr Previous Slide
-              .arrow.left
-            button.orbit-next(aria-label='next')
-              span.show-for-sr Next Slide
-              .arrow.right
-            li.is-active.orbit-slide
-              .docs-example-orbit-slide
-                .slider-container
-                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
-                    +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
-            li.orbit-slide
-              .docs-example-orbit-slide
-                .slider-container
-                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
-                    +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-            li.orbit-slide
-              .docs-example-orbit-slide
-                .slider-container
-                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
-                    +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
-            li.orbit-slide
-              .docs-example-orbit-slide
-                .slider-container
-                  .grid-x.grid-padding-x.small-up-2.medium-up-4.large-up-7
-                    +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+    //.md-slider
+    //  .slider-block.sellout__slider-block
+    //    #sellout__viewport
+    //      ul#sellout__slidewrapper.slider-block__wrapper
+    //        li.slider-block__slide
+    //          .flex-container
+    //            +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
+    //            +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+    //        li.slider-block__slide
+    //          .flex-container
+    //            +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+    //            +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+    //.sm-slider
+    //  .slider-block.sellout__slider-block
+    //    #sellout__viewport
+    //      ul#sellout__slidewrapper.slider-block__wrapper
+    //        li.slider-block__slide
+    //          .flex-container
+    //            +cell("./assets/img/sellout/accord.png","accordion",'Hohner Bravo III 96 RED',"Аккордеон, в стиле «Юнион Джек». Выпущен ограниченным тиражом.")
+    //        li.slider-block__slide
+    //          .flex-container
+    //            +cell("./assets/img/sellout/guitar.png","guitar",'DBZ Halilfire',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+            //li.slider-block__slide
+            //  .flex-container
+            //    +cell("./assets/img/sellout/drum.png","drum",'Pearl Sparkle Burst',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+            //li.slider-block__slide
+            //  .flex-container
+            //    +cell("./assets/img/sellout/piano.png","piano",'Yamaha P-105B',"Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.")
+
+    .sellout__control
+      #sellout__prev-btn.sellout__control--left
+      #sellout__next-btn.sellout__control--right
     .links.sellout__links
       a(href='#') ВСЕ ПРЕДЛОЖЕНИЯ
       a(href='#') ПОДПИСАТЬСЯ НА РАСПРОДАЖИ

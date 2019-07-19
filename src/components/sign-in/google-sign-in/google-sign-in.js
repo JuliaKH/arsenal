@@ -1,54 +1,65 @@
 import * as firebase from "firebase";
+import '../variables'
+import { signInForm } from '../sign-in-view'
+import { googleSignOutBtn } from '../../sign-out/googlesign-out'
 import { signInDom } from "../variables";
-import { signInForm } from "../sign-in-view";
-import { googleSignOutBtn } from "../../sign-out/googlesign-out";
 
-import { Observable } from "./Observable";
-import { Observer } from "./Observer";
+const provider = new firebase.auth.GoogleAuthProvider();
 
-const signInButton = signInDom.openSignInFormButton;
-const googleSignInBtn = document.getElementById("google-sign-in");
+import SignInObservable  from './Observable'
+import Observer from './Observer'
 
-const observable = new Observable();
-const googleSignInObserver = new Observer(observable);
-const signInFormCloseObserver = new Observer(observable);
-const setPhotoObserver = new Observer(observable);
-const alertUserNameObserver = new Observer(observable);
+const signInButton = signInDom.openSignInFormButton,
+      googleSignInBtn = document.getElementById('google-sign-in');
 
-googleSignInObserver.subscribe(user => {
-  observable.googleSignIn();
+const closeRegistrationForm = () => {
+    signInForm.close();
+};
+const addUserImage = (user) => {
+    document.querySelector('.avatar').src = user.photoURL;
+};
+
+const googleSignIn  = () => {
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        const token = result.credential.accessToken;
+        const user = result.user;
+
+        signInButton.classList.remove('active');
+        googleSignOutBtn.classList.add('active');
+        UserSignInObservable.notifyObservers(user);})
+        .catch(function(error) {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        });
+};
+
+
+const UserSignInObservable = new SignInObservable(),
+      signInFormCloseObserver = new Observer(closeRegistrationForm),
+      setPhotoObserver = new Observer(addUserImage);
+
+UserSignInObservable.subscribe(signInFormCloseObserver);
+
+UserSignInObservable.subscribe(setPhotoObserver);
+
+googleSignInBtn.addEventListener('click', () => {
+    googleSignIn();
 });
 
-signInFormCloseObserver.subscribe(user => {
-  signInForm.close();
+
+window.addEventListener('load', function () {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            googleSignOutBtn.classList.add('active');
+            const displayName = user.displayName;
+            const photoURL = user.photoURL;
+            document.querySelector('.avatar').src = photoURL;
+        }
+        else{
+            signInButton.classList.add('active');
+            document.querySelector('.avatar').src = 'assets/img/header/avatar-plaseholder.png';
+        }
+    });
 });
 
-setPhotoObserver.subscribe(user => {
-  document.querySelector(".avatar").src = user.photoURL;
-});
-alertUserNameObserver.subscribe(user => {
-  alert(`Hello! ${user.displayName}`);
-});
-
-googleSignInBtn.addEventListener("click", () => {
-  firebase.auth().onAuthStateChanged(user => {
-    observable.notifyObservers(user);
-  });
-});
-
-window.addEventListener("load", () => {
-  firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-      googleSignOutBtn.classList.add("active");
-      const { displayName } = user;
-      const { photoURL } = user;
-      document.querySelector(".avatar").src = photoURL;
-    } else {
-      signInButton.classList.add("active");
-      document.querySelector(".avatar").src =
-        "assets/img/header/avatar-plaseholder.png";
-    }
-  });
-});
-
-export { signInButton };
+export {signInButton, signInFormCloseObserver, setPhotoObserver};

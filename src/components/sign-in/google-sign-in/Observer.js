@@ -1,17 +1,14 @@
-class Observer {
-  constructor(subject) {
-    subject.registerObserver(this);
-
-    this.subscribers = [];
+export default class Observer {
+  constructor(behavior) {
+    this._behavior = behavior || null;
   }
 
-  subscribe(subscriber) {
-    this.subscribers.push(subscriber);
+  notify(msg) {
+    this._behavior(msg);
   }
 
-  notify(data) {
-    this.subscribers.forEach(subscriber => subscriber(data));
+  set behavior(func) {
+    this._behavior = func;
   }
 }
 
-export { Observer };

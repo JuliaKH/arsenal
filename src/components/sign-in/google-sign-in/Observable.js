@@ -1,41 +1,20 @@
-import * as firebase from "firebase";
-import { googleSignOutBtn } from "../../sign-out/googlesign-out";
-import { signInButton } from "./google-sign-in";
+export default class SignInObservable {
+    constructor() {
+        this._observers = [];
+    }
 
-const provider = new firebase.auth.GoogleAuthProvider();
+    subscribe(subscriber) {
+        this._observers.push(subscriber);
+    }
+    registerObserver(observer) {
+        this._observers.push(observer);
+    }
 
-class Observable {
-  constructor() {
-    this.observers = [];
-  }
+    unregisterObserver(observer) {
+        this._observers = this._observers.filter(obs => obs !== observer);
+    }
 
-  googleSignIn() {
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then(result => {
-        const token = result.credential.accessToken;
-        const { user } = result;
-        signInButton.classList.remove("active");
-        googleSignOutBtn.classList.add("active");
-      })
-      .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
-  }
-
-  registerObserver(observer) {
-    this.observers.push(observer);
-  }
-
-  unregisterObserver(observer) {
-    this.observers = this.observers.filter(obs => obs !== observer);
-  }
-
-  notifyObservers(data) {
-    this.observers.forEach(observer => observer.notify(data));
-  }
+    notifyObservers(data) {
+        this._observers.forEach(observer => observer.notify(data));
+    }
 }
-
-export { Observable };
