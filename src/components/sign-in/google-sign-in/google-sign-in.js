@@ -1,43 +1,57 @@
 import * as firebase from "firebase";
 import '../variables'
-import {signInForm} from '../sign-in-view'
-import {googleSignOutBtn} from '../../sign-out/googlesign-out'
-import {signInDom} from "../variables";
+import { signInForm } from '../sign-in-view'
+import { googleSignOutBtn } from '../../sign-out/googlesign-out'
+import { signInDom } from "../variables";
 
-import {Observable} from './Observable'
-import {Observer} from './Observer'
+const provider = new firebase.auth.GoogleAuthProvider();
+
+import { Observable } from './Observable'
+import { Observer } from './Observer'
 
 const signInButton = signInDom.openSignInFormButton,
       googleSignInBtn = document.getElementById('google-sign-in');
 
 
-const observable = new Observable(),
-      googleSignInObserver = new Observer(observable),
-      signInFormCloseObserver = new Observer(observable),
-      setPhotoObserver = new Observer(observable),
-      alertUserNameObserver = new Observer(observable);
+const UserSignInObservable = new Observable(),
+      googleSignInObserver = new Observer(UserSignInObservable),
+      signInFormCloseObserver = new Observer(UserSignInObservable),
+      setPhotoObserver = new Observer(UserSignInObservable),
+      alertUserNameObserver = new Observer(UserSignInObservable);
 
-googleSignInObserver.subscribe(user => {
-    observable.googleSignIn();
-});
+let addImage = (user) => {
+    document.querySelector('.avatar').src = user.photoURL;
+};
+let googleSignIn  = () => {
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        const token = result.credential.accessToken;
+        const user = result.user;
 
-signInFormCloseObserver.subscribe(user => {
-    signInForm.close();
-});
+        signInButton.classList.remove('active');
+        googleSignOutBtn.classList.add('active');
+        UserSignInObservable.notifyObservers(user);})
+        .catch(function(error) {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        });
+};
+
+signInFormCloseObserver.subscribe(() =>
+    signInForm.close()
+);
 
 setPhotoObserver.subscribe(user => {
-    document.querySelector('.avatar').src = user.photoURL;
+    addImage(user);
 });
+
 alertUserNameObserver.subscribe(user => {
-    alert(`Hello! ${user.displayName}`);
+   alert(`Hello ${user.displayName}!`)
 });
 
 googleSignInBtn.addEventListener('click', () => {
-    firebase.auth().onAuthStateChanged(function(user) {
-        observable.notifyObservers(user);
-    })
-
+    googleSignIn();
 });
+
 
 window.addEventListener('load', function () {
     firebase.auth().onAuthStateChanged(function(user) {
