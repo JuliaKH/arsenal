@@ -1,4 +1,4 @@
-export class SignInObservable {
+export default class SignInObservable {
     constructor() {
         this._observers = [];
     }
@@ -18,5 +18,3 @@ export class SignInObservable {
         this._observers.forEach(observer => observer.notify(data));
     }
 }
-
-// export {SignInObservable}

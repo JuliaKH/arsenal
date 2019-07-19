@@ -6,26 +6,20 @@ import { signInDom } from "../variables";
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
-import { SignInObservable } from './Observable'
-import { Observer } from './Observer'
+import SignInObservable  from './Observable'
+import Observer from './Observer'
 
 const signInButton = signInDom.openSignInFormButton,
       googleSignInBtn = document.getElementById('google-sign-in');
 
-
-let addImage = (user) => {
-    document.querySelector('.avatar').src = user.photoURL;
-};
-let closeForm = () => {
+const closeRegistrationForm = () => {
     signInForm.close();
 };
-const UserSignInObservable = new SignInObservable(),
-      // googleSignInObserver = new Observer(UserSignInObservable),
-      signInFormCloseObserver = new Observer(closeForm),
-      setPhotoObserver = new Observer(addImage);
-      // alertUserNameObserver = new Observer(alertUserNameObserver);
+const addUserImage = (user) => {
+    document.querySelector('.avatar').src = user.photoURL;
+};
 
-let googleSignIn  = () => {
+const googleSignIn  = () => {
     firebase.auth().signInWithPopup(provider).then(function(result) {
         const token = result.credential.accessToken;
         const user = result.user;
@@ -38,6 +32,11 @@ let googleSignIn  = () => {
             const errorMessage = error.message;
         });
 };
+
+
+const UserSignInObservable = new SignInObservable(),
+      signInFormCloseObserver = new Observer(closeRegistrationForm),
+      setPhotoObserver = new Observer(addUserImage);
 
 UserSignInObservable.subscribe(signInFormCloseObserver);
 

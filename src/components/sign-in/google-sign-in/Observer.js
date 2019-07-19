@@ -1,14 +1,7 @@
-export class Observer {
+export default class Observer {
   constructor(behavior) {
-    // subject.registerObserver(this);
     this._behavior = behavior || null;
-    // this.subscribers = [];
   }
-
-  // notify(data) {
-  //   this._behavior.forEach(subscriber => subscriber(data));
-  // }
-
 
   notify(msg) {
     this._behavior(msg);
@@ -19,4 +12,3 @@ export class Observer {
   }
 }
 
-// export { Observer };
