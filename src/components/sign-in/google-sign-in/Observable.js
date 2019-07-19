@@ -1,8 +1,11 @@
-class Observable {
+export class SignInObservable {
     constructor() {
         this._observers = [];
     }
 
+    subscribe(subscriber) {
+        this._observers.push(subscriber);
+    }
     registerObserver(observer) {
         this._observers.push(observer);
     }
@@ -16,4 +19,4 @@ class Observable {
     }
 }
 
-export {Observable}
+// export {SignInObservable}

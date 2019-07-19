@@ -16,7 +16,7 @@ mixin header
                     a.upper-navigation__phone(href='tel:3832408080') (383) 240-80-80,
                     a.upper-navigation__phone(href='tel:3832408080') 240-80-00
             .upper-navigation__item
-                nav
+                nav.navigation-container
                     ul.header-navigation
                         -
                             let headerNavigation = [
@@ -30,7 +30,7 @@ mixin header
             .upper-navigation__item
                 a.upper-navigation__link(href='#')
                     span.upper-navigation__account Мой арсенал
-            .upper-navigation__item
+            .upper-navigation__item.header-auth
                 // +popup
                 // img.upper-navigation__social-image(src='./assets/img/header/VK-icon.png' alt='VK')
                 +sign-in
@@ -113,18 +113,17 @@ mixin header
             //- Use
             +headerMenu(headerMenuLevel, headerMenu)
         .owl-carousel.head-carousel
-            .owl-content.head-carousel__container
+            .owl-content.head-carousel__container.img1
                 span Новинка
                 h2 ARIA MAC-STD
                 p.
                     Станьте ближе к любимой музыке вместе с P5 Series 2. У последней версии полностью
                     обновлена конструкция динамиков, что подняло качество звука на новый уровень, а
                     материалы высокого качества обеспечивают комфорт.
-            .owl-content asdasdasd
-            .owl-content asdasdasd
-            .owl-content asdasdasd
-            .owl-content asdasdasd
-            .owl-content asdasdasd
-            .owl-content asdasdasd
-            .owl-content asdasdasd
-            .owl-content asdasdasd
+            .owl-content.head-carousel__container.img2
+                span Новинка
+                h2 ARIA MAC-STD
+                p.
+                    Станьте ближе к любимой музыке вместе с P5 Series 2. У последней версии полностью
+                    обновлена конструкция динамиков, что подняло качество звука на новый уровень, а
+                    материалы высокого качества обеспечивают комфорт.
