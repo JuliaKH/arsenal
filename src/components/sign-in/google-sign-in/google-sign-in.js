@@ -62,4 +62,5 @@ window.addEventListener('load', function () {
     });
 });
 
+
 export {signInButton, signInFormCloseObserver, setPhotoObserver};

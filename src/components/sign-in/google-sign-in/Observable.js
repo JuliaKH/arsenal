@@ -17,4 +17,7 @@ export default class SignInObservable {
     notifyObservers(data) {
         this._observers.forEach(observer => observer.notify(data));
     }
+    sum(a,b) {
+        return a+b;
+    }
 }
