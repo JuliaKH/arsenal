@@ -10,7 +10,7 @@
     "start": "webpack-dev-server --mode development --open",
     "eslint": "eslint src/**/*.{js,jsx} --fix",
     "format": "prettier --write src/**/*.{js,jsx,css,scss}",
-    "test" : "karma start"
+    "test": "karma start"
   },
   "lint-staged": {
     "**/*.js": [
@@ -58,6 +58,8 @@
     "husky": "^3.0.0",
     "jasmine-core": "^3.4.0",
     "karma": "^4.2.0",
+    "karma-babel-preprocessor": "^8.0.1",
+    "karma-coverage": "^1.1.2",
     "karma-jasmine": "^2.0.1",
     "karma-webpack": "^4.0.2",
     "lint-staged": "^9.2.0",

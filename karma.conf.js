@@ -83,7 +83,8 @@ module.exports = function(config) {
         },
         preprocessors: {
             //add webpack as preprocessor to support require() in test-suits .js files
-            './tests/*.js': ['webpack']
+            './tests/*.js': ['webpack'],
+            './src/components/sign-in/google-sing-in/*.js': ['webpack','babel'],
         },
         webpackMiddleware: {
             //turn off webpack bash output when run the tests
