@@ -20,4 +20,4 @@ const signInForm = new AuthForm(signInFormVars);
 const registrationForm = new AuthForm(registrationFormVars);
 signInDom.userAvatarImage.src = placeholderImage;
 
-export { signInForm, registrationForm };
+export { signInForm, registrationForm, AuthForm };
