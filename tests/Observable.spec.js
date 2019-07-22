@@ -1,5 +1,4 @@
 import Observable from "../src/components/sign-in/google-sign-in/Observable";
-import Observer from "../src/components/sign-in/google-sign-in/Observer";
 
 describe("Observable", () => {
 
@@ -16,22 +15,22 @@ describe("Observable", () => {
         expect(observable._observers.length).toEqual(1);
     });
     it("should unsubscribe the observer",() => {
-        const observer = () => 5;
+        const observer = () => {};
 
         observable.subscribe(observer);
         observable.unsubscribeObserver(observer);
 
         expect(observable._observers.length).toEqual(0);
     });
-    it("should notify observers with notifyObservers",() => {
-        let behavior = (msg) =>  msg;
-        let observer = new Observer(behavior);
-        spyOn(observer, 'notify');
+    it("should notify observers with notify()",() => {
+        const mockObserver = {
+            notify: jasmine.createSpy('notify')
+        };
 
-        observable.subscribe(observer);
+        observable.subscribe(mockObserver);
         observable.notifyObservers('data');
 
-        expect(observer.notify).toHaveBeenCalled();
+        expect(mockObserver.notify).toHaveBeenCalled();
     });
 
 });
