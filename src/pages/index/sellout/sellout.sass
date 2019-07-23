@@ -3,6 +3,7 @@
 .sellout
   min-height: 720px
   position: relative
+  overflow: hidden
   &__slider-block
     width: 1100px
     //height: 115px
@@ -35,6 +36,7 @@
     //border-radius: 50px
   .flex-container
     justify-content: center
+    padding: 20px 0
   h2
     font-size: 28px
     text-align: center
@@ -74,9 +76,10 @@
 
   .cell
     max-width: 240px
-    width: 100%
+    //width: 100%
     border: 1px solid rgb(214,203,203)
     margin-left: -1px
+    align-self: center
     .buttons
       display: none
       .transbcg
@@ -120,21 +123,12 @@
     color: #e73939
     span
       text-decoration: line-through
+  .owl-carousel .owl-item img
+    width: inherit
   .btn-img
     background-color: #503737
     padding: 10px 10px
     border-radius: 50px
-  //.orbit-previous
-  //  left: 110px
-  //  &hover
-  //    background-color: #d3ba7e
-  //    border-radius: 50px
-  //
-  //.orbit-next
-  //  right: 110px
-  //  &:hover
-  //    background-color: #d3ba7e
-  //    border-radius: 50px
   &__links
     text-align: center
     margin-bottom: 42px
@@ -143,35 +137,35 @@
       font-size: 14px
       text-decoration: underline
       margin-right: 25px
-#sellout__viewport
-  position: relative
-  overflow: hidden
-  padding-bottom: 50px
-  -webkit-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  -o-user-select: none
-  user-select: none
-.slider-block__wrapper
-  position: relative
-  width: calc(100% * 3)
-  top: 0
-  left: 0
-  margin: 0
-  padding: 0
-  -webkit-transition: 1s
-  -o-transition: 1s
-  transition: 1s
-  -webkit-transition-timing-function: ease-in-out
-  -o-transition-timing-function: ease-in-out
-  transition-timing-function: ease-in-out
-  & .slider-block__slide
-    width: calc(100%/3)
-    list-style: none
-    float: left
-.slider-block__wrapper , .slider-block__slide
-  margin: 0
-  padding: 0
+//#sellout__viewport
+//  position: relative
+//  overflow: hidden
+//  padding-bottom: 50px
+//  -webkit-user-select: none
+//  -moz-user-select: none
+//  -ms-user-select: none
+//  -o-user-select: none
+//  user-select: none
+//.slider-block__wrapper
+//  position: relative
+//  width: calc(100% * 3)
+//  top: 0
+//  left: 0
+//  margin: 0
+//  padding: 0
+//  -webkit-transition: 1s
+//  -o-transition: 1s
+//  transition: 1s
+//  -webkit-transition-timing-function: ease-in-out
+//  -o-transition-timing-function: ease-in-out
+//  transition-timing-function: ease-in-out
+//  & .slider-block__slide
+//    width: calc(100%/3)
+//    list-style: none
+//    float: left
+//.slider-block__wrapper , .slider-block__slide
+//  margin: 0
+//  padding: 0
 
 @media (min-width: 1287px)
   .sm-slider
@@ -185,7 +179,7 @@
     display: none
 
   .md-slider
-    display: flex
+    display: block
 
   .sm-slider
     display: none
@@ -199,7 +193,7 @@
     display: none
 
   .sm-slider
-    display: flex
+    display: block
 
   .orbit-previous
     left: 5030px

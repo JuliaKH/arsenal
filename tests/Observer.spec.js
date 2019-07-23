@@ -1,7 +1,6 @@
 import Observer from "../src/components/sign-in/google-sign-in/Observer";
 
 describe('Observer',  () => {
-    let observable = null;
     let expectedResult;
     let observableMock;
 
@@ -33,8 +32,8 @@ describe('Observer',  () => {
         let observer  = new Observer(behavior);
 
         observableMock.subscribe(observer);
-        observableMock.notifyObservers('data');
+        observer.notify('data');
 
-        expect(observableMock.notifyObservers).toHaveBeenCalled();
+        expect(notifyResult).toEqual('data');
     });
 });
