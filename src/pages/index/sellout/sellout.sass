@@ -9,36 +9,32 @@
     //height: 115px
     margin: 0 auto
     z-index: 1
-  &__control--left, &__control--right
+  .owl-prev, .owl-next
     position: absolute
     border: solid #808080
     border-width: 0 3px 3px 0
     height: 20px
     min-width: 20px
-    display: inline-block
+    //display: inline-block
     padding: 3px
     top: 60px
-  &__control--left:hover, &__control--right:hover
+    &:after, &:before
+      content: none !important
+  .owl-prev:hover, .owl-next:hover
     cursor: pointer
-  &__control--left
+  .owl-prev
     +arrow-transform(135deg)
-    left: 110px
+    left:  -40px
     top: 300px
-    &:hover
-      //background-color: #d3ba7e
-      //border-radius: 50px
-  &__control--right
+  .owl-next
     +arrow-transform(-45deg)
-    right: 110px
+    right: -40px
     top: 300px
-    &:hover
-      //background-color: #d3ba7e
-    //border-radius: 50px
   .flex-container
     justify-content: center
     padding: 20px 0
   h2
-    font-size: 28px
+    font-size: 34px
     text-align: center
     margin-top: 30px
     color: #503737
@@ -137,35 +133,6 @@
       font-size: 14px
       text-decoration: underline
       margin-right: 25px
-//#sellout__viewport
-//  position: relative
-//  overflow: hidden
-//  padding-bottom: 50px
-//  -webkit-user-select: none
-//  -moz-user-select: none
-//  -ms-user-select: none
-//  -o-user-select: none
-//  user-select: none
-//.slider-block__wrapper
-//  position: relative
-//  width: calc(100% * 3)
-//  top: 0
-//  left: 0
-//  margin: 0
-//  padding: 0
-//  -webkit-transition: 1s
-//  -o-transition: 1s
-//  transition: 1s
-//  -webkit-transition-timing-function: ease-in-out
-//  -o-transition-timing-function: ease-in-out
-//  transition-timing-function: ease-in-out
-//  & .slider-block__slide
-//    width: calc(100%/3)
-//    list-style: none
-//    float: left
-//.slider-block__wrapper , .slider-block__slide
-//  margin: 0
-//  padding: 0
 
 @media (min-width: 1287px)
   .sm-slider
@@ -184,6 +151,12 @@
   .sm-slider
     display: none
 
+  .owl-prev
+    left: 180px!important
+
+  .owl-next
+    right: 180px!important
+
 
 @media (max-width: 800px)
   .lg-slider
@@ -195,19 +168,18 @@
   .sm-slider
     display: block
 
-  .orbit-previous
-    left: 5030px
+  .owl-prev
+    left: 380px!important
 
-  .orbit-next
-    right: 30px
-
+  .owl-next
+    right: 380px!important
 
 @media (max-width: 550px)
-  .orbit-previous
-    left: 0!important
-
-  .orbit-next
-    right: 0!important
+  //.owl-prev
+  //  left: 0!important
+  //
+  //.owl-next
+  //  right: 0!important
 
   .sellout
     .btn

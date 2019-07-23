@@ -15,5 +15,9 @@ $('.sellout__slider-block').owlCarousel({
     items: 1,
     dots: false,
     loop: false,
-    nav: true
+    nav: true,
+    navText: ['']
 });
+
+let owlprev = document.querySelector('.owl-prev');
+owlprev.innerHTML = '';
