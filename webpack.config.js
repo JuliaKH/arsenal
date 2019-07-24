@@ -11,7 +11,6 @@ const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 
 
-
 var config = {
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
