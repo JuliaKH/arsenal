@@ -10,5 +10,6 @@ window.jQuery = window.$ = $;
 import "./headVideo/headVideo"
 import "./bar-menu/bar-menu"
 import "./reservation/reservation"
+import "./contacts/contacts"
 
 

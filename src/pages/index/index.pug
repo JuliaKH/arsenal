@@ -2,6 +2,7 @@ extends ../../page-templates/base.pug
 include headVideo/head-carousel
 include bar-menu/bar-menu
 include reservation/reservation
+include contacts/contacts
 
 block content
     +head-carousel
@@ -10,3 +11,5 @@ block content
             +bar-menu
         .content-container__item
             +reservation
+        .content-container__item
+            +contacts
