@@ -8,7 +8,8 @@ import './../../../../assets/img/bar-menu/page4.jpg'
 
 $('.bar-menu-carousel').owlCarousel({
     loop: true,
-    nav: true,
+    nav: false,
+    dots: false,
     items: 1,
     margin: 10,
 });

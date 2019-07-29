@@ -1,6 +1,20 @@
 mixin reservation
-    section.reservation-container
-        input
-        input
-        input
-        buton=btn
+    section
+        form.reservation-container
+            h2.reservation-container__item.reservation-container__header ONLINE TABLE BOOKING
+            input.reservation-container__item(
+                placeholder="Your name"
+                type="text"
+            )
+            input.reservation-container__item(
+                placeholder="Your phone"
+                type="tel"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            )
+            input.reservation-container__item(
+                placeholder=""
+                type="date"
+            )
+            buton.reservation-container__item.reservation-container__button(
+                type="submit"
+            )="Reserve table"
