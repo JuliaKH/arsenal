@@ -1,5 +1,12 @@
 extends ../../page-templates/base.pug
-include head-carousel/head-carousel
+include headVideo/head-carousel
+include bar-menu/bar-menu
+include reservation/reservation
 
 block content
     +head-carousel
+    .content-container
+        .content-container__item
+            +bar-menu
+        .content-container__item
+            +reservation

@@ -1,0 +1,21 @@
+mixin head-carousel
+    section
+        .owl-carousel.head-carousel
+            .item
+                video.header-video(
+                    id="header-carousel",
+                    class="video-js vjs-default-skin",
+                    controls
+                    autoplay
+                    data-setup=`{
+                                "techOrder": ["youtube"],
+                                "sources": [{
+                                    "type": "video/youtube",
+                                    "src": "https://www.youtube.com/watch?v=oO7Y8NsnkRg"
+                                }],
+                                "youtube": {
+                                    "iv_load_policy": 1,
+                                    "playlist": "cK3NMZAUKGw,001a4x0D1jY,GvD3CHA48pA"
+                                }
+                            }`
+                )

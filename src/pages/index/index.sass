@@ -1,23 +1,16 @@
+@import "./../../variables"
+@import "./../../mixins"
+
 body
     background: #000
+    margin: 0
+    padding: 0
 
-.popup-container
-    display: none /* Hidden by default */
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    position: fixed /* Stay in place */
-    z-index: 3 /* Sit on top */
-    left: 0
-    top: 0
-    width: 100% /* Full width */
-    height: 100% /* Full height */
-    overflow: auto /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4) /* Black w/ opacity */
-    &.is-active
-        display: flex
+.content-container
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
     &__item
-        display: flex
-        width: 50px
-        height: 50px
-        background-color: pink
+        width: 100%
+        +tablet-landscape
+            width: 40%

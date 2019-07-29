@@ -7,6 +7,8 @@ import "./index.sass";
 import $ from "jquery";
 window.jQuery = window.$ = $;
 // Import components
-import "./head-carousel/head-carousel"
+import "./headVideo/headVideo"
+import "./bar-menu/bar-menu"
+import "./reservation/reservation"
 
 
