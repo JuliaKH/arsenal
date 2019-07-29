@@ -1,4 +1,4 @@
-// import "./popup.sass";
+import "./popup.sass";
 
 class Popup {
   constructor(button, container, closeFormElement) {

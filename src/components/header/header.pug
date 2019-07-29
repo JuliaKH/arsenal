@@ -1,129 +1,18 @@
-include  ../popup/popup
-include ../sign-in/sign-in
-include ../sign-out/sign-out
-
 mixin header
     header.header
-        .upper-navigation
-            .upper-navigation__item
-                span.upper-navigation__link
-                    a.upper-navigation__city(href='#') Новосибирск
-                    span  →
-                    a.upper-navigation__street(href='#') ул. Октябрьская, 34
-            .upper-navigation__item
-                span.upper-navigation__link
-                    img(src='./assets/img/header/phone-icon.png' alt='Phone')
-                    a.upper-navigation__phone(href='tel:3832408080') (383) 240-80-80,
-                    a.upper-navigation__phone(href='tel:3832408080') 240-80-00
-            .upper-navigation__item
-                nav.navigation-container
-                    ul.header-navigation
-                        -
-                            let headerNavigation = [
-                            ['#', 'Как купить'],
-                            ['#', 'Гарантия'],
-                            ['#', 'Доставка']
-                            ];
-                        each val in headerNavigation
-                            li.header-navigation__item
-                                a.header-navigation__link(href=val[0])= val[1]
-            .upper-navigation__item
-                a.upper-navigation__link(href='#')
-                    span.upper-navigation__account Мой арсенал
-            .upper-navigation__item.header-auth
-                // +popup
-                // img.upper-navigation__social-image(src='./assets/img/header/VK-icon.png' alt='VK')
-                +sign-in
-                +sign-out
-        .shop-bar
-            .shop-bar__item
-                a.logo(href='#')
-                    img(src='./assets/img/header/logo.png' alt='Музыкальный арсенал')
-                    span.logo__text Мы работаем на ваш талант!
-            .shop-bar__item.shop-bar__item--growed
-                .search
-                    input.search__input(type='text' placeholder='Поиск товаров')
-                    img.search__image(src='./assets/img/header/search-icon.png' alt='search')
-            .shop-bar__item.cart
-                img(src='./assets/img/header/cart-icon.png' alt='cart')
-                span Корзина
-                span.cart__items-count 25
-        .header-menu
-            -
-                var headerMenu = [
-                ['#', 'Акции'],
-                ['#', 'Музыкальные инструменты', [
-                    ['#', 'Гитары'],
-                    ['#', 'Ударные', [
-                    ['#', 'Тарелки'],
-                    ['#', 'Тренировочные пэды', [
-                        './assets/img/header/headerMainMenuImage1.png',
-                        'DBZ Halifire',
-                        'Электрогитара, в стиле «Юнион Джек». Выпущена ограниченным тиражом.',
-                        '89 750',
-                        '83 550',
-                    ]],
-                ['#', 'Пластики'],
-                ['#', 'Барабанные палочки'],
-                ['#', 'Чехлы, кейсы, сумки'],
-                ['#', 'Аксессуары'],
-                ['#', 'Перкуссия'],
-                ]],
-                ['#', 'Клавишные'],
-                ['#', 'Духовые'],
-                ['#', 'Смычковые'],
-                ['#', 'Народные'],
-                ]],
-                ['#', 'DJ'],
-                ['#', 'Шоу-техника'],
-                ['#', 'Студия'],
-                ['#', 'Звук'],
-                ['#', 'Свет'],
-                ['#', 'Коммутация'],
-                ['#', 'Стойки'],
-                ];
-                var headerMenuLevel = 1;
-            //- Declaration
-            mixin headerMenuItem(headerMenuLevel, item)
-                - let imageUrl = item[0];
-                - let className = 'level-' + headerMenuLevel + '-menu';
-                ul(class='menu ' + className)
-                    div(class= className + '__item')
-                        img(src=item[0] alt='guitar')
-                        h4(class= className + '__name')= item[1]
-                        p(class= className + '__info')= item[2]
-                        div(class= className + '__price-container')
-                            span(class= className + '__price-old')= item[3]
-                            span(class= className + '__price-new')= item[4] + '₽'
-            mixin headerMenu(headerMenuLevel, items)
-                - let i = 0;
-                - let className = 'level-' + headerMenuLevel + '-menu';
-                ul(class='dropdown ' + 'menu ' + className, data-dropdown-menu)
-                    while i < items.length
-                        li
-                            a(class=className + '__link' href=items[i][0])= items[i][1]
-                            if items[i][2]
-                                - headerMenuLevel++
-                                if headerMenuLevel <= 3
-                                    +headerMenu(headerMenuLevel, items[i][2])
-                                else
-                                    +headerMenuItem(headerMenuLevel, items[i][2])
-                        - i++
-                    - i = 0
-            //- Use
-            +headerMenu(headerMenuLevel, headerMenu)
-        .owl-carousel.head-carousel
-            .owl-content.head-carousel__container.img1
-                span Новинка
-                h2 ARIA MAC-STD
-                p.
-                    Станьте ближе к любимой музыке вместе с P5 Series 2. У последней версии полностью
-                    обновлена конструкция динамиков, что подняло качество звука на новый уровень, а
-                    материалы высокого качества обеспечивают комфорт.
-            .owl-content.head-carousel__container.img2
-                span Новинка
-                h2 ARIA MAC-STD
-                p.
-                    Станьте ближе к любимой музыке вместе с P5 Series 2. У последней версии полностью
-                    обновлена конструкция динамиков, что подняло качество звука на новый уровень, а
-                    материалы высокого качества обеспечивают комфорт.
+        .burger
+            label(for='menu-toggle')  ☰
+            input#menu-toggle(type='checkbox')
+            ul.nav
+                li
+                    a(href='#') NAV
+                li
+                    a(href='#') PHP
+                li
+                    a(href='#') HTML
+                li
+                    a(href='#') CSS
+                li
+                    a(href='#') MYSQL
+                li
+                    a(href='#') SSL

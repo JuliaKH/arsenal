@@ -1,214 +1,51 @@
 @import "./../../variables"
 @import "./../../mixins"
 
-//<editor-fold desc="upper-navigation">
-.upper-navigation
-    display: flex
-    flex-direction: column
-    flex-wrap: wrap
-    +tablet-portrait
-        flex-direction: row
-        text-align: center
-        padding: 1em
-    justify-content: space-around
-    align-items: center
-    background-color: $base-color-dark-orange
-    &__item
-        padding: 0.5em 0
-        align-items: center
-        display: flex
-        justify-content: space-between
-    &__link, &__city, &__street, &__phone
-        color: white
-        &:hover, &:visited, &:focus
-            color: white
-    &__city
-        border-bottom: 1px dotted white
-    &__street
-        border-bottom: 1px solid white
-    &__account
-        border-bottom: 1px dotted white
-    &__social-image
-        object-fit: contain
-.header-navigation
-    background-color: $base-color-dark-orange !important
+.burger
+    display: block
     list-style-type: none
-    margin: 0
-    padding: 0
-    display: flex
-    align-items: center
-    &__item
-        display: inline
-        margin-right: 1em
-        border-bottom: 1px solid white
-    &__link
-        margin-right: 0em
-        color: white
-        &:hover
-            color: white
-//</editor-fold>
-//<editor-fold desc="shop-bar">
-.shop-bar
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    align-items: center
-    border-bottom: 1px solid $base-color-light-grey
-    +tablet-portrait
-        flex-direction: row
+    background: #000
+    ul
         text-align: center
-        padding: 1em
-    &__item
-        &:first-child
-            padding-top: 1em
-        display: flex
-        margin-bottom: 1em
-        @media (min-width: $tablet-portrait)
-            padding: 0 1em
-            margin-bottom: 0em
-    &__item--growed
-        flex-grow: 1
-.logo
-    display: flex
-    flex-direction: column
-    align-items: center
-    padding: 0 1em
-    color: $base-color-text-grey
-    text-align: center
-    &:hover
-        color: darken($base-color-text-grey, 10%)
-.search
-    display: flex
-    width: 100%
-    border: 1px solid #919191
-    &__image
-        object-fit: contain
-        padding-right: 1em
-    &__input
-        margin: 0 !important
-        border: none !important
-        box-shadow: none !important
-        &:focus
-            border: none
-            box-shadow: none
-.cart
-    justify-content: space-evenly
-    width: 12em
+    li
+        display: inline-block
+        width: 15%
+        list-style: none
+        background: #000
+        color: #fff
+        a
+            display: block
+            padding: 15px
+            text-decoration: none
+            color: #fff
+            transition: 0.8s
+            &:hover
+                background: #4183c4
+                color: #fff
+    label
+        display: none
 
-    padding: 0.5em
-    background-color: #f0f0f0
-    border: 1px solid #929292
-    &__items-count
-        background-color: #c19c4f
-        border-radius: 50%
-        width: 2em
-        color: white
-        text-align: center
-//</editor-fold>
-//<editor-fold desc="Header menu">
-.header-menu
-    border-bottom: 2px solid #ed3642
-    padding: 1em 0
-.level-1-menu
-    justify-content: space-around
-    &__link
-        +link-color(#5f4849)
-    > .is-active
-        +link-color(white)
-        background-color: red
-        border-radius: 3em
+#menu-toggle
+    display: none
 
-.level-2-menu
-    background-color: rgba(0,0,0,0.8) !important
-    border: none !important
-    margin-top: 1.1em !important
-    &__link
-        +link-color(white)
-    > .is-active
-        background-color: rgb(175, 149, 89) !important
+@media all and (max-width: 700px) and (min-width: 0px)
+    .burger
+        label
+            display: block
+            height: 70px
+            width: 70px
+            line-height: 70px
+            text-align: center
+            color: #fff
+            font-size: 1.8rem
+            background: #000
+            cursor: pointer
+        .nav
+            display: none
+        li
+            width: 100%
+    #menu-toggle:checked + .nav
+        display: block
+    .burger label:active .nav
+        display: none
 
-.level-3-menu
-    background-color: rgb(175, 149, 89) !important
-    border: none !important
-    &__link
-        +link-color(white)
-
-.level-4-menu
-    background-color: rgb(175, 149, 89) !important
-    border: none !important
-    &__item
-        border-left: 1px solid rgb(150,128,76)
-        padding: 1em
-        color: rgb(85,80,71)
-
-        display: flex
-        flex-direction: column
-        align-items: center
-    &__name
-        border-bottom: 1px solid rgb(85,80,71)
-    &__info
-        font-size: 0.8em
-        text-align: center
-    &__price-container
-        background-color: white
-        padding: 0 1em
-    &__price-old
-        text-decoration: line-through
-        color: rgb(126,126,126)
-        padding-right: 0.5em
-    &__price-new
-        color: red
-        font-size: 1.3em
-
-.dropdown.menu > li.is-dropdown-submenu-parent > a::after,
-.dropdown.menu.vertical > li.opens-right > a::after
-    display: none !important // foundation styles
-
-//</editor-fold>
-//<editor-fold desc="Header carousel">
-.head-carousel
-    z-index: 0 !important
-    display: none !important
-    @media (min-width: $tablet-portrait)
-        display: flex !important
-    &__container
-        background-size: cover
-        display: flex
-        flex-direction: column
-        justify-content: center
-        padding-left: 50%
-        height: 400px
-        color: white
-        & > span
-            color: rgb(170, 170, 170)
-        &.img1
-            background-image: url('./assets/img/header/headerCarouselImage1.png')
-        &.img2
-            background-image: url('./assets/img/header/headerCarouselImage2.png')
-
-.owl-dots
-    width: 100%
-    position: absolute
-    // margin-top: -2em
-    display: flex
-    justify-content: center
-    bottom: 1em
-.owl-dot
-    background-color: white
-    width: 20px
-    height: 20px
-    border-radius: 50%
-    border: 1px solid #393a3b
-    margin: 0 0.2em
-    &.active
-        border:
-            width: 5px
-            style: solid
-            color: red grey grey grey
-        animation: move 5.5s linear infinite
-        @keyframes move
-            0%
-                transform: rotate(0deg)
-            100%
-                transform: rotate(360deg)
-//</editor-fold>

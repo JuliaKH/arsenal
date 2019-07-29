@@ -75,6 +75,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
+    "ember-burger-menu": "^3.3.3",
     "express": "^4.17.1",
     "firebase": "^6.3.0",
     "foundation-sites": "^6.5.3",
@@ -87,9 +88,10 @@
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
+    "videojs-youtube": "^2.6.0",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6",
-    "webpack-karma-jasmine": "^3.0.6",
+    "webpack-karma-jasmine": "^3.0.7",
     "what-input": "^5.2.3"
   }
 }

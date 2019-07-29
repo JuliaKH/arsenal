@@ -1,41 +1,23 @@
-//body
-//    overflow-x: hidden
+body
+    background: #000
 
-
-
-//@import "../src.temp/sass/mixins"
-//@import "../src.temp/sass/variables"
-//@import "../node_modules/foundation-sites/assets/foundation"
-//
-//@import "components/page-templates/header/header"
-//@import "../src.temp/views/pages/index/brands/brands"
-//@import "../src.temp/sass/index/sellout"
-//@import "../src.temp/sass/index/services"
-//@import "../src.temp/sass/index/stock"
-//@import "../src.temp/sass/index/news_items"
-//@import "../src.temp/sass/index/articles"
-//@import "../src.temp/views/page-templates/footer/footer"
-//@import "../src.temp/sass/index/sign-in"
-//
-//body
-//  margin: 0
-//  padding: 0
-//  font-size: 16px
-//  min-width: 320px
-//  position: relative
-//  font-family: sans-serif
-//
-//.arrow
-//  position: relative
-//  border: solid #808080
-//  border-width: 0 3px 3px 0
-//  height: 20px
-//  min-width: 20px
-//  display: inline-block
-//  padding: 3px
-//
-//  &.right
-//    @include arrow-transform(-45deg)
-//
-//  &.left
-//    @include arrow-transform(135deg)
+.popup-container
+    display: none /* Hidden by default */
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    position: fixed /* Stay in place */
+    z-index: 3 /* Sit on top */
+    left: 0
+    top: 0
+    width: 100% /* Full width */
+    height: 100% /* Full height */
+    overflow: auto /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4) /* Black w/ opacity */
+    &.is-active
+        display: flex
+    &__item
+        display: flex
+        width: 50px
+        height: 50px
+        background-color: pink
