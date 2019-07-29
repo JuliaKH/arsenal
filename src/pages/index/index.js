@@ -11,5 +11,6 @@ import "./headVideo/headVideo"
 import "./bar-menu/bar-menu"
 import "./reservation/reservation"
 import "./contacts/contacts"
+import "./photo-gallery/photo-gallery"
 
 
