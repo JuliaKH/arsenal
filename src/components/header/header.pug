@@ -1,18 +1,17 @@
 mixin header
-    header.header
-        .burger
-            label(for='menu-toggle')  ☰
-            input#menu-toggle(type='checkbox')
-            ul.nav
-                li
-                    a(href='#') NAV
-                li
-                    a(href='#') PHP
-                li
-                    a(href='#') HTML
-                li
-                    a(href='#') CSS
-                li
-                    a(href='#') MYSQL
-                li
-                    a(href='#') SSL
+    .header-menu
+        label.header-menu__button(for='menu-toggle')  ☰
+        img.header-menu__logo(src="./assets/img/logo/logo1.png")
+        input#menu-toggle(type='checkbox')
+        ul.navigation-container
+            li.navigation-container__item
+                a.navigation-container__link(href='#') MENU
+            li.navigation-container__item
+                a.navigation-container__link(href='#') GALLERY
+            li.navigation-container__item
+                a.navigation-container__link(href='#') BOOKING
+            li.navigation-container__item
+                a.navigation-container__link(href='#') CONTACTS
+            li.navigation-container__item
+                a.navigation-container__link(href='#') KARAOKE
+header.header

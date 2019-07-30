@@ -21,7 +21,9 @@
     @content
 
 @mixin link-color($color, $color2:$color)
-  color: $color !important
+  color: $color
   cursor: pointer
+  text-decoration: none
   &:hover, &:active, &:focus
-    color: darken($color2,10%) !important
+    color: darken($color2,10%)
+    text-decoration: underline
