@@ -12,9 +12,26 @@ mixin reservation
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             )
             input.reservation-container__item(
-                placeholder=""
-                type="date"
+                placeholder="Your e-mail"
+                type="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             )
+            .reservation-container__item
+                input.reservation-container__daytime(
+                    placeholder=""
+                    type="date"
+                )
+                input.reservation-container__daytime(
+                    min="11:00"
+                    max="00:00"
+                    type="time"
+                )
+            .reservation-container__item
+                input.reservation-container__karaoke(
+                    id="karaoke"
+                    type="checkbox"
+                )
+                label.reservation-container__karaoke(for="karaoke") I want to sing karaoke
             buton.reservation-container__item.reservation-container__button(
                 type="submit"
             )="Reserve table"

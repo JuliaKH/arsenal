@@ -16,6 +16,10 @@
   @media (min-width: $tablet-landscape)
     @content
 
+@mixin desktop
+  @media (min-width: $desktop)
+    @content
+
 @mixin link-color($color, $color2:$color)
   color: $color !important
   cursor: pointer

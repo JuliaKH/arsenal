@@ -1,13 +1,14 @@
 .reservation-container
-    padding: 1em
-    height: 100%
     color: white
 
     display: flex
-    flex-direction: column
+    flex-direction: row
+    flex-wrap: wrap
     justify-content: space-around
 
-    &__item
+    &__item, &__daytime
+        width: 100%
+        text-align: center
         background-color: black
         border: none
         border-bottom: 1px solid orangered
@@ -17,7 +18,12 @@
             outline: none
     &__header
         text-align: center
-        margin: 0
+    &__daytime
+        width: auto
+        border: none
+        padding: 0
+    &__karaoke
+        width: auto
     &__button
         background-color: orangered
         text-align: center

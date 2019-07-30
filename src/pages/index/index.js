@@ -7,10 +7,12 @@ import "./index.sass";
 import $ from "jquery";
 window.jQuery = window.$ = $;
 // Import components
-import "./headVideo/headVideo"
 import "./bar-menu/bar-menu"
 import "./reservation/reservation"
 import "./contacts/contacts"
 import "./photo-gallery/photo-gallery"
+import "./karaoke-gallery/karaoke-gallery"
+
+import "../../../assets/fire.gif"
 
 

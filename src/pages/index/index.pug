@@ -1,18 +1,20 @@
 extends ../../page-templates/base.pug
-include headVideo/head-carousel
 include bar-menu/bar-menu
 include reservation/reservation
 include contacts/contacts
 include photo-gallery/photo-gallery
+include karaoke-gallery/karaoke-gallery
 
 block content
-    +head-carousel
     .content-container
         .content-container__item
             +bar-menu
+        .content-container__item
+            +photo-gallery
         .content-container__item
             +reservation
         .content-container__item
             +contacts
         .content-container__item
-            +photo-gallery
+            +karaoke-gallery
+
