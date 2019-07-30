@@ -37,7 +37,7 @@ var config = {
                 }
             },
             {
-                test: /\.(png|jp(e*)g|svg|gif)$/,
+                test: /\.(png|jp(e*)g|svg|gif|ico)$/,
                 use: [{
                     loader: 'file-loader',
                     options: {

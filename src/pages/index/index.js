@@ -1,4 +1,5 @@
 // Import Components
+import "../../../assets/img/logo/logo2.ico"
 import "../../components/header/header";
 import "../../components/footer/footer";
 import "./lazy_loading";
