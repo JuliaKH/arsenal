@@ -1,30 +1,35 @@
 mixin reservation
     section
-        form.reservation-container
+        form(action="#").reservation-container
             h1.reservation-container__item.reservation-container__header ONLINE TABLE BOOKING
             input.reservation-container__item(
                 placeholder="Your name"
                 type="text"
+                required
             )
             input.reservation-container__item(
                 placeholder="Your phone"
                 type="tel"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                pattern="[0-9]{1,}"
+                required
             )
             input.reservation-container__item(
                 placeholder="Your e-mail"
                 type="email"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                required
             )
             .reservation-container__item
                 input.reservation-container__daytime(
                     placeholder=""
                     type="date"
+                    required
                 )
                 input.reservation-container__daytime(
                     min="11:00"
-                    max="00:00"
+                    max="23:59"
                     type="time"
+                    required
                 )
             .reservation-container__item
                 input.reservation-container__karaoke(
@@ -32,6 +37,7 @@ mixin reservation
                     type="checkbox"
                 )
                 label.reservation-container__karaoke(for="karaoke") I want to sing karaoke
-            buton.reservation-container__item.reservation-container__button(
+            input.reservation-container__item.reservation-container__button(
                 type="submit"
-            )="Reserve table"
+                value="Reserve table"
+            )
