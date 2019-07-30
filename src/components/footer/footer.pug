@@ -1,52 +1,28 @@
 mixin footer
-    footer.footer
-        .footer__item
-            .created
-                .created__item
-                    h5 © 2014 Музыкальный арсенал
-                    a(href='#') Правила использования сайта
-                .created__item
-                    span
-                        a(href='#') Разработка сайта
-                        |  - github.com/JuliaKH/arsenal
-                    span
-                        a(href='#') Дизайн сайта
-                        |  - yuriev.pro
-        .footer__item
-            .contacts
-                .place-info
-                    h5 Магазин в Новосибирске
-                    span
-                        img(src='assets/img/footer-icons/place.png', alt='icon')
-                        |                 ул. Октябрьская, 34
-                    span
-                        img(src='assets/img/footer-icons/phone.png', alt='icon')
-                        |                 (383) 240-80-80, 240-80-80
-                    span
-                        img(src='assets/img/footer-icons/time.png', alt='icon')
-                        |                 Сегодня с 10:00 до 19:00
-                .social
-                    img(src='assets/img/footer-icons/vk.png', alt='vk')
-                    img(src='assets/img/footer-icons/fb.png', alt='fb')
-                    img(src='assets/img/footer-icons/avito.png', alt='avito')
-        .footer__item
-            .links
-                .links__item
-                    a(href='#') О компании
-                    a(href='#') Наша история
-                    a(href='#') Благодарности
-                    a(href='#') Партнерам
-                    a(href='#') Магазины
-                    a(href='#') Контакты
-                .links__item
-                    a(href='#') Эндорсеры
-                    a(href='#') Коллектив
-                    a(href='#') Вакансии
-                    a(href='#') Новости
-                    a(href='#') Обзоры
-                .links__item
-                    a(href='#') Акции
-                    a(href='#') Распродажи
-                    a(href='#') Товары
-                    a(href='#') Услуги
-                    a(href='#') Производители
+    footer
+        .footer-container
+            .footer-container__item
+                .contacts-container
+                    h1.contacts-container__item.contacts-container__header Hours
+                    span.contacts-container__item Mon - Thu, Sun 11:00 AM - 11:00 PM
+                    span.contacts-container__item Fri - Sat 11:00 AM - 12:00 AM
+            .footer-container__item
+                .contacts-container
+                    h1.contacts-container__item.contacts-container__header Contacts
+                    span.contacts-container__item ∇ another str.
+                    span.contacts-container__item ✆ +123-456-7890
+                    span.contacts-container__item ✉ sample@gmail.com
+            .footer-container__item
+                h1.contacts-container__header Navigation
+                ul.footer-navigation-container
+                    li.footer-navigation-container__item
+                        a.footer-navigation-container__link(href='#') MENU
+                    li.footer-navigation-container__item
+                        a.footer-navigation-container__link(href='#') GALLERY
+                    li.footer-navigation-container__item
+                        a.footer-navigation-container__link(href='#') BOOKING
+                    li.footer-navigation-container__item
+                        a.footer-navigation-container__link(href='#') CONTACTS
+                    li.footer-navigation-container__item
+                        a.footer-navigation-container__link(href='#') KARAOKE
+        p.copyright Copyright © 2019 Hakarocu. All Rights Reserved

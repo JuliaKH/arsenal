@@ -1,7 +1,6 @@
 extends ../../page-templates/base.pug
 include bar-menu/bar-menu
 include reservation/reservation
-include contacts/contacts
 include photo-gallery/photo-gallery
 include karaoke-gallery/karaoke-gallery
 
@@ -12,9 +11,7 @@ block content
         .content-container__item
             +photo-gallery
         .content-container__item
-            +reservation
-        .content-container__item
-            +contacts
-        .content-container__item
             +karaoke-gallery
+        .content-container__item
+            +reservation
 

@@ -1,59 +1,44 @@
 @import "../../variables"
 @import "../../mixins"
 
-.footer
+.footer-container
     display: flex
     flex-direction: column
-
-    text-align: center
-    background-color: #5d5555
-    color: white
     +tablet-landscape
-        padding-top: 3em
-        padding-bottom: 5em
         flex-direction: row
-        text-align: start
-
     &__item
+        width: 100%
         display: flex
-        flex-direction: row
-        flex-grow: 1
-        justify-content: center
-        padding: 1em 0
-        border-bottom: 1px solid white
+        flex-direction: column
+        margin-bottom: 1em
+        border-bottom: 1px solid orangered
         +tablet-landscape
-            border: none
-    span
-        padding: 0.5em 0
-.created
-    justify-content: space-between
-    &__item
-        display: flex
-        flex-direction: column
+            border-bottom: none
 
-.links
+.contacts-container
     display: flex
     flex-direction: column
-    flex-grow: 2
-    justify-content: space-between
-    +tablet-portrait
-        flex-direction: row
-        justify-content: space-around
-    &__item
-        display: flex
-        flex-direction: column
-
-footer a,
-footer a:hover,
-footer a:visited
-    color: white
-    text-decoration: underline
-    padding: 0.5em 0
-.place-info
-    display: flex
-    flex-direction: column
-.social
-    display: flex
     justify-content: center
-    & > img
-        margin-right: 1em
+    align-items: center
+    &__item
+        color: white
+        width: 100%
+        text-align: center
+    &__header
+        padding: 1em 0
+
+.footer-navigation-container
+    text-align: center
+    padding: 0
+    margin: 0
+    list-style-type: none
+    width: 100%
+    &__item
+        width: 100%
+        padding: 0.5em 0
+    &__link
+        +link-color(white, orangered)
+
+.copyright
+    color: white
+    text-align: center

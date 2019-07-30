@@ -9,7 +9,6 @@ window.jQuery = window.$ = $;
 // Import components
 import "./bar-menu/bar-menu"
 import "./reservation/reservation"
-import "./contacts/contacts"
 import "./photo-gallery/photo-gallery"
 import "./karaoke-gallery/karaoke-gallery"
 
