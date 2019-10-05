@@ -1,0 +1,17 @@
+@mixin arrow-transform($prop)
+  transform: rotate($prop)
+  -webkit-transform: rotate($prop)
+
+@mixin tablet-portrait
+  @media (min-width: $tablet-portrait)
+    @content
+
+@mixin tablet-landscape
+  @media (min-width: $tablet-landscape)
+    @content
+
+@mixin link-color($color, $color2:$color)
+  color: $color !important
+  cursor: pointer
+  &:hover, &:active, &:focus
+    color: darken($color2,10%) !important

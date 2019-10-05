@@ -1,2 +1,2 @@
-# twix1
-work with git
+# Music Arsenal (Team: Twix)
+RDLab test app
